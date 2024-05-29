@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'core/constant_finals.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,9 +22,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Hello Worlds Lalu!'),
-      ),
+      body: Center(),
     );
   }
 }
