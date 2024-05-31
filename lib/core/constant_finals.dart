@@ -24,6 +24,7 @@ const Color kGreen = Color(0xFF00A991);
 const Color kPurple = Color(0xFF5F23FD);
 const Color kLightGrey100 = Color(0xFFF0F1F3);
 const Color kLightGrey500 = Color(0xFF667085);
+const Color kLightGrey800 = Color(0xFF383E49);
 const Color kGrey = Color(0xFF2B2F38);
 
 class Styles {

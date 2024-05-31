@@ -1,9 +1,10 @@
-// ignore_for_file: , prefer_const_constructors
+// ignore_for_file: , prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
 import '../widgets/card_ratio.dart';
+import '../widgets/card_student_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,6 +17,10 @@ class HomeScreen extends StatelessWidget {
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
+            CardStudentBody(),
+            SizedBox(
+              height: 16,
+            ),
             CardRatio(
               title: 'Dosen',
               total: '736',
