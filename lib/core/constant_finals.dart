@@ -1,15 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-//Icon
-const String icBriefcase = 'assets/svgs/briefcase.svg';
-const String icProfileTwoUser = 'assets/svgs/profiletwouser.svg';
-const String icHome = 'assets/svgs/home.svg';
-const String icPeople = 'assets/svgs/poeple.svg';
-const String icProfileTwoUserOutline = 'assets/svgs/profiletwouseroutline.svg';
-const String icChart = 'assets/svgs/chart.svg';
-const String icTeacher = 'assets/svgs/teacher.svg';
-const String icMedal = 'assets/svgs/medal.svg';
+// Route
+const String akademikRoute = 'akademik/';
+const String pmbRoute = '${akademikRoute}pmb/';
+
+// Icon
+const String icLoc = 'assets/svgs/';
+const String icBriefcase = '${icLoc}briefcase.svg';
+const String icProfileTwoUser = '${icLoc}profiletwouser.svg';
+const String icHome = '${icLoc}home.svg';
+const String icPeople = '${icLoc}people.svg';
+const String icProfileTwoUserOutline = '${icLoc}profiletwouseroutline.svg';
+const String icChart = '${icLoc}chart.svg';
+const String icTeacher = '${icLoc}teacher.svg';
+const String icMedal = '${icLoc}medal.svg';
+const String icFrame = '${icLoc}frame.svg';
+const String icNoteTwo = '${icLoc}note-2.svg';
+const String icProfileTick = '${icLoc}profile-tick.svg';
+const String icTaskSquare = '${icLoc}task-square.svg';
+const String icNote = '${icLoc}note.svg';
+const String icClipboard = '${icLoc}clipboard.svg';
+const String icSearchStatus = '${icLoc}search-status.svg';
+const String icBook = '${icLoc}book.svg';
+const String icAward = '${icLoc}award.svg';
+const String icUserOctagon = '${icLoc}user-octagon.svg';
+const String icProfileAdd = '${icLoc}profile-add.svg';
 
 //Warna
 const Color kTempBackground = Color.fromARGB(255, 222, 234, 255);
