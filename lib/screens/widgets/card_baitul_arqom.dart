@@ -1,12 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constant_finals.dart';
 import 'base_container.dart';
 
-class CardMahasiswaLulusTBQ extends StatelessWidget {
-  const CardMahasiswaLulusTBQ({super.key});
+class CardBaitulArqom extends StatelessWidget {
+  const CardBaitulArqom({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Mahasiswa Lulus TBQ',
+                  'Mahasiswa Lulus Baitul \nArqom',
                   style: Styles.kPublicSemiBoldBodyOne.copyWith(
                     color: kGrey,
                   ),
@@ -38,7 +37,7 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
                 children: [
                   PieChart(
                     PieChartData(
-                      sections: getSectionsTBQ(),
+                      sections: getSectionsBaitulArqom(),
                       centerSpaceRadius: 105,
                       sectionsSpace: 3,
                     ),
@@ -66,7 +65,7 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
-            const DeskripsiChartTBQ(
+            const DeskripsiChartBaitulArqom(
               color: kGreen,
               title: 'Lulus',
               percent: '50%',
@@ -75,7 +74,7 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            const DeskripsiChartTBQ(
+            const DeskripsiChartBaitulArqom(
               color: kPink,
               title: 'Tidak Lulus',
               percent: '25%',
@@ -84,7 +83,7 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            const DeskripsiChartTBQ(
+            const DeskripsiChartBaitulArqom(
               color: kBlue,
               title: 'Belum Lulus',
               percent: '25%',
@@ -97,7 +96,7 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
   }
 
   //list temporary buat nampilin data di card jumlah lulusan TBQ
-  List<PieChartSectionData> getSectionsTBQ() {
+  List<PieChartSectionData> getSectionsBaitulArqom() {
     return [
       PieChartSectionData(
         showTitle: false,
@@ -121,12 +120,12 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
   }
 }
 
-class DeskripsiChartTBQ extends StatelessWidget {
+class DeskripsiChartBaitulArqom extends StatelessWidget {
   final Color color;
   final String title;
   final String percent;
   final String value;
-  const DeskripsiChartTBQ(
+  const DeskripsiChartBaitulArqom(
       {super.key,
       required this.color,
       required this.title,
