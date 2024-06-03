@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:des_uad/screens/widgets/student_status.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
@@ -19,6 +20,7 @@ class CardStudentBody extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,15 +39,11 @@ class CardStudentBody extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Text(
-                  '29.800',
-                  style: Styles.kPublicSemiBoldHeadingTwo.copyWith(
-                    color: kGrey,
-                  ),
-                ),
-              ],
+            Text(
+              '29.800',
+              style: Styles.kPublicSemiBoldHeadingTwo.copyWith(
+                color: kGrey,
+              ),
             ),
             SizedBox(
               height: 24,
@@ -57,9 +55,8 @@ class CardStudentBody extends StatelessWidget {
                   child: Container(
                     height: 20,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(4),
-                        bottomLeft: Radius.circular(4),
+                      borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(4),
                       ),
                       color: kLightBlue,
                     ),
@@ -77,9 +74,8 @@ class CardStudentBody extends StatelessWidget {
                   child: Container(
                     height: 20,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(4),
-                        bottomRight: Radius.circular(4),
+                      borderRadius: BorderRadius.horizontal(
+                        right: Radius.circular(4),
                       ),
                       color: kPink,
                     ),
@@ -93,99 +89,11 @@ class CardStudentBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Aktif',
-                      style: Styles.kPublicRegularBodyTwo
-                          .copyWith(color: kLightGrey500),
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            color: kLightBlue,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
-                          '24.750',
-                          style: Styles.kPublicMediumBodyOne
-                              .copyWith(color: kLightGrey800),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Cuti',
-                      style: Styles.kPublicRegularBodyTwo.copyWith(
-                        color: kLightGrey500,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            color: kYellow,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
-                          '2.430',
-                          style: Styles.kPublicMediumBodyOne.copyWith(
-                            color: kLightGrey800,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Non Aktif',
-                      style: Styles.kPublicRegularBodyTwo
-                          .copyWith(color: kLightGrey500),
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            color: kPink,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(
-                          '2.620',
-                          style: Styles.kPublicMediumBodyOne.copyWith(
-                            color: kLightGrey800,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                StudentStatus(
+                    status: 'Aktif', value: '24.750', color: kLightBlue),
+                StudentStatus(status: 'Cuti', value: '2.430', color: kYellow),
+                StudentStatus(
+                    status: 'Non Aktif', value: '2.620', color: kPink),
               ],
             ),
           ],
