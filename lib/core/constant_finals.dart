@@ -10,6 +10,7 @@ const String icProfileTwoUserOutline = 'assets/svgs/profiletwouseroutline.svg';
 const String icChart = 'assets/svgs/chart.svg';
 const String icTeacher = 'assets/svgs/teacher.svg';
 const String icMedal = 'assets/svgs/medal.svg';
+const String icRightArrow = 'assets/svgs/circulararrowright.svg';
 
 //Warna
 const Color kTempBackground = Color.fromARGB(255, 222, 234, 255);
@@ -23,6 +24,7 @@ const Color kRed = Color(0xFFFF7368);
 const Color kGreen = Color(0xFF00A991);
 const Color kPurple = Color(0xFF5F23FD);
 const Color kLightGrey100 = Color(0xFFF0F1F3);
+const Color kLightGrey400 = Color(0xFF858D9D);
 const Color kLightGrey500 = Color(0xFF667085);
 const Color kLightGrey800 = Color(0xFF383E49);
 const Color kGrey = Color(0xFF2B2F38);

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
+import '../widgets/card_akreditasi_prodi.dart';
 import '../widgets/card_ratio.dart';
 import '../widgets/card_student_body.dart';
 import '../widgets/card_total_registrasi.dart';
@@ -57,6 +58,10 @@ class HomeScreen extends StatelessWidget {
                 ratio: '1:58',
                 svgIcon: icBriefcase,
               ),
+              SizedBox(
+                height: 16,
+              ),
+              CardAkreditasiProdi(),
             ],
           ),
         ),
