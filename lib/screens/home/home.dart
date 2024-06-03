@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../core/constant_finals.dart';
 import '../widgets/card_ratio.dart';
 import '../widgets/card_student_body.dart';
+import '../widgets/card_total_registrasi.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,30 +14,51 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackground,
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            CardStudentBody(),
-            SizedBox(
-              height: 16,
-            ),
-            CardRatio(
-              title: 'Dosen',
-              total: '736',
-              ratio: '1:36',
-              svgIcon: icProfileTwoUser,
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            CardRatio(
-              title: 'Tendik',
-              total: '494',
-              ratio: '1:58',
-              svgIcon: icBriefcase,
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 48, horizontal: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Assalamualaikum 👋',
+                style: Styles.kPublicRegularBodyOne.copyWith(
+                  color: kLightGrey500,
+                ),
+              ),
+              Text(
+                'Yuk Mulai Pantau DES!',
+                style:
+                    Styles.kPublicSemiBoldHeadingThree.copyWith(color: kGrey),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CardTotalRegistrasi(),
+              SizedBox(
+                height: 16,
+              ),
+              CardStudentBody(),
+              SizedBox(
+                height: 16,
+              ),
+              CardRatio(
+                title: 'Dosen',
+                total: '736',
+                ratio: '1:36',
+                svgIcon: icProfileTwoUser,
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              CardRatio(
+                title: 'Tendik',
+                total: '494',
+                ratio: '1:58',
+                svgIcon: icBriefcase,
+              ),
+            ],
+          ),
         ),
       ),
     );
