@@ -21,8 +21,7 @@ class AppBarSubMenuAkademik extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: IconButton(
-              style:
-                  TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
+              highlightColor: Colors.transparent,
               onPressed: () => Navigator.pop(context),
               icon: const Icon(
                 Icons.arrow_back,

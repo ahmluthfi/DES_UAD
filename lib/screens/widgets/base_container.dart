@@ -22,16 +22,24 @@ class BaseContainer extends StatelessWidget {
     this.boxShadow,
   });
 
-  factory BaseContainer.styledPMB({
+  factory BaseContainer.styledSubMenuAkademik({
     required final List<Widget> children,
+    final bool isRow = false,
+    final MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start 
   }) =>
       BaseContainer(
         padding: const EdgeInsets.all(16),
         width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: children,
-        ),
+        child: isRow
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: children,
+              )
+            : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: mainAxisAlignment,
+                children: children,
+              ),
       );
 
   @override
@@ -40,7 +48,7 @@ class BaseContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         borderRadius: const BorderRadius.all(
-          Radius.circular(10),
+          Radius.circular(12),
         ),
         border: border,
         boxShadow: boxShadow,

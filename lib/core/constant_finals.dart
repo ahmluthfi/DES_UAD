@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Spacing (Gap)
+const Gap kGap8 = Gap(8);
+const Gap kGap12 = Gap(12);
+const Gap kGap16 = Gap(16);
+const Gap kGap20 = Gap(20);
+const Gap kGap24 = Gap(24);
+
 // Route
+const String homeRoute = 'home/';
 const String akademikRoute = 'akademik/';
 const String pmbRoute = '${akademikRoute}pmb/';
+const String mhsLokalRoute = '${akademikRoute}mhslokal/';
+const String mhsAsingRoute = '${akademikRoute}mhsasing/';
+const String kelulusanRoute = '${akademikRoute}kelulusan/';
+const String keberhasilanStudiRoute = '${akademikRoute}keberhasilanstudi/';
+const String perpustakaanRoute = '${akademikRoute}perpustakaan/';
+const String publikasiRoute = '${akademikRoute}publikasi/';
+const String jurnalRoute = '${akademikRoute}jurnal/';
+const String aikRoute = '${akademikRoute}aik/';
+
+// Image
+const String imgLoc = 'assets/images/';
+const String imgScopus = '${imgLoc}scopus.png';
+const String imgGaruda = '${imgLoc}garuda.png';
+const String imgScholar = '${imgLoc}scholar.png';
 
 // Icon
 const String icLoc = 'assets/svgs/';
@@ -39,9 +62,14 @@ const Color kRed = Color(0xFFFF7368);
 const Color kGreen = Color(0xFF00A991);
 const Color kPurple = Color(0xFF5F23FD);
 const Color kLightGrey100 = Color(0xFFF0F1F3);
+const Color kLightGrey300 = Color(0xFF989FAD);
 const Color kLightGrey500 = Color(0xFF667085);
 const Color kLightGrey800 = Color(0xFF383E49);
 const Color kGrey = Color(0xFF2B2F38);
+const Color kGrey100 = Color(0xFFD0D3D9);
+const Color kGrey300 = Color(0xFF989FAD);
+const Color kGrey400 = Color(0xFF858D9D);
+const Color kGrey600 = Color(0xFF5D6679);
 
 class Styles {
   //W400 - Regular
