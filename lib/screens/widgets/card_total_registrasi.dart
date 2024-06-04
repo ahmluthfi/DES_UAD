@@ -1,7 +1,5 @@
 
 // ignore_for_file: avoid_unnecessary_containers
-
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
