@@ -1,6 +1,12 @@
-import 'package:des_uad/core/constant_finals.dart';
-import 'package:des_uad/screens/widgets/base_container.dart';
+
+// ignore_for_file: avoid_unnecessary_containers
+
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/constant_finals.dart';
+import 'base_container.dart';
+import 'chart_total_registrasi.dart';
 
 class CardTotalRegistrasi extends StatelessWidget {
   const CardTotalRegistrasi({super.key});
@@ -10,7 +16,10 @@ class CardTotalRegistrasi extends StatelessWidget {
     return BaseContainer(
       color: kBlue,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 16,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -49,7 +58,13 @@ class CardTotalRegistrasi extends StatelessWidget {
             Text(
               '736',
               style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kWhite),
-            )
+            ),
+            Container(
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 13),
+                child: ChartTotalRegistrasi(),
+              ),
+            ),
           ],
         ),
       ),

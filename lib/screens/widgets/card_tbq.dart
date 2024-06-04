@@ -1,28 +1,24 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constant_finals.dart';
 import 'base_container.dart';
 
-class CardAkreditasiProdi extends StatelessWidget {
-  const CardAkreditasiProdi({super.key});
+class CardMahasiswaLulusTBQ extends StatelessWidget {
+  const CardMahasiswaLulusTBQ({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BaseContainer(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 14,
-          horizontal: 16,
-        ),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Akreditasi Prodi',
+                  'Mahasiswa Lulus TBQ',
                   style: Styles.kPublicSemiBoldBodyOne.copyWith(
                     color: kGrey,
                   ),
@@ -41,7 +37,7 @@ class CardAkreditasiProdi extends StatelessWidget {
                 children: [
                   PieChart(
                     PieChartData(
-                      sections: getSectionsProdi(),
+                      sections: getSectionsTBQ(),
                       centerSpaceRadius: 105,
                       sectionsSpace: 3,
                     ),
@@ -51,12 +47,12 @@ class CardAkreditasiProdi extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '68',
+                          '29.800',
                           style: Styles.kPublicSemiBoldHeadingTwo
                               .copyWith(color: kGrey),
                         ),
                         Text(
-                          'Total Prodi',
+                          'Mahasiswa',
                           style: Styles.kPublicRegularBodyOne
                               .copyWith(color: kLightGrey400),
                         )
@@ -69,38 +65,29 @@ class CardAkreditasiProdi extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
-            const DeskripsiChartProdi(
+            const DeskripsiChartTBQ(
               color: kGreen,
-              title: 'Unggul',
-              percent: '45%',
-              value: '4',
+              title: 'Lulus',
+              percent: '50%',
+              value: '14.900',
             ),
             const SizedBox(
               height: 12,
             ),
-            const DeskripsiChartProdi(
+            const DeskripsiChartTBQ(
+              color: kPink,
+              title: 'Tidak Lulus',
+              percent: '25%',
+              value: '7.460',
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            const DeskripsiChartTBQ(
               color: kBlue,
-              title: 'Baik Sekali',
-              percent: '30%',
-              value: '8',
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const DeskripsiChartProdi(
-              color: kLightBlue,
-              title: 'Baik',
-              percent: '20%',
-              value: '8',
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const DeskripsiChartProdi(
-              color: kYellow,
-              title: 'Izin Operasional',
-              percent: '15%',
-              value: '1',
+              title: 'Belum Lulus',
+              percent: '25%',
+              value: '7.460',
             ),
           ],
         ),
@@ -108,43 +95,37 @@ class CardAkreditasiProdi extends StatelessWidget {
     );
   }
 
-  //list data temporary buat nampilin chart di card prodi
-  List<PieChartSectionData> getSectionsProdi() {
+  //list temporary buat nampilin data di card jumlah lulusan TBQ
+  List<PieChartSectionData> getSectionsTBQ() {
     return [
       PieChartSectionData(
         showTitle: false,
         color: kGreen,
-        value: 45,
+        value: 25,
         radius: 15,
       ),
       PieChartSectionData(
         showTitle: false,
-        color: kYellow,
-        value: 5,
-        radius: 15,
-      ),
-      PieChartSectionData(
-        showTitle: false,
-        color: kLightBlue,
-        value: 20,
+        color: kRed,
+        value: 25,
         radius: 15,
       ),
       PieChartSectionData(
         showTitle: false,
         color: kBlue,
-        value: 30,
+        value: 50,
         radius: 15,
       ),
     ];
   }
 }
 
-class DeskripsiChartProdi extends StatelessWidget {
+class DeskripsiChartTBQ extends StatelessWidget {
   final Color color;
   final String title;
   final String percent;
   final String value;
-  const DeskripsiChartProdi(
+  const DeskripsiChartTBQ(
       {super.key,
       required this.color,
       required this.title,
@@ -192,13 +173,6 @@ class DeskripsiChartProdi extends StatelessWidget {
             Text(
               value,
               style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey),
-            ),
-            const SizedBox(
-              width: 16,
-            ),
-            SvgPicture.asset(
-              icRightArrow,
-              width: 24,
             ),
           ],
         ),

@@ -1,9 +1,11 @@
 // ignore_for_file: , prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
 import '../widgets/card_akreditasi_prodi.dart';
+import '../widgets/card_baitul_arqom.dart';
+import '../widgets/card_prestasi_mahasiswa.dart';
+import '../widgets/card_tbq.dart';
 import '../widgets/card_ratio.dart';
 import '../widgets/card_student_body.dart';
 import '../widgets/card_total_registrasi.dart';
@@ -62,6 +64,18 @@ class HomeScreen extends StatelessWidget {
                 height: 16,
               ),
               CardAkreditasiProdi(),
+              SizedBox(
+                height: 16,
+              ),
+              CardMahasiswaLulusTBQ(),
+              SizedBox(
+                height: 16,
+              ),
+              CardBaitulArqom(),
+              SizedBox(
+                height: 16,
+              ),
+              CardPrestasiMahasiswa(),
             ],
           ),
         ),
