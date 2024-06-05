@@ -1,7 +1,9 @@
 // ignore_for_file: , prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../core/constant_finals.dart';
+import '../widgets/chart_prestasi.dart';
 import '../widgets/card_akreditasi_prodi.dart';
 import '../widgets/card_baitul_arqom.dart';
 import '../widgets/card_prestasi_mahasiswa.dart';
@@ -19,7 +21,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: kBackground,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 48, horizontal: 16),
+          padding: EdgeInsets.symmetric(vertical: 60, horizontal: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
