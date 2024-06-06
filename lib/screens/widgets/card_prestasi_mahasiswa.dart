@@ -48,7 +48,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
                     Text(
@@ -58,7 +58,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 16,
                 ),
                 Row(
@@ -71,7 +71,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
                     Text(
