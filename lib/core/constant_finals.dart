@@ -1,15 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-//Icon
-const String icBriefcase = 'assets/svgs/briefcase.svg';
-const String icProfileTwoUser = 'assets/svgs/profiletwouser.svg';
-const String icHome = 'assets/svgs/home.svg';
-const String icPeople = 'assets/svgs/people.svg';
-const String icProfileTwoUserOutline = 'assets/svgs/profiletwouseroutline.svg';
-const String icChart = 'assets/svgs/chart.svg';
-const String icTeacher = 'assets/svgs/teacher.svg';
-const String icMedal = 'assets/svgs/medal.svg';
+// Spacing (Gap)
+const Gap kGap8 = Gap(8);
+const Gap kGap12 = Gap(12);
+const Gap kGap16 = Gap(16);
+const Gap kGap20 = Gap(20);
+const Gap kGap24 = Gap(24);
+
+// Route
+const String homeRoute = 'home/';
+const String akademikRoute = 'akademik/';
+const String pmbRoute = '${akademikRoute}pmb/';
+const String mhsLokalRoute = '${akademikRoute}mhslokal/';
+const String mhsAsingRoute = '${akademikRoute}mhsasing/';
+const String kelulusanRoute = '${akademikRoute}kelulusan/';
+const String keberhasilanStudiRoute = '${akademikRoute}keberhasilanstudi/';
+const String perpustakaanRoute = '${akademikRoute}perpustakaan/';
+const String publikasiRoute = '${akademikRoute}publikasi/';
+const String jurnalRoute = '${akademikRoute}jurnal/';
+const String aikRoute = '${akademikRoute}aik/';
+
+// Image
+const String imgLoc = 'assets/images/';
+const String imgScopus = '${imgLoc}scopus.png';
+const String imgGaruda = '${imgLoc}garuda.png';
+const String imgScholar = '${imgLoc}scholar.png';
+
+// Icon
+const String icLoc = 'assets/svgs/';
+const String icBriefcase = '${icLoc}briefcase.svg';
+const String icProfileTwoUser = '${icLoc}profiletwouser.svg';
+const String icHome = '${icLoc}home.svg';
+const String icPeople = '${icLoc}people.svg';
+const String icProfileTwoUserOutline = '${icLoc}profiletwouseroutline.svg';
+const String icChart = '${icLoc}chart.svg';
+const String icTeacher = '${icLoc}teacher.svg';
+const String icMedal = '${icLoc}medal.svg';
+const String icFrame = '${icLoc}frame.svg';
+const String icNoteTwo = '${icLoc}note-2.svg';
+const String icProfileTick = '${icLoc}profile-tick.svg';
+const String icTaskSquare = '${icLoc}task-square.svg';
+const String icNote = '${icLoc}note.svg';
+const String icClipboard = '${icLoc}clipboard.svg';
+const String icSearchStatus = '${icLoc}search-status.svg';
+const String icBook = '${icLoc}book.svg';
+const String icAward = '${icLoc}award.svg';
+const String icUserOctagon = '${icLoc}user-octagon.svg';
+const String icProfileAdd = '${icLoc}profile-add.svg';
 const String icRightArrow = 'assets/svgs/circulararrowright.svg';
 
 //Warna
@@ -31,6 +70,10 @@ const Color klightGrey450 = Color(0xFF6E7880);
 const Color kLightGrey500 = Color(0xFF667085);
 const Color kLightGrey800 = Color(0xFF383E49);
 const Color kGrey = Color(0xFF2B2F38);
+const Color kGrey100 = Color(0xFFD0D3D9);
+const Color kGrey300 = Color(0xFF989FAD);
+const Color kGrey400 = Color(0xFF858D9D);
+const Color kGrey600 = Color(0xFF5D6679);
 
 class Styles {
   //W400 - Regular
