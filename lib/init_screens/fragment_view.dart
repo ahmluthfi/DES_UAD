@@ -1,6 +1,9 @@
 import 'package:des_uad/core/constant_finals.dart';
 import 'package:des_uad/screens/home/home.dart';
+import 'package:des_uad/screens/mutu/mutu.dart';
 import 'package:des_uad/screens/pmb/pmb.dart';
+import 'package:des_uad/screens/prestasi/prestasi.dart';
+import 'package:des_uad/screens/sdm/sdm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,6 +23,9 @@ class _FragmentPageState extends State<FragmentPage> {
     const pages = [
       HomeScreen(),
       PMB(),
+      SumberDayaManusia(),
+      Mutu(),
+      Prestasi(),
     ];
 
     final destinations = [
@@ -32,12 +38,28 @@ class _FragmentPageState extends State<FragmentPage> {
         ),
       ),
       NavigationDestination(
-          icon: SvgPicture.asset(icTeacher),
-          label: 'Akademik',
-          selectedIcon: SvgPicture.asset(
-            icTeacher,
-            color: kBlue,
-          )),
+        icon: SvgPicture.asset(icTeacher),
+        label: 'Akademik',
+        selectedIcon: SvgPicture.asset(
+          icTeacher,
+          color: kBlue,
+        ),
+      ),
+      NavigationDestination(
+        icon: SvgPicture.asset(icProfileTwoUserOutline),
+        label: 'SDM',
+        selectedIcon: SvgPicture.asset(icProfileTwoUserOutline, color: kBlue),
+      ),
+      NavigationDestination(
+        icon: SvgPicture.asset(icChart),
+        label: 'Muhtu',
+        selectedIcon: SvgPicture.asset(icChart, color: kBlue),
+      ),
+      NavigationDestination(
+        icon: SvgPicture.asset(icMedal),
+        label: 'Prestasi',
+        selectedIcon: SvgPicture.asset(icMedal, color: kBlue),
+      ),
     ];
 
     return Scaffold(

@@ -77,6 +77,9 @@ class HomeScreen extends StatelessWidget {
                 height: 16,
               ),
               CardPrestasiMahasiswa(),
+              SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),

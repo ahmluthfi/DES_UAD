@@ -9,10 +9,10 @@ class BaseContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         color: color,
         borderRadius: const BorderRadius.all(
-          Radius.circular(10),
+          Radius.circular(12),
         ),
       ),
       child: child,
