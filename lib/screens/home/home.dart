@@ -1,4 +1,3 @@
-// ignore_for_file: , prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:des_uad/init_screens/fragment_view.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: kBackground,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 60, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -38,42 +37,42 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              CardTotalRegistrasi(),
-              SizedBox(
+              const CardTotalRegistrasi(),
+              const SizedBox(
                 height: 16,
               ),
-              CardStudentBody(),
-              SizedBox(
+              const CardStudentBody(),
+              const SizedBox(
                 height: 16,
               ),
-              CardRatio(
+              const CardRatio(
                 title: 'Dosen',
                 total: '736',
                 ratio: '1:36',
                 svgIcon: icProfileTwoUser,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
-              CardRatio(
+              const CardRatio(
                 title: 'Tendik',
                 total: '494',
                 ratio: '1:58',
                 svgIcon: icBriefcase,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
-              CardAkreditasiProdi(),
-              SizedBox(
+              const CardAkreditasiProdi(),
+              const SizedBox(
                 height: 16,
               ),
-              CardMahasiswaLulusTBQ(),
-              SizedBox(
+              const CardMahasiswaLulusTBQ(),
+              const SizedBox(
                 height: 16,
               ),
-              CardBaitulArqom(),
-              SizedBox(
+              const CardBaitulArqom(),
+              const SizedBox(
                 height: 16,
               ),
               CardPrestasiMahasiswa(),
