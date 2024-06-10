@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api
+
 import 'package:des_uad/core/constant_finals.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -154,7 +156,7 @@ class _PrestasiChartState extends State<PrestasiChart> {
 
   String formatLargeNumber(int number) {
     if (number >= 1000) {
-      return (number / 1000).toStringAsFixed(0) + 'K';
+      return '${(number / 1000).toStringAsFixed(0)}K';
     }
     return number.toString();
   }

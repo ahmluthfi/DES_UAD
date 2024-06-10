@@ -52,9 +52,9 @@ const String icProfileAdd = '${icLoc}profile-add.svg';
 const String icRightArrow = 'assets/svgs/circulararrowright.svg';
 
 //Warna
-const Color kTempBackground = Color.fromARGB(255, 222, 234, 255);
 const Color kBackground = Color(0xFFEFF3FA);
 const Color kWhite = Color(0xFFFFFFFF);
+const Color kIvoryWhite = Color(0xFFE8ECF4);
 const Color kBlue = Color(0xFF2080F9);
 const Color kLightBlue = Color(0xFF3490FC);
 const Color kYellow = Color(0xFFFFB444);
@@ -62,6 +62,7 @@ const Color kPink = Color(0xFFFF5C76);
 const Color kRed = Color(0xFFFF7368);
 const Color kGreen = Color(0xFF00A991);
 const Color kPurple = Color(0xFF5F23FD);
+const Color kLightPurple = Color(0xFF6B8BFF);
 const Color kLightGrey100 = Color(0xFFF0F1F3);
 const Color kLightGrey300 = Color(0xFF989FAD);
 const Color kLightGrey400 = Color(0xFF858D9D);
