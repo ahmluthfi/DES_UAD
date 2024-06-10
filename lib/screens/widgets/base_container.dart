@@ -22,26 +22,6 @@ class BaseContainer extends StatelessWidget {
     this.boxShadow,
   });
 
-  factory BaseContainer.styledSubMenuAkademik({
-    required final List<Widget> children,
-    final bool isRow = false,
-    final MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start 
-  }) =>
-      BaseContainer(
-        padding: const EdgeInsets.all(16),
-        width: double.infinity,
-        child: isRow
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: children,
-              )
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: mainAxisAlignment,
-                children: children,
-              ),
-      );
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,4 +40,24 @@ class BaseContainer extends StatelessWidget {
       child: child,
     );
   }
+
+  factory BaseContainer.styledSubMenuAkademik(
+          {required final List<Widget> children,
+          final bool isRow = false,
+          final MainAxisAlignment mainAxisAlignment =
+              MainAxisAlignment.start}) =>
+      BaseContainer(
+        padding: const EdgeInsets.all(16),
+        width: double.infinity,
+        child: isRow
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: children,
+              )
+            : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: mainAxisAlignment,
+                children: children,
+              ),
+      );
 }

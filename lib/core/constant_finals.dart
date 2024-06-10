@@ -49,6 +49,7 @@ const String icBook = '${icLoc}book.svg';
 const String icAward = '${icLoc}award.svg';
 const String icUserOctagon = '${icLoc}user-octagon.svg';
 const String icProfileAdd = '${icLoc}profile-add.svg';
+const String icRightArrow = 'assets/svgs/circulararrowright.svg';
 
 //Warna
 const Color kTempBackground = Color.fromARGB(255, 222, 234, 255);
@@ -63,6 +64,8 @@ const Color kGreen = Color(0xFF00A991);
 const Color kPurple = Color(0xFF5F23FD);
 const Color kLightGrey100 = Color(0xFFF0F1F3);
 const Color kLightGrey300 = Color(0xFF989FAD);
+const Color kLightGrey400 = Color(0xFF858D9D);
+const Color klightGrey450 = Color(0xFF6E7880);
 const Color kLightGrey500 = Color(0xFF667085);
 const Color kLightGrey800 = Color(0xFF383E49);
 const Color kGrey = Color(0xFF2B2F38);
