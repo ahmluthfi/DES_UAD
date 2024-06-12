@@ -18,7 +18,7 @@ class PerpustakaanPage extends StatelessWidget {
           title: 'Perpustakaan',
         ),
         children: [
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             isRow: true,
             children: [
               Column(
@@ -46,7 +46,7 @@ class PerpustakaanPage extends StatelessWidget {
             crossAxisSpacing: 12,
             children: [
               for (int i = 0; i < 3; i++)
-                BaseContainer.styledSubMenuAkademik(
+                BaseContainer.styledBigCard(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(

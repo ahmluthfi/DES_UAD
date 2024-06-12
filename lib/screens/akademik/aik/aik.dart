@@ -4,7 +4,7 @@ import '../../../core/constant_finals.dart';
 import '../../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/body_sub_menu_akademik.dart';
-import '../../widgets/card_title_sub_menu_akademik.dart';
+import '../../widgets/big_card_title.dart';
 
 class AIKPage extends StatelessWidget {
   const AIKPage({super.key});
@@ -18,9 +18,9 @@ class AIKPage extends StatelessWidget {
           title: 'AIK',
         ),
         children: [
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: [
-              const CardTitleSubMenuAkademik(title: 'Mahasiswa Lulus TBQ'),
+              const BigCardTitle(title: 'Mahasiswa Lulus TBQ'),
               Text(
                 'TA 2023/2024',
                 style: Styles.kPublicRegularBodyThree.copyWith(color: kGrey400),
@@ -28,15 +28,15 @@ class AIKPage extends StatelessWidget {
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Baca Quran'),
+              BigCardTitle(title: 'Baca Quran'),
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: [
-              const CardTitleSubMenuAkademik(
+              const BigCardTitle(
                   title: 'Mahasiswa Lulus Baitul Arqam'),
               Text(
                 'TA 2023/2024',
@@ -45,9 +45,9 @@ class AIKPage extends StatelessWidget {
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Baitul Arqam'),
+              BigCardTitle(title: 'Baitul Arqam'),
             ],
           ),
         ],

@@ -3,11 +3,14 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Spacing (Gap)
+const Gap kGap4 = Gap(4);
 const Gap kGap8 = Gap(8);
 const Gap kGap12 = Gap(12);
 const Gap kGap16 = Gap(16);
 const Gap kGap20 = Gap(20);
 const Gap kGap24 = Gap(24);
+const Gap kGap28 = Gap(28);
+const Gap kGap80 = Gap(80);
 
 // Route
 const String homeRoute = 'home/';
@@ -38,6 +41,7 @@ const String icProfileTwoUserOutline = '${icLoc}profiletwouseroutline.svg';
 const String icChart = '${icLoc}chart.svg';
 const String icTeacher = '${icLoc}teacher.svg';
 const String icMedal = '${icLoc}medal.svg';
+const String icMedalStar = '${icLoc}medal-star.svg';
 const String icFrame = '${icLoc}frame.svg';
 const String icNoteTwo = '${icLoc}note-2.svg';
 const String icProfileTick = '${icLoc}profile-tick.svg';
@@ -56,11 +60,15 @@ const Color kBackground = Color(0xFFEFF3FA);
 const Color kWhite = Color(0xFFFFFFFF);
 const Color kIvoryWhite = Color(0xFFE8ECF4);
 const Color kBlue = Color(0xFF2080F9);
+// const Color kLightBlue = Color(0xFFA9E1FD);
 const Color kLightBlue = Color(0xFF3490FC);
+const Color kLightSkyBlue = Color(0xFFA2CCFE);
+// const Color kDeepSkyBlue = Color(0xFF45BDFB);
 const Color kYellow = Color(0xFFFFB444);
 const Color kPink = Color(0xFFFF5C76);
 const Color kRed = Color(0xFFFF7368);
 const Color kGreen = Color(0xFF00A991);
+const Color kLightGreen = Color(0xFF8AD7CC);
 const Color kPurple = Color(0xFF5F23FD);
 const Color kLightPurple = Color(0xFF6B8BFF);
 const Color kLightGrey100 = Color(0xFFF0F1F3);
@@ -73,7 +81,10 @@ const Color kGrey = Color(0xFF2B2F38);
 const Color kGrey100 = Color(0xFFD0D3D9);
 const Color kGrey300 = Color(0xFF989FAD);
 const Color kGrey400 = Color(0xFF858D9D);
+const Color kGrey500 = Color(0xFF667085);
 const Color kGrey600 = Color(0xFF5D6679);
+const Color kGrey800 = Color(0xFF383E49);
+const Color kGrey900 = Color(0xFF2B2F38);
 
 class Styles {
   //W400 - Regular

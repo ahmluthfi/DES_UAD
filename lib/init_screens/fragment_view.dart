@@ -1,8 +1,10 @@
-import 'package:des_uad/core/constant_finals.dart';
-import 'package:des_uad/screens/home/home.dart';
-import 'package:des_uad/screens/pmb/pmb.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../core/constant_finals.dart';
+import '../screens/akademik/akademik.dart';
+import '../screens/home/home.dart';
+import '../screens/mutu/mutu.dart';
 
 class FragmentPage extends StatefulWidget {
   const FragmentPage({super.key});
@@ -19,7 +21,8 @@ class _FragmentPageState extends State<FragmentPage> {
   Widget build(BuildContext context) {
     const pages = [
       HomeScreen(),
-      PMB(),
+      AkademikPage(),
+      MutuPage(),
     ];
 
     final destinations = [
@@ -28,16 +31,25 @@ class _FragmentPageState extends State<FragmentPage> {
         label: 'Home',
         selectedIcon: SvgPicture.asset(
           icHome,
-          color: kBlue,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
         ),
       ),
       NavigationDestination(
-          icon: SvgPicture.asset(icTeacher),
-          label: 'Akademik',
-          selectedIcon: SvgPicture.asset(
-            icTeacher,
-            color: kBlue,
-          )),
+        icon: SvgPicture.asset(icTeacher),
+        label: 'Akademik',
+        selectedIcon: SvgPicture.asset(
+          icTeacher,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
+        ),
+      ),
+      NavigationDestination(
+        icon: SvgPicture.asset(icChart),
+        label: 'Mutu',
+        selectedIcon: SvgPicture.asset(
+          icChart,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
+        ),
+      ),
     ];
 
     return Scaffold(
@@ -51,7 +63,7 @@ class _FragmentPageState extends State<FragmentPage> {
         children: pages,
       ),
       floatingActionButton: Container(
-        decoration: BoxDecoration(color: Colors.white),
+        decoration: const BoxDecoration(color: kWhite),
         width: double.infinity,
         height: 68,
         child: NavigationBar(

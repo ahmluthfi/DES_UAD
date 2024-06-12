@@ -4,7 +4,7 @@ import '../../../core/constant_finals.dart';
 import '../../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/body_sub_menu_akademik.dart';
-import '../../widgets/card_title_sub_menu_akademik.dart';
+import '../../widgets/big_card_title.dart';
 import '../../widgets/card_total_registration.dart';
 import '../../widgets/item_data_pmb.dart';
 
@@ -24,9 +24,9 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
         children: [
           const CardTotalRegistration(),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Data PMB 2024'),
+              BigCardTitle(title: 'Data PMB 2024'),
               kGap20,
               ItemDataPMB(
                 asset: icPeople,
@@ -65,28 +65,28 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Tren Mahasiswa Baru'),
+              BigCardTitle(title: 'Tren Mahasiswa Baru'),
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'PMB Berdasarkan Persebaran'),
+              BigCardTitle(title: 'PMB Berdasarkan Persebaran'),
               kGap24,
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'PMB Jalur Reguler'),
+              BigCardTitle(title: 'PMB Jalur Reguler'),
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'PMB Jalur Non Reguler'),
+              BigCardTitle(title: 'PMB Jalur Non Reguler'),
             ],
           ),
           kGap24,

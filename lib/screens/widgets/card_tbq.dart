@@ -10,87 +10,79 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseContainer(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Mahasiswa Lulus TBQ',
+                style: Styles.kPublicSemiBoldBodyOne.copyWith(
+                  color: kGrey,
+                ),
+              ),
+              Text(
+                'Lihat semua',
+                style: Styles.kPublicRegularBodyThree.copyWith(
+                  color: kBlue,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 300,
+            child: Stack(
               children: [
-                Text(
-                  'Mahasiswa Lulus TBQ',
-                  style: Styles.kPublicSemiBoldBodyOne.copyWith(
-                    color: kGrey,
+                PieChart(
+                  PieChartData(
+                    sections: getSectionsTBQ(),
+                    centerSpaceRadius: 105,
+                    sectionsSpace: 3,
                   ),
                 ),
-                Text(
-                  'Lihat semua',
-                  style: Styles.kPublicRegularBodyThree.copyWith(
-                    color: kBlue,
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '29.800',
+                        style: Styles.kPublicSemiBoldHeadingTwo
+                            .copyWith(color: kGrey),
+                      ),
+                      Text(
+                        'Mahasiswa',
+                        style: Styles.kPublicRegularBodyOne
+                            .copyWith(color: kLightGrey400),
+                      )
+                    ],
                   ),
                 ),
               ],
             ),
-            Container(
-              height: 300,
-              child: Stack(
-                children: [
-                  PieChart(
-                    PieChartData(
-                      sections: getSectionsTBQ(),
-                      centerSpaceRadius: 105,
-                      sectionsSpace: 3,
-                    ),
-                  ),
-                  Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '29.800',
-                          style: Styles.kPublicSemiBoldHeadingTwo
-                              .copyWith(color: kGrey),
-                        ),
-                        Text(
-                          'Mahasiswa',
-                          style: Styles.kPublicRegularBodyOne
-                              .copyWith(color: kLightGrey400),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            const DeskripsiChartTBQ(
-              color: kGreen,
-              title: 'Lulus',
-              percent: '50%',
-              value: '14.900',
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const DeskripsiChartTBQ(
-              color: kPink,
-              title: 'Tidak Lulus',
-              percent: '25%',
-              value: '7.460',
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const DeskripsiChartTBQ(
-              color: kBlue,
-              title: 'Belum Lulus',
-              percent: '25%',
-              value: '7.460',
-            ),
-          ],
-        ),
+          ),
+          kGap24,
+          const DeskripsiChartTBQ(
+            color: kGreen,
+            title: 'Lulus',
+            percent: '50%',
+            value: '14.900',
+          ),
+          kGap12,
+          const DeskripsiChartTBQ(
+            color: kPink,
+            title: 'Tidak Lulus',
+            percent: '25%',
+            value: '7.460',
+          ),
+          kGap12,
+          const DeskripsiChartTBQ(
+            color: kBlue,
+            title: 'Belum Lulus',
+            percent: '25%',
+            value: '7.460',
+          ),
+        ],
       ),
     );
   }

@@ -28,10 +28,14 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^8.1.4
+  community_charts_flutter: ^1.0.4
   cupertino_icons: ^1.0.6
+  d_chart: ^2.6.9
   fl_chart: ^0.68.0
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   flutter_svg: ^2.0.10+1
   gap: ^3.0.1
   google_fonts: ^6.2.1

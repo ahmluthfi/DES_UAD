@@ -28,13 +28,11 @@ class StudentStatus extends StatelessWidget {
               height: 10,
               width: 10,
               decoration: BoxDecoration(
-                color: color,
                 borderRadius: BorderRadius.circular(10),
+                color: color,
               ),
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            kGap8,
             Text(
               value,
               style: Styles.kPublicMediumBodyOne.copyWith(color: kLightGrey800),

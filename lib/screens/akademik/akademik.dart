@@ -10,10 +10,8 @@ class AkademikPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackground,
       appBar: AppBar(
-        backgroundColor: kWhite,
-        title: Text('Akademik', style: Styles.kPublicSemiBoldHeadingThree),
+        title: const Text('Akademik'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -105,6 +103,7 @@ class AkademikPage extends StatelessWidget {
                   ),
                 ],
               ),
+              kGap80,
             ],
           ),
         ),

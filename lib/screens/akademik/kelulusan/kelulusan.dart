@@ -4,7 +4,7 @@ import '../../../core/constant_finals.dart';
 import '../../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/body_sub_menu_akademik.dart';
-import '../../widgets/card_title_sub_menu_akademik.dart';
+import '../../widgets/big_card_title.dart';
 import '../../widgets/rounded_icon_container.dart';
 
 class KelulusanPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class KelulusanPage extends StatelessWidget {
           title: 'Kelulusan Mahasiswa',
         ),
         children: [
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             isRow: true,
             children: [
               Column(
@@ -38,15 +38,15 @@ class KelulusanPage extends StatelessWidget {
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Tren Kelulusan Tepat Waktu'),
+              BigCardTitle(title: 'Tren Kelulusan Tepat Waktu'),
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(
+              BigCardTitle(
                   title: 'Perbandingan Kelulusan Dengan Total Mahasiswa'),
             ],
           ),

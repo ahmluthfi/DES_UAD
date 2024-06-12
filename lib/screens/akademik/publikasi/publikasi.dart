@@ -20,7 +20,7 @@ class PublikasiPage extends StatelessWidget {
           title: 'Publikasi',
         ),
         children: [
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
               Gap(100),
             ],
@@ -52,7 +52,7 @@ class PublikasiPage extends StatelessWidget {
             ),
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
               ItemPublikasi(asset: imgScopus, title: 'Scopus', value: '2.905'),
               kGap20,
@@ -69,4 +69,3 @@ class PublikasiPage extends StatelessWidget {
     );
   }
 }
-

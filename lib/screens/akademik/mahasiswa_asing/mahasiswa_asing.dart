@@ -4,7 +4,7 @@ import '../../../core/constant_finals.dart';
 import '../../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/body_sub_menu_akademik.dart';
-import '../../widgets/card_title_sub_menu_akademik.dart';
+import '../../widgets/big_card_title.dart';
 import '../../widgets/rounded_icon_container.dart';
 
 class MahasiswaAsingPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class MahasiswaAsingPage extends StatelessWidget {
           title: 'Mahasiswa Asing',
         ),
         children: [
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             isRow: true,
             children: [
               Column(
@@ -38,15 +38,15 @@ class MahasiswaAsingPage extends StatelessWidget {
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Tren Mahasiswa Asing'),
+              BigCardTitle(title: 'Tren Mahasiswa Asing'),
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Persebaran Negara'),
+              BigCardTitle(title: 'Persebaran Negara'),
             ],
           ),
         ],

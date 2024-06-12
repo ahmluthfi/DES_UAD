@@ -4,7 +4,7 @@ import '../../../core/constant_finals.dart';
 import '../../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/body_sub_menu_akademik.dart';
-import '../../widgets/card_title_sub_menu_akademik.dart';
+import '../../widgets/big_card_title.dart';
 
 class KeberhasilanStudiPage extends StatelessWidget {
   const KeberhasilanStudiPage({super.key});
@@ -18,9 +18,9 @@ class KeberhasilanStudiPage extends StatelessWidget {
           title: 'Keberhasilan Studi',
         ),
         children: [
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: [
-              const CardTitleSubMenuAkademik(title: 'Studi Mahasiswa'),
+              const BigCardTitle(title: 'Studi Mahasiswa'),
               Text(
                 'TA 2023/2024',
                 style: Styles.kPublicRegularBodyThree.copyWith(color: kGrey400),
@@ -28,15 +28,15 @@ class KeberhasilanStudiPage extends StatelessWidget {
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Tren Keberhasilan Studi'),
+              BigCardTitle(title: 'Tren Keberhasilan Studi'),
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(
+              BigCardTitle(
                   title:
                       'Perbandingan Keberhasilan Studi Dengan Total Mahasiswa'),
             ],

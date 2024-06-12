@@ -41,11 +41,11 @@ class BaseContainer extends StatelessWidget {
     );
   }
 
-  factory BaseContainer.styledSubMenuAkademik(
-          {required final List<Widget> children,
-          final bool isRow = false,
-          final MainAxisAlignment mainAxisAlignment =
-              MainAxisAlignment.start}) =>
+  factory BaseContainer.styledBigCard({
+    required final List<Widget> children,
+    final bool isRow = false,
+    final MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+  }) =>
       BaseContainer(
         padding: const EdgeInsets.all(16),
         width: double.infinity,
