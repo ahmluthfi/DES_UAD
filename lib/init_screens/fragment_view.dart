@@ -1,7 +1,7 @@
 import 'package:des_uad/core/constant_finals.dart';
+import 'package:des_uad/screens/akademik/akademik.dart';
 import 'package:des_uad/screens/home/home.dart';
 import 'package:des_uad/screens/mutu/mutu.dart';
-import 'package:des_uad/screens/pmb/pmb.dart';
 import 'package:des_uad/screens/prestasi/prestasi.dart';
 import 'package:des_uad/screens/sdm/sdm.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class _FragmentPageState extends State<FragmentPage> {
   Widget build(BuildContext context) {
     const pages = [
       HomeScreen(),
-      PMB(),
+      AkademikPage(),
       SumberDayaManusia(),
       Mutu(),
       Prestasi(),
@@ -38,10 +38,10 @@ class _FragmentPageState extends State<FragmentPage> {
         ),
       ),
       NavigationDestination(
-        icon: SvgPicture.asset(icTeacher),
+        icon: SvgPicture.asset(icTeacherOutline),
         label: 'Akademik',
         selectedIcon: SvgPicture.asset(
-          icTeacher,
+          icTeacherOutline,
           color: kBlue,
         ),
       ),

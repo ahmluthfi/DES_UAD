@@ -11,99 +11,89 @@ class CardAkreditasiProdi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseContainer(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 14,
-          horizontal: 16,
-        ),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      padding: const EdgeInsets.symmetric(
+        vertical: 14,
+        horizontal: 16,
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Akreditasi Prodi',
+                style: Styles.kPublicSemiBoldBodyOne.copyWith(
+                  color: kGrey,
+                ),
+              ),
+              Text(
+                'Lihat semua',
+                style: Styles.kPublicRegularBodyThree.copyWith(
+                  color: kBlue,
+                ),
+              ),
+            ],
+          ),
+          Container(
+            height: 300,
+            child: Stack(
               children: [
-                Text(
-                  'Akreditasi Prodi',
-                  style: Styles.kPublicSemiBoldBodyOne.copyWith(
-                    color: kGrey,
+                PieChart(
+                  PieChartData(
+                    sections: getSectionsProdi(),
+                    centerSpaceRadius: 105,
+                    sectionsSpace: 3,
                   ),
                 ),
-                Text(
-                  'Lihat semua',
-                  style: Styles.kPublicRegularBodyThree.copyWith(
-                    color: kBlue,
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '68',
+                        style: Styles.kPublicSemiBoldHeadingTwo
+                            .copyWith(color: kGrey),
+                      ),
+                      Text(
+                        'Total Prodi',
+                        style: Styles.kPublicRegularBodyOne
+                            .copyWith(color: kLightGrey400),
+                      )
+                    ],
                   ),
                 ),
               ],
             ),
-            Container(
-              height: 300,
-              child: Stack(
-                children: [
-                  PieChart(
-                    PieChartData(
-                      sections: getSectionsProdi(),
-                      centerSpaceRadius: 105,
-                      sectionsSpace: 3,
-                    ),
-                  ),
-                  Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '68',
-                          style: Styles.kPublicSemiBoldHeadingTwo
-                              .copyWith(color: kGrey),
-                        ),
-                        Text(
-                          'Total Prodi',
-                          style: Styles.kPublicRegularBodyOne
-                              .copyWith(color: kLightGrey400),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            const DeskripsiChartProdi(
-              color: kGreen,
-              title: 'Unggul',
-              percent: '45%',
-              value: '4',
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const DeskripsiChartProdi(
-              color: kBlue,
-              title: 'Baik Sekali',
-              percent: '30%',
-              value: '8',
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const DeskripsiChartProdi(
-              color: kLightBlue,
-              title: 'Baik',
-              percent: '20%',
-              value: '8',
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            const DeskripsiChartProdi(
-              color: kYellow,
-              title: 'Izin Operasional',
-              percent: '15%',
-              value: '1',
-            ),
-          ],
-        ),
+          ),
+          kGap24,
+          const DeskripsiChartProdi(
+            color: kGreen,
+            title: 'Unggul',
+            percent: '45%',
+            value: '4',
+          ),
+          kGap12,
+          const DeskripsiChartProdi(
+            color: kBlue,
+            title: 'Baik Sekali',
+            percent: '30%',
+            value: '8',
+          ),
+          kGap12,
+          const DeskripsiChartProdi(
+            color: kLightBlue,
+            title: 'Baik',
+            percent: '20%',
+            value: '8',
+          ),
+          kGap12,
+          const DeskripsiChartProdi(
+            color: kYellow,
+            title: 'Izin Operasional',
+            percent: '15%',
+            value: '1',
+          ),
+        ],
       ),
     );
   }
@@ -166,9 +156,7 @@ class DeskripsiChartProdi extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4),
               ),
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            kGap8,
             Text(
               title,
               style:
@@ -193,9 +181,7 @@ class DeskripsiChartProdi extends StatelessWidget {
               value,
               style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey),
             ),
-            const SizedBox(
-              width: 16,
-            ),
+            kGap16,
             SvgPicture.asset(
               icRightArrow,
               width: 24,

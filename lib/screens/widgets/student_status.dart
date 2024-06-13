@@ -32,9 +32,7 @@ class StudentStatus extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            kGap8,
             Text(
               value,
               style: Styles.kPublicMediumBodyOne.copyWith(color: kLightGrey800),

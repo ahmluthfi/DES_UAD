@@ -1,47 +1,44 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-import 'package:des_uad/screens/sdm/dosen/sdm_dosen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../core/constant_finals.dart';
-import '../widgets/card_ratio.dart';
-
 import 'package:flutter/material.dart';
 
-import 'tendik/sdm_tendik.dart';
+import '../../../../core/constant_finals.dart';
+import '../../../widgets/base_container.dart';
 
-class SumberDayaManusia extends StatefulWidget {
-  const SumberDayaManusia({super.key});
+class PersebaranDosen extends StatefulWidget {
+  const PersebaranDosen({
+    super.key,
+  });
 
   @override
-  _SumberDayaManusiaState createState() => _SumberDayaManusiaState();
+  State<PersebaranDosen> createState() => _PersebaranDosenState();
 }
 
-class _SumberDayaManusiaState extends State<SumberDayaManusia> {
-  bool isDosenSelected = true; // Menambahkan variabel status
+class _PersebaranDosenState extends State<PersebaranDosen> {
+  bool isFakultasSelected = true; // Menambahkan variabel status
 
   void toggleSelection(bool isDosen) {
     setState(() {
-      isDosenSelected = isDosen;
+      isFakultasSelected = isDosen;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kBackground,
-      appBar: AppBar(
-        toolbarHeight: 150,
-        backgroundColor: kWhite,
-        surfaceTintColor: kWhite,
-        title: Column(
+    return BaseContainer(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          vertical: 16,
+          horizontal: 16,
+        ),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Sumber Daya Manusia',
-              style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kGrey),
+              'Jabatan Fungsional Dosen',
+              style: Styles.kPublicSemiBoldBodyOne.copyWith(
+                color: kGrey,
+              ),
             ),
-            kGap16,
+            kGap20,
             Container(
               height: 40,
               decoration: BoxDecoration(
@@ -59,14 +56,14 @@ class _SumberDayaManusiaState extends State<SumberDayaManusia> {
                         child: Container(
                           height: 32,
                           decoration: BoxDecoration(
-                            color: isDosenSelected
+                            color: isFakultasSelected
                                 ? kWhite
                                 : kLightGrey100, // Mengubah warna berdasarkan status
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
                             child: Text(
-                              'Dosen',
+                              'Fakultas',
                               style: Styles.kPublicSemiBoldBodyThree.copyWith(
                                 color: kGrey,
                               ),
@@ -82,14 +79,14 @@ class _SumberDayaManusiaState extends State<SumberDayaManusia> {
                         child: Container(
                           height: 32,
                           decoration: BoxDecoration(
-                            color: isDosenSelected
+                            color: isFakultasSelected
                                 ? kLightGrey100
                                 : kWhite, // Mengubah warna berdasarkan status
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
                             child: Text(
-                              'Tendik',
+                              'Prodi',
                               style: Styles.kPublicSemiBoldBodyThree.copyWith(
                                 color: kGrey,
                               ),
@@ -105,7 +102,6 @@ class _SumberDayaManusiaState extends State<SumberDayaManusia> {
           ],
         ),
       ),
-      body: isDosenSelected ? SDMDosen() : SDMTendik(),
     );
   }
 }

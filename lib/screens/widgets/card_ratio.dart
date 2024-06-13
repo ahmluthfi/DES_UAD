@@ -40,9 +40,7 @@ class CardRatio extends StatelessWidget {
                             child: SvgPicture.asset(svgIcon),
                           ),
                         ),
-                        const SizedBox(
-                          width: 8,
-                        ),
+                        kGap8,
                         Text(
                           title,
                           style: Styles.kPublicSemiBoldBodyOne.copyWith(
@@ -61,9 +59,7 @@ class CardRatio extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 16,
-            ),
+            kGap16,
             Container(
               height: 95,
               decoration: BoxDecoration(

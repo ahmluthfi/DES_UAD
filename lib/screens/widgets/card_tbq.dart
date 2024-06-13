@@ -62,27 +62,21 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 24,
-            ),
+            kGap24,
             const DeskripsiChartTBQ(
               color: kGreen,
               title: 'Lulus',
               percent: '50%',
               value: '14.900',
             ),
-            const SizedBox(
-              height: 12,
-            ),
+            kGap12,
             const DeskripsiChartTBQ(
               color: kPink,
               title: 'Tidak Lulus',
               percent: '25%',
               value: '7.460',
             ),
-            const SizedBox(
-              height: 12,
-            ),
+            kGap12,
             const DeskripsiChartTBQ(
               color: kBlue,
               title: 'Belum Lulus',
@@ -147,9 +141,7 @@ class DeskripsiChartTBQ extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4),
               ),
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            kGap8,
             Text(
               title,
               style:

@@ -30,9 +30,7 @@ class ItemDataPMB extends StatelessWidget {
               iconColor: iconColor,
               side: 36,
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            kGap8,
             Text(
               title,
               style: Styles.kPublicRegularBodyTwo,

@@ -45,9 +45,7 @@ class CardStudentBody extends StatelessWidget {
                 color: kGrey,
               ),
             ),
-            SizedBox(
-              height: 24,
-            ),
+            kGap24,
             Row(
               children: [
                 Expanded(
@@ -83,9 +81,7 @@ class CardStudentBody extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 24,
-            ),
+            kGap24,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

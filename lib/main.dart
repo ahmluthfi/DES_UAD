@@ -16,11 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: akademikRoute,
-      routes: Routes.routes,
+      // initialRoute: akademikRoute,
+      // routes: Routes.routes,
       theme: ThemeData(
         navigationBarTheme: NavigationBarThemeData(
-          indicatorColor: kWhite,
+          indicatorColor: kWhite.withOpacity(0 / 100),
           labelTextStyle: MaterialStateProperty.resolveWith(
             (Set<MaterialState> states) {
               if (states.contains(MaterialState.selected)) {
