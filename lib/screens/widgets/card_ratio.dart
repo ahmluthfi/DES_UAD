@@ -46,7 +46,7 @@ class CardRatio extends StatelessWidget {
                         Text(
                           title,
                           style: Styles.kPublicSemiBoldBodyOne.copyWith(
-                            color: kGrey,
+                            color: kGrey900,
                           ),
                         ),
                       ],
@@ -81,7 +81,7 @@ class CardRatio extends StatelessWidget {
                         Text(
                           total,
                           style: Styles.kPublicSemiBoldHeadingTwo.copyWith(
-                            color: kGrey,
+                            color: kGrey900,
                           ),
                         ),
                         Text('Total $title',
@@ -100,7 +100,7 @@ class CardRatio extends StatelessWidget {
                         Text(
                           ratio,
                           style: Styles.kPublicSemiBoldHeadingTwo.copyWith(
-                            color: kGrey,
+                            color: kGrey900,
                           ),
                         ),
                         Text(

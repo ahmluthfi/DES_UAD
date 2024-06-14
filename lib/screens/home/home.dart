@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               Text(
                 'Yuk Mulai Pantau DES!',
                 style:
-                    Styles.kPublicSemiBoldHeadingThree.copyWith(color: kGrey),
+                    Styles.kPublicSemiBoldHeadingThree.copyWith(color: kGrey900),
               ),
               kGap20,
               const CardTotalRegistration(),

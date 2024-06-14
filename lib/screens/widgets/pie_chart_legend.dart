@@ -63,7 +63,7 @@ class PieChartLegend extends StatelessWidget {
               Expanded(
                 child: Text(
                   value,
-                  style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey),
+                  style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey900),
                 ),
               ),
               SvgPicture.asset(

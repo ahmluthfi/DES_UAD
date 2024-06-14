@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
 
-class AppBarButton extends StatelessWidget {
-  const AppBarButton({
+class ActiveButton extends StatelessWidget {
+  const ActiveButton({
     super.key,
     required this.title,
     this.isActive = true,

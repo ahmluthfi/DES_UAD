@@ -194,9 +194,7 @@ class _ChartTotalRegistrasiState extends State<ChartTotalRegistrasi> {
               ),
             ),
             gridData: const FlGridData(show: false),
-            borderData: FlBorderData(
-              show: false,
-            ),
+            borderData: FlBorderData(show: false),
           ),
         );
       }),

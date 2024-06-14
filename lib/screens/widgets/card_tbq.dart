@@ -19,7 +19,7 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
               Text(
                 'Mahasiswa Lulus TBQ',
                 style: Styles.kPublicSemiBoldBodyOne.copyWith(
-                  color: kGrey,
+                  color: kGrey900,
                 ),
               ),
               Text(
@@ -48,7 +48,7 @@ class CardMahasiswaLulusTBQ extends StatelessWidget {
                       Text(
                         '29.800',
                         style: Styles.kPublicSemiBoldHeadingTwo
-                            .copyWith(color: kGrey),
+                            .copyWith(color: kGrey900),
                       ),
                       Text(
                         'Mahasiswa',
@@ -164,7 +164,7 @@ class DeskripsiChartTBQ extends StatelessWidget {
             ),
             Text(
               value,
-              style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey),
+              style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey900),
             ),
           ],
         ),

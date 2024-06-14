@@ -19,7 +19,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
               Text(
                 'Prestasi Mahasiswa',
                 style: Styles.kPublicSemiBoldBodyOne.copyWith(
-                  color: kGrey,
+                  color: kGrey900,
                 ),
               ),
               Text(
@@ -52,7 +52,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
                   ),
                   Text(
                     'Mahasiswa Berprestasi',
-                    style: Styles.kPublicRegularBodyTwo.copyWith(color: kGrey),
+                    style: Styles.kPublicRegularBodyTwo.copyWith(color: kGrey900),
                   ),
                 ],
               ),
@@ -74,7 +74,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
                   ),
                   Text(
                     'Score',
-                    style: Styles.kPublicRegularBodyTwo.copyWith(color: kGrey),
+                    style: Styles.kPublicRegularBodyTwo.copyWith(color: kGrey900),
                   ),
                 ],
               ),

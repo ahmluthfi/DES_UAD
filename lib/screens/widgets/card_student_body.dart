@@ -31,7 +31,7 @@ class CardStudentBody extends StatelessWidget {
         ),
         Text(
           '29.800',
-          style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kGrey),
+          style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kGrey900),
         ),
         kGap24,
         Row(

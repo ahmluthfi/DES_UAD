@@ -18,7 +18,7 @@ class CardBaitulArqom extends StatelessWidget {
             children: [
               Text(
                 'Mahasiswa Lulus Baitul \nArqom',
-                style: Styles.kPublicSemiBoldBodyOne.copyWith(color: kGrey),
+                style: Styles.kPublicSemiBoldBodyOne.copyWith(color: kGrey900),
               ),
               Text(
                 'Lihat semua',
@@ -44,7 +44,7 @@ class CardBaitulArqom extends StatelessWidget {
                       Text(
                         '29.800',
                         style: Styles.kPublicSemiBoldHeadingTwo
-                            .copyWith(color: kGrey),
+                            .copyWith(color: kGrey900),
                       ),
                       Text(
                         'Mahasiswa',
@@ -160,7 +160,7 @@ class DeskripsiChartBaitulArqom extends StatelessWidget {
             ),
             Text(
               value,
-              style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey),
+              style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey900),
             ),
           ],
         ),

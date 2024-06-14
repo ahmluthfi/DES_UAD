@@ -1,10 +1,10 @@
-import 'package:des_uad/core/constant_finals.dart';
-import 'package:des_uad/cubit/mutu_cubit.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'core/constant_finals.dart';
 import 'core/routes.dart';
+import 'cubit/mutu_cubit.dart';
+import 'cubit/pmb_cubit.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => MutuCubit()),
+        BlocProvider(create: (context) => PMBCubit()),
       ],
       child: MaterialApp(
         initialRoute: homeRoute,

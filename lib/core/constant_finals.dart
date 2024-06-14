@@ -10,6 +10,7 @@ const Gap kGap16 = Gap(16);
 const Gap kGap20 = Gap(20);
 const Gap kGap24 = Gap(24);
 const Gap kGap28 = Gap(28);
+const Gap kGap32 = Gap(32);
 const Gap kGap80 = Gap(80);
 
 // Route
@@ -56,6 +57,7 @@ const String icProfileAdd = '${icLoc}profile-add.svg';
 const String icRightArrow = 'assets/svgs/circulararrowright.svg';
 
 //Warna
+const Color kTransparent = Color(0x00000000);
 const Color kBackground = Color(0xFFEFF3FA);
 const Color kWhite = Color(0xFFFFFFFF);
 const Color kIvoryWhite = Color(0xFFE8ECF4);
@@ -77,7 +79,7 @@ const Color kLightGrey400 = Color(0xFF858D9D);
 const Color klightGrey450 = Color(0xFF6E7880);
 const Color kLightGrey500 = Color(0xFF667085);
 const Color kLightGrey800 = Color(0xFF383E49);
-const Color kGrey = Color(0xFF2B2F38);
+const Color kGrey50 = Color(0xFFF0F1F3);
 const Color kGrey100 = Color(0xFFD0D3D9);
 const Color kGrey300 = Color(0xFF989FAD);
 const Color kGrey400 = Color(0xFF858D9D);

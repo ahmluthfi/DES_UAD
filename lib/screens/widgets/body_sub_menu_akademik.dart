@@ -14,7 +14,7 @@ class BodySubMenuAkademik extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SizedBox(
-        height: 2000,
+        height: 2400,
         child: Stack(
           children: [
             appBar,

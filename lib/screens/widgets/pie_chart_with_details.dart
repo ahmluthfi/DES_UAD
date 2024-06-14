@@ -30,7 +30,8 @@ class PieChartWithDetails extends StatelessWidget {
             children: [
               Text(
                 '$value',
-                style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kGrey),
+                style:
+                    Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kGrey900),
               ),
               Text(
                 title,

@@ -1,7 +1,6 @@
 import 'package:des_uad/screens/widgets/big_card_title.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constant_finals.dart';
 import 'base_container.dart';
@@ -42,7 +41,7 @@ class CardAkreditasiProdi extends StatelessWidget {
                     Text(
                       '68',
                       style: Styles.kPublicSemiBoldHeadingTwo
-                          .copyWith(color: kGrey),
+                          .copyWith(color: kGrey900),
                     ),
                     Text(
                       'Total Prodi',
