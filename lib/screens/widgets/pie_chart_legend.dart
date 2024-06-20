@@ -1,17 +1,20 @@
+import 'package:des_uad/screens/widgets/chart_legend.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constant_finals.dart';
 
-class PieChartLegend extends StatelessWidget {
-  final Color color;
-  final String title;
+class PieChartLegend extends ChartLegend {
+  // final Color color;
+  // final String title;
   final String percent;
   final String value;
   const PieChartLegend({
     super.key,
-    required this.color,
-    required this.title,
+    // required this.color,
+    // required this.title,
+    required super.color,
+    required super.title,
     required this.percent,
     required this.value,
   });
@@ -63,7 +66,8 @@ class PieChartLegend extends StatelessWidget {
               Expanded(
                 child: Text(
                   value,
-                  style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey900),
+                  style:
+                      Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey900),
                 ),
               ),
               SvgPicture.asset(

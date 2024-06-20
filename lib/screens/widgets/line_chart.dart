@@ -1,10 +1,10 @@
+import 'package:des_uad/cubit/akademik_cubit.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/constant_finals.dart';
-import '../../cubit/pmb_cubit.dart';
 
 // const showingTooltipOnSpots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
@@ -61,7 +61,7 @@ class LineChartCustomizedState extends State<LineChartCustomized> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 12),
       height: 220,
-      child: BlocBuilder<PMBCubit, PMBState>(
+      child: BlocBuilder<AkademikCubit, AkademikState>(
         builder: (context, state) {
           return LineChart(mainData(context, datas));
         },
@@ -201,10 +201,10 @@ class LineChartCustomizedState extends State<LineChartCustomized> {
     required final Params params,
     required final int index,
   }) {
-    final pmbCubit = context.read<PMBCubit>();
+    final akademikCubit = context.read<AkademikCubit>();
 
     return LineChartBarData(
-      spots: pmbCubit.isChecked[index] ? params.spots : [],
+      spots: akademikCubit.isChecked[index] ? params.spots : [],
       isCurved: true,
       gradient: LinearGradient(colors: params.spotColor),
       barWidth: 3,

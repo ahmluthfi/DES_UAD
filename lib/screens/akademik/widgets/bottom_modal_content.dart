@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant_finals.dart';
+import '../../../core/constant_finals.dart';
 import 'bottom_modal_content_item.dart';
 
 class BottomModalContent extends StatelessWidget {
