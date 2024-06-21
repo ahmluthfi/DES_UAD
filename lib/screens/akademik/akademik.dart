@@ -10,32 +10,32 @@ class AkademikPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Akademik'),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          const SliverAppBar(
+            title: Text('Akademik'),
+          ),
+        ],
+        body: Padding(
           padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
+            padding: EdgeInsets.zero,
             children: [
               const CardStudentBody(),
-              const SizedBox(
-                height: 24,
-              ),
+              kGap24,
               Text(
                 'Menu Akademik',
-                style: Styles.kPublicSemiBoldHeadingFour,
+                style:
+                    Styles.kPublicSemiBoldHeadingFour.copyWith(color: kGrey900),
               ),
-              const SizedBox(
-                height: 12,
-              ),
+              kGap12,
               GridView.count(
                 crossAxisCount: 3,
                 shrinkWrap: true,
                 mainAxisSpacing: 16,
                 crossAxisSpacing: 16,
                 childAspectRatio: 100 / 120,
+                padding: EdgeInsets.zero,
                 physics: const ScrollPhysics(),
                 children: const [
                   ItemAkademikMenu(

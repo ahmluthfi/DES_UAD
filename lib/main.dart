@@ -5,6 +5,7 @@ import 'core/constant_finals.dart';
 import 'core/routes.dart';
 import 'cubit/akademik_cubit.dart';
 import 'cubit/mutu_cubit.dart';
+import 'cubit/prestasi_cubit.dart';
 
 void main() => runApp(const MyApp());
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => MutuCubit()),
         BlocProvider(create: (context) => AkademikCubit()),
+        BlocProvider(create: (context) => PrestasiCubit()),
       ],
       child: MaterialApp(
         initialRoute: homeRoute,

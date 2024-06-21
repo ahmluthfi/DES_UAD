@@ -11,9 +11,12 @@ class AkademikCubit extends Cubit<AkademikState> {
   List<int> indexJenisPMB = [0, 0, 0];
   List<bool> isChecked = [true, true, true, true];
   int indexMhsLokal = 0;
-  int idnexMhsAsing = 0;
+  int indexMhsAsing = 0;
 
-  void click(final JenisPMB jenisPMB, final int index) {
+  bool isActivated(final JenisPMB jenisPMB, final int index) =>
+      indexJenisPMB[jenisPMB.index] == index;
+
+  void clickActiveButtonPMB(final JenisPMB jenisPMB, final int index) {
     indexJenisPMB[jenisPMB.index] = index;
     emit(AkademikInitial());
   }
@@ -29,7 +32,7 @@ class AkademikCubit extends Cubit<AkademikState> {
   }
 
   void clickActiveButtonMhsAsing(final int index) {
-    idnexMhsAsing = index;
+    indexMhsAsing = index;
     emit(AkademikInitial());
   }
 }

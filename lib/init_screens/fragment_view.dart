@@ -5,6 +5,7 @@ import '../core/constant_finals.dart';
 import '../screens/akademik/akademik.dart';
 import '../screens/home/home.dart';
 import '../screens/mutu/mutu.dart';
+import '../screens/prestasi/prestasi.dart';
 
 class FragmentPage extends StatefulWidget {
   const FragmentPage({super.key});
@@ -23,6 +24,7 @@ class _FragmentPageState extends State<FragmentPage> {
       HomeScreen(),
       AkademikPage(),
       MutuPage(),
+      PrestasiPage(),
     ];
 
     final destinations = [
@@ -50,15 +52,21 @@ class _FragmentPageState extends State<FragmentPage> {
           colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
         ),
       ),
+      NavigationDestination(
+        icon: SvgPicture.asset(icMedalStar),
+        label: 'Ranking',
+        selectedIcon: SvgPicture.asset(
+          icMedalStar,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
+        ),
+      ),
     ];
 
     return Scaffold(
       body: PageView(
         controller: pageController,
         onPageChanged: (value) => setState(
-          () {
-            currentPage = value;
-          },
+          () => currentPage = value,
         ),
         children: pages,
       ),

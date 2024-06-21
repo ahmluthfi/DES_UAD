@@ -1,17 +1,17 @@
-import 'package:des_uad/cubit/akademik_cubit.dart';
-import 'package:des_uad/screens/akademik/pmb/pmb.dart';
-import 'package:des_uad/screens/widgets/active_button.dart';
-import 'package:des_uad/screens/widgets/horizontal_bar_chart.dart';
-import 'package:des_uad/screens/widgets/line_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/constant_finals.dart';
-import '../../widgets/app_bar_sub_menu_akademik.dart';
+import '../../../cubit/akademik_cubit.dart';
+import '../../widgets/active_button.dart';
 import '../../widgets/base_container.dart';
-import '../../widgets/body_sub_menu_akademik.dart';
 import '../../widgets/big_card_title.dart';
+import '../../widgets/chart/line_chart.dart';
+import '../../widgets/chart/line_chart_checkbox.dart';
+import '../../widgets/horizontal_bar_chart.dart';
 import '../../widgets/rounded_icon_container.dart';
+import '../widgets/app_bar_sub_menu_akademik.dart';
+import '../widgets/body_sub_menu_akademik.dart';
 
 class MahasiswaAsingPage extends StatelessWidget {
   const MahasiswaAsingPage({super.key});
@@ -19,12 +19,14 @@ class MahasiswaAsingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final akademikCubit = context.read<AkademikCubit>();
+
     return Scaffold(
-      backgroundColor: kBackground,
+      
       body: BodySubMenuAkademik(
         appBar: const AppBarSubMenuAkademik(
           title: 'Mahasiswa Asing',
         ),
+        height: 1050,
         children: [
           BaseContainer.styledBigCard(
             isRow: true,
@@ -32,16 +34,22 @@ class MahasiswaAsingPage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Total Mahasiswa Asing',
-                      style: Styles.kPublicRegularBodyTwo),
-                  Text('10.524', style: Styles.kPublicSemiBoldHeadingTwo),
+                  Text(
+                    'Total Mahasiswa Asing',
+                    style: Styles.kPublicRegularBodyTwo,
+                  ),
+                  Text(
+                    '10.524',
+                    style: Styles.kPublicSemiBoldHeadingTwo,
+                  ),
                 ],
               ),
               const RoundedIconContainer(
-                  side: 64,
-                  color: kLightGrey100,
-                  iconColor: kGrey100,
-                  asset: icFrame),
+                side: 64,
+                color: kLightGrey100,
+                iconColor: kGrey100,
+                asset: icFrame,
+              ),
             ],
           ),
           kGap16,
@@ -54,13 +62,25 @@ class MahasiswaAsingPage extends StatelessWidget {
                   return const Row(
                     children: [
                       LineChartCheckBox(
-                          activeColor: kLightPurple, year: '2021', index: 0),
+                        activeColor: kLightPurple,
+                        year: '2021',
+                        index: 0,
+                      ),
                       LineChartCheckBox(
-                          activeColor: kPurple, year: '2022', index: 1),
+                        activeColor: kPurple,
+                        year: '2022',
+                        index: 1,
+                      ),
                       LineChartCheckBox(
-                          activeColor: kBlue, year: '2023', index: 2),
+                        activeColor: kBlue,
+                        year: '2023',
+                        index: 2,
+                      ),
                       LineChartCheckBox(
-                          activeColor: kGreen, year: '2024', index: 3),
+                        activeColor: kGreen,
+                        year: '2024',
+                        index: 3,
+                      ),
                     ],
                   );
                 },
@@ -83,7 +103,7 @@ class MahasiswaAsingPage extends StatelessWidget {
                                 akademikCubit.clickActiveButtonMhsAsing(0),
                             child: ActiveButton(
                                 title: 'Fakultas',
-                                isActive: akademikCubit.idnexMhsAsing == 0),
+                                isActive: akademikCubit.indexMhsAsing == 0),
                           ),
                         ),
                         kGap4,
@@ -93,7 +113,7 @@ class MahasiswaAsingPage extends StatelessWidget {
                                 akademikCubit.clickActiveButtonMhsAsing(1),
                             child: ActiveButton(
                                 title: 'Prodi',
-                                isActive: akademikCubit.idnexMhsAsing == 1),
+                                isActive: akademikCubit.indexMhsAsing == 1),
                           ),
                         ),
                       ],
@@ -102,7 +122,7 @@ class MahasiswaAsingPage extends StatelessWidget {
                 },
               ),
               SizedBox(
-                height: 250,
+                height: 300,
                 child: HorizontalBarLabelChart(dataAkreditasi),
               ),
             ],

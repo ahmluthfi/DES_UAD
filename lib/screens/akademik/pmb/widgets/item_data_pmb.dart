@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constant_finals.dart';
-import 'rounded_icon_container.dart';
+import '../../../../core/constant_finals.dart';
+import '../../../widgets/rounded_icon_container.dart';
 
 class ItemDataPMB extends StatelessWidget {
   const ItemDataPMB({
@@ -30,18 +30,16 @@ class ItemDataPMB extends StatelessWidget {
               iconColor: iconColor,
               side: 36,
             ),
-            const SizedBox(
-              width: 8,
-            ),
+            kGap8,
             Text(
               title,
-              style: Styles.kPublicRegularBodyTwo,
+              style: Styles.kPublicRegularBodyTwo.copyWith(color: kGrey900),
             ),
           ],
         ),
         Text(
           value,
-          style: Styles.kPublicSemiBoldBodyOne,
+          style: Styles.kPublicSemiBoldBodyOne.copyWith(color: kGrey900),
         ),
       ],
     );

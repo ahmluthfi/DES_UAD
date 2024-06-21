@@ -16,59 +16,68 @@ class MutuPage extends StatelessWidget {
     final mutuCubit = context.read<MutuCubit>();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Mutu'),
-            kGap16,
-            BaseContainer.activeButtonContainer(
-              child: BlocBuilder<MutuCubit, MutuState>(
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          SliverAppBar(
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Mutu',
+                  style: Styles.kPublicSemiBoldHeadingThree
+                      .copyWith(color: kGrey900),
+                ),
+                kGap20,
+                BaseContainer.activeButtonContainer(
+                  child: BlocBuilder<MutuCubit, MutuState>(
+                    builder: (context, state) {
+                      return Row(
+                        children: [
+                          Expanded(
+                            child: InkWell(
+                              onTap: () => mutuCubit.clickAppBarButton(),
+                              child: ActiveButton(
+                                title: 'Akreditasi',
+                                isActive: mutuCubit.isAkreditasi,
+                              ),
+                            ),
+                          ),
+                          kGap8,
+                          Expanded(
+                            child: InkWell(
+                              onTap: () =>
+                                  mutuCubit.clickAppBarButton(isActive: false),
+                              child: ActiveButton(
+                                title: 'Ranking',
+                                isActive: !mutuCubit.isAkreditasi,
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+            toolbarHeight: 120,
+          ),
+        ],
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              BlocBuilder<MutuCubit, MutuState>(
                 builder: (context, state) {
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () => mutuCubit.clickAppBarButton(),
-                          child: ActiveButton(
-                            title: 'Akreditasi',
-                            isActive: mutuCubit.isAkreditasi,
-                          ),
-                        ),
-                      ),
-                      kGap8,
-                      Expanded(
-                        child: InkWell(
-                          onTap: () =>
-                              mutuCubit.clickAppBarButton(isActive: false),
-                          child: ActiveButton(
-                            title: 'Ranking',
-                            isActive: !mutuCubit.isAkreditasi,
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
+                  return mutuCubit.isAkreditasi
+                      ? const AkreditasiSection()
+                      : const RankingSection();
                 },
               ),
-            )
-          ],
-        ),
-        toolbarHeight: 120,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: ListView(
-          children: [
-            BlocBuilder<MutuCubit, MutuState>(
-              builder: (context, state) {
-                return mutuCubit.isAkreditasi
-                    ? const AkreditasiSection()
-                    : const RankingSection();
-              },
-            ),
-            kGap80,
-          ],
+              kGap80,
+            ],
+          ),
         ),
       ),
     );

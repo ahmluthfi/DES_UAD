@@ -29,7 +29,10 @@ class DropdownMenuBox extends StatelessWidget {
               title,
               style: Styles.kPublicRegularBodyTwo.copyWith(color: kGrey900),
             ),
-            const Icon(Icons.keyboard_arrow_down, color: kGrey600),
+            const Icon(
+              Icons.keyboard_arrow_down,
+              color: kGrey600,
+            ),
           ],
         ),
       ),

@@ -57,9 +57,9 @@ class AkreditasiSection extends StatelessWidget {
                     asset: icNoteTwo),
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 300,
-              child: PieChartWithDetails(
+              child: PieChartWithDetails.prodi(
                 title: 'Total Prodi',
                 value: 68,
               ),

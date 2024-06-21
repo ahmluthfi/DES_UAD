@@ -1,10 +1,10 @@
-import 'package:des_uad/cubit/akademik_cubit.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/constant_finals.dart';
+import '../../../core/constant_finals.dart';
+import '../../../cubit/akademik_cubit.dart';
 
 // const showingTooltipOnSpots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 

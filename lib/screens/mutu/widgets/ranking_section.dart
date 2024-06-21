@@ -7,7 +7,7 @@ import '../../../cubit/mutu_cubit.dart';
 import '../../../data/data_chart.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/big_card_title.dart';
-import '../../widgets/combo_chart.dart';
+import '../../widgets/chart/combo_chart.dart';
 import '../../widgets/rounded_icon_container.dart';
 import 'button_listview_ranking.dart';
 import 'item_ranking.dart';

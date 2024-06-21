@@ -1,20 +1,21 @@
-import 'package:des_uad/cubit/akademik_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/constant_finals.dart';
+import '../../../cubit/akademik_cubit.dart';
 import '../../widgets/active_button.dart';
-import '../../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/big_card_title.dart';
-import '../../widgets/body_sub_menu_akademik.dart';
 import '../../widgets/bottom_modal.dart';
 import '../../widgets/card_total_registration.dart';
+import '../../widgets/chart/line_chart.dart';
+import '../../widgets/chart/line_chart_checkbox.dart';
 import '../../widgets/dropdown_menu_box.dart';
 import '../../widgets/horizontal_bar_chart.dart';
-import '../../widgets/item_data_pmb.dart';
-import '../../widgets/line_chart.dart';
+import '../widgets/app_bar_sub_menu_akademik.dart';
+import '../widgets/body_sub_menu_akademik.dart';
 import '../widgets/bottom_modal_content.dart';
+import 'widgets/item_data_pmb.dart';
 
 class PenerimaanMahasiswaBaruPage extends StatelessWidget {
   const PenerimaanMahasiswaBaruPage({super.key});
@@ -24,11 +25,12 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
     final akademikCubit = context.read<AkademikCubit>();
 
     return Scaffold(
-      backgroundColor: kBackground,
+      
       body: BodySubMenuAkademik(
         appBar: const AppBarSubMenuAkademik(
           title: 'PMB',
         ),
+        height: 2550,
         children: [
           const CardTotalRegistration(),
           kGap16,
@@ -76,24 +78,34 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
           kGap16,
           // Line Chart Mahasiswa Baru
           BaseContainer.styledBigCard(
-            children: [
-              const BigCardTitle(title: 'Tren Mahasiswa Baru'),
-              const LineChartCustomized(),
-              BlocBuilder<AkademikCubit, AkademikState>(
-                builder: (context, state) {
-                  return const Row(
-                    children: [
-                      LineChartCheckBox(
-                          activeColor: kLightPurple, year: '2021', index: 0),
-                      LineChartCheckBox(
-                          activeColor: kPurple, year: '2022', index: 1),
-                      LineChartCheckBox(
-                          activeColor: kBlue, year: '2023', index: 2),
-                      LineChartCheckBox(
-                          activeColor: kGreen, year: '2024', index: 3),
-                    ],
-                  );
-                },
+            children: const [
+              BigCardTitle(
+                title: 'Tren Mahasiswa Baru',
+              ),
+              LineChartCustomized(),
+              Row(
+                children: [
+                  LineChartCheckBox(
+                    activeColor: kLightPurple,
+                    year: '2021',
+                    index: 0,
+                  ),
+                  LineChartCheckBox(
+                    activeColor: kPurple,
+                    year: '2022',
+                    index: 1,
+                  ),
+                  LineChartCheckBox(
+                    activeColor: kBlue,
+                    year: '2023',
+                    index: 2,
+                  ),
+                  LineChartCheckBox(
+                    activeColor: kGreen,
+                    year: '2024',
+                    index: 3,
+                  ),
+                ],
               ),
             ],
           ),
@@ -101,7 +113,9 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
           // Horizontal Bar Chart Persebaran Mahasiswa
           BaseContainer.styledBigCard(
             children: [
-              const BigCardTitle(title: 'PMB Berdasarkan Persebaran'),
+              const BigCardTitle(
+                title: 'PMB Berdasarkan Persebaran',
+              ),
               kGap28,
               BlocBuilder<AkademikCubit, AkademikState>(
                 builder: (context, state) {
@@ -110,37 +124,37 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
                       children: [
                         Expanded(
                           child: InkWell(
-                            onTap: () =>
-                                akademikCubit.click(JenisPMB.persebaran, 0),
+                            onTap: () => akademikCubit.clickActiveButtonPMB(
+                                JenisPMB.persebaran, 0),
                             child: ActiveButton(
-                                title: 'Fakultas',
-                                isActive: akademikCubit.indexJenisPMB[
-                                        JenisPMB.persebaran.index] ==
-                                    0),
+                              title: 'Fakultas',
+                              isActive: akademikCubit.isActivated(
+                                  JenisPMB.persebaran, 0),
+                            ),
                           ),
                         ),
                         kGap4,
                         Expanded(
                           child: InkWell(
-                            onTap: () =>
-                                akademikCubit.click(JenisPMB.persebaran, 1),
+                            onTap: () => akademikCubit.clickActiveButtonPMB(
+                                JenisPMB.persebaran, 1),
                             child: ActiveButton(
-                                title: 'Prodi',
-                                isActive: akademikCubit.indexJenisPMB[
-                                        JenisPMB.persebaran.index] ==
-                                    1),
+                              title: 'Prodi',
+                              isActive: akademikCubit.isActivated(
+                                  JenisPMB.persebaran, 1),
+                            ),
                           ),
                         ),
                         kGap4,
                         Expanded(
                           child: InkWell(
-                            onTap: () =>
-                                akademikCubit.click(JenisPMB.persebaran, 2),
+                            onTap: () => akademikCubit.clickActiveButtonPMB(
+                                JenisPMB.persebaran, 2),
                             child: ActiveButton(
-                                title: 'Provinsi',
-                                isActive: akademikCubit.indexJenisPMB[
-                                        JenisPMB.persebaran.index] ==
-                                    2),
+                              title: 'Provinsi',
+                              isActive: akademikCubit.isActivated(
+                                  JenisPMB.persebaran, 2),
+                            ),
                           ),
                         ),
                       ],
@@ -149,7 +163,7 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
                 },
               ),
               SizedBox(
-                height: 250,
+                height: 300,
                 child: HorizontalBarLabelChart(dataAkreditasi),
               ),
             ],
@@ -158,33 +172,41 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
           // Horizontal Bar Chart Jalur Reguler
           BaseContainer.styledBigCard(
             children: [
-              const BigCardTitle(title: 'PMB Jalur Reguler'),
+              const BigCardTitle(
+                title: 'PMB Jalur Reguler',
+              ),
               kGap28,
               BaseContainer.activeButtonContainer(
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: InkWell(
-                        onTap: () => akademikCubit.click(JenisPMB.reguler, 0),
-                        child: ActiveButton(
-                            title: 'Fakultas',
-                            isActive: akademikCubit
-                                    .indexJenisPMB[JenisPMB.reguler.index] ==
-                                0),
-                      ),
-                    ),
-                    kGap4,
-                    Expanded(
-                      child: InkWell(
-                        onTap: () => akademikCubit.click(JenisPMB.reguler, 1),
-                        child: ActiveButton(
-                            title: 'Prodi',
-                            isActive: akademikCubit
-                                    .indexJenisPMB[JenisPMB.reguler.index] ==
-                                1),
-                      ),
-                    ),
-                  ],
+                child: BlocBuilder<AkademikCubit, AkademikState>(
+                  builder: (context, state) {
+                    return Row(
+                      children: [
+                        Expanded(
+                          child: InkWell(
+                            onTap: () => akademikCubit.clickActiveButtonPMB(
+                                JenisPMB.reguler, 0),
+                            child: ActiveButton(
+                              title: 'Fakultas',
+                              isActive: akademikCubit.isActivated(
+                                  JenisPMB.reguler, 0),
+                            ),
+                          ),
+                        ),
+                        kGap4,
+                        Expanded(
+                          child: InkWell(
+                            onTap: () => akademikCubit.clickActiveButtonPMB(
+                                JenisPMB.reguler, 1),
+                            child: ActiveButton(
+                              title: 'Prodi',
+                              isActive: akademikCubit.isActivated(
+                                  JenisPMB.reguler, 1),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
               kGap20,
@@ -199,7 +221,7 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
                 title: 'Pilih Fakultas',
               ),
               SizedBox(
-                height: 250,
+                height: 300,
                 child: HorizontalBarLabelChart(dataAkreditasi),
               ),
             ],
@@ -210,32 +232,34 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
             builder: (context, state) {
               return BaseContainer.styledBigCard(
                 children: [
-                  const BigCardTitle(title: 'PMB Jalur Non Reguler'),
+                  const BigCardTitle(
+                    title: 'PMB Jalur Non Reguler',
+                  ),
                   kGap28,
                   BaseContainer.activeButtonContainer(
                     child: Row(
                       children: [
                         Expanded(
                           child: InkWell(
-                            onTap: () =>
-                                akademikCubit.click(JenisPMB.nonReguler, 0),
+                            onTap: () => akademikCubit.clickActiveButtonPMB(
+                                JenisPMB.nonReguler, 0),
                             child: ActiveButton(
-                                title: 'Fakultas',
-                                isActive: akademikCubit.indexJenisPMB[
-                                        JenisPMB.nonReguler.index] ==
-                                    0),
+                              title: 'Fakultas',
+                              isActive: akademikCubit.isActivated(
+                                  JenisPMB.nonReguler, 0),
+                            ),
                           ),
                         ),
                         kGap4,
                         Expanded(
                           child: InkWell(
-                            onTap: () =>
-                                akademikCubit.click(JenisPMB.nonReguler, 1),
+                            onTap: () => akademikCubit.clickActiveButtonPMB(
+                                JenisPMB.nonReguler, 1),
                             child: ActiveButton(
-                                title: 'Prodi',
-                                isActive: akademikCubit.indexJenisPMB[
-                                        JenisPMB.nonReguler.index] ==
-                                    1),
+                              title: 'Prodi',
+                              isActive: akademikCubit.isActivated(
+                                  JenisPMB.nonReguler, 1),
+                            ),
                           ),
                         ),
                       ],
@@ -253,50 +277,16 @@ class PenerimaanMahasiswaBaruPage extends StatelessWidget {
                     title: 'Pilih Fakultas',
                   ),
                   SizedBox(
-                    height: 250,
+                    height: 300,
                     child: HorizontalBarLabelChart(dataAkreditasi),
                   ),
                 ],
               );
             },
           ),
-          kGap24,
         ],
       ),
     );
   }
 }
 
-class LineChartCheckBox extends StatelessWidget {
-  const LineChartCheckBox({
-    super.key,
-    required this.activeColor,
-    required this.year,
-    required this.index,
-  });
-
-  final Color activeColor;
-  final String year;
-  final int index;
-
-  @override
-  Widget build(BuildContext context) {
-    final akademikCubit = context.read<AkademikCubit>();
-
-    return BlocBuilder<AkademikCubit, AkademikState>(
-      builder: (context, state) => Row(
-        children: [
-          Checkbox(
-            activeColor: activeColor,
-            value: akademikCubit.isChecked[index],
-            onChanged: (value) => akademikCubit.check(index),
-          ),
-          Text(
-            year,
-            style: Styles.kPublicRegularBodyTwo.copyWith(color: kGrey900),
-          ),
-        ],
-      ),
-    );
-  }
-}
