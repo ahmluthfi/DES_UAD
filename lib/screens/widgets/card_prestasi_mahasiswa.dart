@@ -48,9 +48,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
-                    const SizedBox(
-                      width: 8,
-                    ),
+                    kGap8,
                     Text(
                       'Mahasiswa Berprestasi',
                       style:
@@ -58,9 +56,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 16,
-                ),
+                kGap16,
                 Row(
                   children: [
                     Container(
@@ -71,9 +67,7 @@ class CardPrestasiMahasiswa extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
-                    const SizedBox(
-                      width: 8,
-                    ),
+                    kGap8,
                     Text(
                       'Score',
                       style:

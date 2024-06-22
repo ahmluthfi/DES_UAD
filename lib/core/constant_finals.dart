@@ -8,6 +8,8 @@ const Gap kGap12 = Gap(12);
 const Gap kGap16 = Gap(16);
 const Gap kGap20 = Gap(20);
 const Gap kGap24 = Gap(24);
+const Gap kGap32 = Gap(32);
+const Gap kGap70 = Gap(70);
 
 // Route
 const String homeRoute = 'home/';
@@ -36,7 +38,9 @@ const String icHome = '${icLoc}home.svg';
 const String icPeople = '${icLoc}people.svg';
 const String icProfileTwoUserOutline = '${icLoc}profiletwouseroutline.svg';
 const String icChart = '${icLoc}chart.svg';
-const String icTeacher = '${icLoc}teacher.svg';
+const String icTeacherFill = '${icLoc}teacher-fill.svg';
+const String icTeacherOutline = '${icLoc}teacher-outline.svg';
+const String icArrowBottom = '${icLoc}arrow-bottom.svg';
 const String icMedal = '${icLoc}medal.svg';
 const String icFrame = '${icLoc}frame.svg';
 const String icNoteTwo = '${icLoc}note-2.svg';
@@ -49,7 +53,9 @@ const String icBook = '${icLoc}book.svg';
 const String icAward = '${icLoc}award.svg';
 const String icUserOctagon = '${icLoc}user-octagon.svg';
 const String icProfileAdd = '${icLoc}profile-add.svg';
-const String icRightArrow = 'assets/svgs/circulararrowright.svg';
+const String icManGender = '${icLoc}gender-man.svg';
+const String icWomanGender = '${icLoc}gender-woman.svg';
+const String icRightArrow = '${icLoc}circulararrowright.svg';
 
 //Warna
 const Color kBackground = Color(0xFFEFF3FA);
@@ -70,6 +76,7 @@ const Color klightGrey450 = Color(0xFF6E7880);
 const Color kLightGrey500 = Color(0xFF667085);
 const Color kLightGrey800 = Color(0xFF383E49);
 const Color kGrey = Color(0xFF2B2F38);
+const Color kGrey50 = Color(0xFFF0F1F3);
 const Color kGrey100 = Color(0xFFD0D3D9);
 const Color kGrey300 = Color(0xFF989FAD);
 const Color kGrey400 = Color(0xFF858D9D);
@@ -155,4 +162,7 @@ class Styles {
       GoogleFonts.publicSans(fontWeight: FontWeight.w700, fontSize: 12);
   static final TextStyle kPublicBoldBodyFour =
       GoogleFonts.publicSans(fontWeight: FontWeight.w700, fontSize: 10);
+
+  static final TextStyle kInterMediumBodyOne =
+      GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 16);
 }

@@ -36,9 +36,7 @@ class ItemAkademikMenu extends StatelessWidget {
               side: side,
               iconColor: iconColor,
             ),
-            const SizedBox(
-              height: 8,
-            ),
+            kGap8,
             Text(
               title,
               style: Styles.kPublicRegularBodyThree,

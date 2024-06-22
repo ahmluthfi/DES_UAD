@@ -34,7 +34,7 @@ class KelulusanPage extends StatelessWidget {
                   side: 64,
                   color: kLightGrey100,
                   iconColor: kGrey100,
-                  asset: icTeacher),
+                  asset: icTeacherFill),
             ],
           ),
           kGap16,

@@ -62,7 +62,7 @@ class AkademikPage extends StatelessWidget {
                     route: mhsAsingRoute,
                   ),
                   ItemAkademikMenu(
-                    asset: icTeacher,
+                    asset: icTeacherFill,
                     iconColor: Color(0xFF3490FC),
                     side: 40,
                     title: 'Kelulusan',
@@ -105,6 +105,7 @@ class AkademikPage extends StatelessWidget {
                   ),
                 ],
               ),
+              kGap70,
             ],
           ),
         ),

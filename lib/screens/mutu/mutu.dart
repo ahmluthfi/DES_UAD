@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PMB extends StatelessWidget {
-  const PMB({super.key});
+class Mutu extends StatelessWidget {
+  const Mutu({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('PMB'),
+        child: Text('Mutu'),
       ),
     );
   }
