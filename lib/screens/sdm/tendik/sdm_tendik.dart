@@ -53,7 +53,7 @@ class SDMTendik extends StatelessWidget {
             ),
             kGap16,
             Persebaran(
-              judul: 'Persebaran Tendik',
+              title: 'Persebaran Tendik',
             ),
             kGap16,
             CardBarChart(

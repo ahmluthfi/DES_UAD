@@ -1,15 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/constant_finals.dart';
 import '../../widgets/base_container.dart';
 
 class Persebaran extends StatefulWidget {
-  final String judul;
+  final String title;
   const Persebaran({
-    required this.judul,
+    required this.title,
     super.key,
   });
 
@@ -33,7 +31,7 @@ class _PersebaranState extends State<Persebaran> {
   void toggleSelection(bool isDosen) {
     setState(() {
       isFakultasSelected = isDosen;
-      print(isDosen);
+      // print(isDosen);
     });
   }
 
@@ -106,7 +104,7 @@ class _PersebaranState extends State<Persebaran> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              widget.judul,
+              widget.title,
               style: Styles.kPublicSemiBoldBodyOne.copyWith(
                 color: kGrey,
               ),
@@ -125,7 +123,7 @@ class _PersebaranState extends State<Persebaran> {
                   children: [
                     Expanded(
                       child: GestureDetector(
-                        onTap: () => toggleSelection(true), // Mengubah status
+                        onTap: () => toggleSelection(true), // ubah status
                         child: Container(
                           height: 32,
                           decoration: BoxDecoration(
@@ -148,13 +146,13 @@ class _PersebaranState extends State<Persebaran> {
                     kGap8,
                     Expanded(
                       child: GestureDetector(
-                        onTap: () => toggleSelection(false), // Mengubah status
+                        onTap: () => toggleSelection(false), // ubah status
                         child: Container(
                           height: 32,
                           decoration: BoxDecoration(
                             color: isFakultasSelected
                                 ? kLightGrey100
-                                : kWhite, // Mengubah warna berdasarkan status
+                                : kWhite, 
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Center(
@@ -178,7 +176,6 @@ class _PersebaranState extends State<Persebaran> {
               child: GestureDetector(
                 onTap: () => showFakultasSelection(),
                 child: Container(
-                  height: 40,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: kGrey100)),

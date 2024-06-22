@@ -55,7 +55,7 @@ class SDMDosen extends StatelessWidget {
             ),
             kGap16,
             Persebaran(
-              judul: 'Persebaran Dosen',
+              title: 'Persebaran Dosen',
             ),
             kGap16,
             CardBarChart(
