@@ -40,7 +40,7 @@ const String icProfileTwoUserOutline = '${icLoc}profiletwouseroutline.svg';
 const String icChart = '${icLoc}chart.svg';
 const String icTeacherFill = '${icLoc}teacher-fill.svg';
 const String icTeacherOutline = '${icLoc}teacher-outline.svg';
-
+const String icArrowBottom = '${icLoc}arrow-bottom.svg';
 const String icMedal = '${icLoc}medal.svg';
 const String icFrame = '${icLoc}frame.svg';
 const String icNoteTwo = '${icLoc}note-2.svg';
@@ -162,4 +162,7 @@ class Styles {
       GoogleFonts.publicSans(fontWeight: FontWeight.w700, fontSize: 12);
   static final TextStyle kPublicBoldBodyFour =
       GoogleFonts.publicSans(fontWeight: FontWeight.w700, fontSize: 10);
+
+  static final TextStyle kInterMediumBodyOne =
+      GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 16);
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant_finals.dart';
-import '../../../widgets/base_container.dart';
+import '../../../core/constant_finals.dart';
+import '../../widgets/base_container.dart';
 
-class CardBarChartDosen extends StatelessWidget {
+class CardBarChart extends StatelessWidget {
   final String title;
   final String barTitle;
   final String percent;
   final String value;
-  const CardBarChartDosen({
+  const CardBarChart({
     required this.title,
     required this.barTitle,
     required this.percent,

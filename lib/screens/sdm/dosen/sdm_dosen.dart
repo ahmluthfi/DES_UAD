@@ -8,8 +8,8 @@ import 'package:flutter/widgets.dart';
 import '../../../core/constant_finals.dart';
 import '../../widgets/card_ratio.dart';
 import '../widgets/card_total_gender.dart';
-import 'widgets/card_bar_chart.dart';
-import 'widgets/card_persebaran_dosen.dart';
+import '../widgets/card_bar_chart.dart';
+import '../widgets/card_persebaran.dart';
 
 class SDMDosen extends StatelessWidget {
   const SDMDosen({
@@ -49,30 +49,32 @@ class SDMDosen extends StatelessWidget {
               ],
             ),
             kGap16,
-            CardBarChartDosen(
+            CardBarChart(
               title: 'Jabatan Fungsional Dosen',
               barTitle: 'Guru Besar',
               percent: '50%',
               value: '37',
             ),
             kGap16,
-            PersebaranDosen(),
+            Persebaran(
+              judul: 'Persebaran Dosen',
+            ),
             kGap16,
-            CardBarChartDosen(
+            CardBarChart(
               title: 'Pendidikan Dosen',
               barTitle: 'S1',
               percent: '50%',
               value: '37',
             ),
             kGap16,
-            CardBarChartDosen(
+            CardBarChart(
               title: 'Usia Dosen',
               barTitle: '21 - 30',
               percent: '50%',
               value: '37',
             ),
             kGap16,
-            CardBarChartDosen(
+            CardBarChart(
               title: 'Sertifikasi',
               barTitle: 'Bersertifikasi',
               percent: '50%',
