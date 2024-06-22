@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constant_finals.dart';
-import 'base_container.dart';
+import '../../../../core/constant_finals.dart';
+import '../../../widgets/base_container.dart';
 
 class ButtonFilterPublikasi extends StatelessWidget {
   final String title;
@@ -17,7 +17,10 @@ class ButtonFilterPublikasi extends StatelessWidget {
     return BaseContainer(
       border: Border.all(color: isActive ? kBlue : kGrey300),
       color: isActive ? kBlue : Colors.transparent,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 12,
+        vertical: 6,
+      ),
       child: Center(
         child: Text(
           title,
@@ -28,4 +31,3 @@ class ButtonFilterPublikasi extends StatelessWidget {
     );
   }
 }
-

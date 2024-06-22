@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
 
-class CardTitleSubMenuAkademik extends StatelessWidget {
-  const CardTitleSubMenuAkademik({
+class BigCardTitle extends StatelessWidget {
+  const BigCardTitle({
     super.key,
     required this.title,
   });

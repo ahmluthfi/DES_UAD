@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Mutu extends StatelessWidget {
-  const Mutu({super.key});
+class MutuPage extends StatelessWidget {
+  const MutuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Mutu'),
+        child: Text('MutuPage'),
       ),
     );
   }

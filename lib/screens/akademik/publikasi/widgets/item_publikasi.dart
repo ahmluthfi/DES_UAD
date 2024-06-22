@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constant_finals.dart';
+import '../../../../core/constant_finals.dart';
 
 class ItemPublikasi extends StatelessWidget {
   const ItemPublikasi({
@@ -21,12 +21,22 @@ class ItemPublikasi extends StatelessWidget {
       children: [
         Row(
           children: [
-            Image.asset(asset, width: 36, height: 36),
+            Image.asset(
+              asset,
+              width: 36,
+              height: 36,
+            ),
             kGap12,
-            Text(title, style: Styles.kPublicRegularBodyTwo),
+            Text(
+              title,
+              style: Styles.kPublicRegularBodyTwo,
+            ),
           ],
         ),
-        Text(value, style: Styles.kPublicRegularBodyOne)
+        Text(
+          value,
+          style: Styles.kPublicRegularBodyOne,
+        )
       ],
     );
   }

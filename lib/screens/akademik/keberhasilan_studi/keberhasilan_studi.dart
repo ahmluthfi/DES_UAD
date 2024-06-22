@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constant_finals.dart';
-import '../../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
-import '../../widgets/body_sub_menu_akademik.dart';
-import '../../widgets/card_title_sub_menu_akademik.dart';
+import '../../widgets/big_card_title.dart';
+import '../../widgets/chart/chart_legend.dart';
+import '../../widgets/chart/combo_chart.dart';
+import '../../widgets/chart_prestasi.dart';
+import '../../widgets/pie_chart_with_details.dart';
+import '../widgets/app_bar_sub_menu_akademik.dart';
+import '../widgets/body_sub_menu_akademik.dart';
+import 'widgets/item_studi_mahasiswa.dart';
 
 class KeberhasilanStudiPage extends StatelessWidget {
   const KeberhasilanStudiPage({super.key});
@@ -12,33 +17,83 @@ class KeberhasilanStudiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kBackground,
       body: BodySubMenuAkademik(
         appBar: const AppBarSubMenuAkademik(
           title: 'Keberhasilan Studi',
         ),
+        height: 1425,
         children: [
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: [
-              const CardTitleSubMenuAkademik(title: 'Studi Mahasiswa'),
+              const BigCardTitle(
+                title: 'Studi Mahasiswa',
+              ),
               Text(
                 'TA 2023/2024',
                 style: Styles.kPublicRegularBodyThree.copyWith(color: kGrey400),
-              )
+              ),
+              SizedBox(
+                height: 300,
+                child: PieChartWithDetails.succeededStudy(
+                  title: 'Total Mahasiswa',
+                  value: 29800,
+                ),
+              ),
+              const Row(
+                children: [
+                  ItemStudiMahasiswa(
+                    title: 'Berhasil',
+                    value: '3.872',
+                    color: kBlue,
+                  ),
+                  kGap32,
+                  ItemStudiMahasiswa(
+                    title: 'Drop Out',
+                    value: '1.696',
+                    color: kYellow,
+                  ),
+                ],
+              ),
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
+          BaseContainer.styledBigCard(
             children: const [
-              CardTitleSubMenuAkademik(title: 'Tren Keberhasilan Studi'),
+              BigCardTitle(
+                title: 'Tren Keberhasilan Studi',
+              ),
+              kGap24,
+              SizedBox(
+                height: 300,
+                child: ComboChart(),
+              ),
             ],
           ),
           kGap16,
-          BaseContainer.styledSubMenuAkademik(
-            children: const [
-              CardTitleSubMenuAkademik(
-                  title:
-                      'Perbandingan Keberhasilan Studi Dengan Total Mahasiswa'),
+          BaseContainer.styledBigCard(
+            children: [
+              const BigCardTitle(
+                title: 'Perbandingan Keberhasilan Studi Dengan Total Mahasiswa',
+              ),
+              kGap24,
+              SizedBox(
+                height: 300,
+                child: PrestasiChart(),
+              ),
+              kGap24,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ChartLegend(
+                    color: kBlue,
+                    title: 'Total Mahasiswa',
+                  ),
+                  ChartLegend(
+                    color: kGreen,
+                    title: 'Mahasiswa Berhasil',
+                  ),
+                ],
+              ),
             ],
           ),
         ],

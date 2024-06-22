@@ -8,12 +8,14 @@ class BaseContainer extends StatelessWidget {
   final EdgeInsets? margin;
   final double? height;
   final double? width;
+  final double radius;
   final BoxBorder? border;
   final List<BoxShadow>? boxShadow;
   const BaseContainer({
     super.key,
     required this.child,
     this.color = kWhite,
+    this.radius = 12,
     this.padding,
     this.margin,
     this.height,
@@ -27,9 +29,7 @@ class BaseContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: color,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(12),
-        ),
+        borderRadius: BorderRadius.circular(radius),
         border: border,
         boxShadow: boxShadow,
       ),
@@ -41,11 +41,11 @@ class BaseContainer extends StatelessWidget {
     );
   }
 
-  factory BaseContainer.styledSubMenuAkademik(
-          {required final List<Widget> children,
-          final bool isRow = false,
-          final MainAxisAlignment mainAxisAlignment =
-              MainAxisAlignment.start}) =>
+  factory BaseContainer.styledBigCard({
+    required final List<Widget> children,
+    final bool isRow = false,
+    final MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+  }) =>
       BaseContainer(
         padding: const EdgeInsets.all(16),
         width: double.infinity,
@@ -59,5 +59,16 @@ class BaseContainer extends StatelessWidget {
                 mainAxisAlignment: mainAxisAlignment,
                 children: children,
               ),
+      );
+
+  factory BaseContainer.activeButtonContainer({
+    required final Widget child,
+  }) =>
+      BaseContainer(
+        radius: 30,
+        color: kLightGrey100,
+        padding: const EdgeInsets.all(4),
+        width: double.infinity,
+        child: child,
       );
 }

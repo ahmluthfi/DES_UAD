@@ -7,7 +7,7 @@ import '../widgets/card_prestasi_mahasiswa.dart';
 import '../widgets/card_tbq.dart';
 import '../widgets/card_ratio.dart';
 import '../widgets/card_student_body.dart';
-import '../widgets/card_total_registrasi.dart';
+import '../widgets/card_total_registration.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -31,12 +31,10 @@ class HomeScreen extends StatelessWidget {
               Text(
                 'Yuk Mulai Pantau DES!',
                 style:
-                    Styles.kPublicSemiBoldHeadingThree.copyWith(color: kGrey),
+                    Styles.kPublicSemiBoldHeadingThree.copyWith(color: kGrey900),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              const CardTotalRegistrasi(),
+              kGap20,
+              const CardTotalRegistration(),
               kGap16,
               const CardStudentBody(),
               kGap16,

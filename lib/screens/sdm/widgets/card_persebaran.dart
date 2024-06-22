@@ -45,7 +45,7 @@ class _PersebaranState extends State<Persebaran> {
               padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
               child: Text(
                 'Pilih Fakultas',
-                style: Styles.kPublicSemiBoldHeadingFour.copyWith(color: kGrey),
+                style: Styles.kPublicSemiBoldHeadingFour.copyWith(color: kGrey900),
               ),
             ),
             Divider(
@@ -63,7 +63,7 @@ class _PersebaranState extends State<Persebaran> {
                     title: Text(
                       data,
                       style: Styles.kInterMediumBodyOne.copyWith(
-                        color: kGrey,
+                        color: kGrey900,
                       ),
                     ),
                     // trailing: Divider(),
@@ -106,7 +106,7 @@ class _PersebaranState extends State<Persebaran> {
             Text(
               widget.title,
               style: Styles.kPublicSemiBoldBodyOne.copyWith(
-                color: kGrey,
+                color: kGrey900,
               ),
             ),
             kGap20,
@@ -136,7 +136,7 @@ class _PersebaranState extends State<Persebaran> {
                             child: Text(
                               'Fakultas',
                               style: Styles.kPublicSemiBoldBodyThree.copyWith(
-                                color: kGrey,
+                                color: kGrey900,
                               ),
                             ),
                           ),
@@ -159,7 +159,7 @@ class _PersebaranState extends State<Persebaran> {
                             child: Text(
                               'Prodi',
                               style: Styles.kPublicSemiBoldBodyThree.copyWith(
-                                color: kGrey,
+                                color: kGrey900,
                               ),
                             ),
                           ),
@@ -190,7 +190,7 @@ class _PersebaranState extends State<Persebaran> {
                         Text(
                           selectedFakultas,
                           style: Styles.kPublicRegularBodyTwo.copyWith(
-                            color: kGrey,
+                            color: kGrey900,
                           ),
                         ),
                         SvgPicture.asset(icArrowBottom),

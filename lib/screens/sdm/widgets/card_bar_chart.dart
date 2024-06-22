@@ -27,7 +27,7 @@ class CardBarChart extends StatelessWidget {
             Text(
               title,
               style: Styles.kPublicSemiBoldBodyOne.copyWith(
-                color: kGrey,
+                color: kGrey900,
               ),
             ),
             kGap20,
