@@ -1,13 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:des_uad/screens/sdm/dosen/sdm_dosen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constant_finals.dart';
-import '../widgets/card_ratio.dart';
-
-import 'package:flutter/material.dart';
-
 import 'tendik/sdm_tendik.dart';
 
 class SumberDayaManusia extends StatefulWidget {
