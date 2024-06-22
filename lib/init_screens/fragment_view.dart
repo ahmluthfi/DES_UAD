@@ -7,6 +7,12 @@ import 'package:des_uad/screens/sdm/sdm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../core/constant_finals.dart';
+import '../screens/akademik/akademik.dart';
+import '../screens/home/home.dart';
+import '../screens/mutu/mutu.dart';
+import '../screens/prestasi/prestasi.dart';
+
 class FragmentPage extends StatefulWidget {
   const FragmentPage({super.key});
 
@@ -24,8 +30,8 @@ class _FragmentPageState extends State<FragmentPage> {
       HomeScreen(),
       AkademikPage(),
       SumberDayaManusia(),
-      Mutu(),
-      Prestasi(),
+      MutuPage(),
+      PrestasiPage(),
     ];
 
     final destinations = [
@@ -34,7 +40,7 @@ class _FragmentPageState extends State<FragmentPage> {
         label: 'Home',
         selectedIcon: SvgPicture.asset(
           icHome,
-          color: kBlue,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
         ),
       ),
       NavigationDestination(
@@ -42,23 +48,32 @@ class _FragmentPageState extends State<FragmentPage> {
         label: 'Akademik',
         selectedIcon: SvgPicture.asset(
           icTeacherOutline,
-          color: kBlue,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
         ),
       ),
       NavigationDestination(
         icon: SvgPicture.asset(icProfileTwoUserOutline),
         label: 'SDM',
-        selectedIcon: SvgPicture.asset(icProfileTwoUserOutline, color: kBlue),
+        selectedIcon: SvgPicture.asset(
+          icProfileTwoUserOutline,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
+        ),
       ),
       NavigationDestination(
         icon: SvgPicture.asset(icChart),
-        label: 'Muhtu',
-        selectedIcon: SvgPicture.asset(icChart, color: kBlue),
+        label: 'Mutu',
+        selectedIcon: SvgPicture.asset(
+          icChart,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
+        ),
       ),
       NavigationDestination(
-        icon: SvgPicture.asset(icMedal),
-        label: 'Prestasi',
-        selectedIcon: SvgPicture.asset(icMedal, color: kBlue),
+        icon: SvgPicture.asset(icMedalOutline),
+        label: 'Ranking',
+        selectedIcon: SvgPicture.asset(
+          icMedalOutline,
+          colorFilter: const ColorFilter.mode(kBlue, BlendMode.srcIn),
+        ),
       ),
     ];
 
@@ -66,14 +81,12 @@ class _FragmentPageState extends State<FragmentPage> {
       body: PageView(
         controller: pageController,
         onPageChanged: (value) => setState(
-          () {
-            currentPage = value;
-          },
+          () => currentPage = value,
         ),
         children: pages,
       ),
       floatingActionButton: Container(
-        decoration: BoxDecoration(color: Colors.white),
+        decoration: const BoxDecoration(color: kWhite),
         width: double.infinity,
         height: 68,
         child: NavigationBar(

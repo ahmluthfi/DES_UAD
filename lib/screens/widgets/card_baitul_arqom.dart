@@ -10,81 +10,75 @@ class CardBaitulArqom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseContainer(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Mahasiswa Lulus Baitul \nArqom',
+                style: Styles.kPublicSemiBoldBodyOne.copyWith(color: kGrey900),
+              ),
+              Text(
+                'Lihat semua',
+                style: Styles.kPublicRegularBodyThree.copyWith(color: kBlue),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 300,
+            child: Stack(
               children: [
-                Text(
-                  'Mahasiswa Lulus Baitul \nArqom',
-                  style: Styles.kPublicSemiBoldBodyOne.copyWith(
-                    color: kGrey,
+                PieChart(
+                  PieChartData(
+                    sections: getSectionsBaitulArqom(),
+                    centerSpaceRadius: 105,
+                    sectionsSpace: 3,
                   ),
                 ),
-                Text(
-                  'Lihat semua',
-                  style: Styles.kPublicRegularBodyThree.copyWith(
-                    color: kBlue,
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '29.800',
+                        style: Styles.kPublicSemiBoldHeadingTwo
+                            .copyWith(color: kGrey900),
+                      ),
+                      Text(
+                        'Mahasiswa',
+                        style: Styles.kPublicRegularBodyOne
+                            .copyWith(color: kLightGrey400),
+                      )
+                    ],
                   ),
                 ),
               ],
             ),
-            Container(
-              height: 300,
-              child: Stack(
-                children: [
-                  PieChart(
-                    PieChartData(
-                      sections: getSectionsBaitulArqom(),
-                      centerSpaceRadius: 105,
-                      sectionsSpace: 3,
-                    ),
-                  ),
-                  Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '29.800',
-                          style: Styles.kPublicSemiBoldHeadingTwo
-                              .copyWith(color: kGrey),
-                        ),
-                        Text(
-                          'Mahasiswa',
-                          style: Styles.kPublicRegularBodyOne
-                              .copyWith(color: kLightGrey400),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            kGap24,
-            const DeskripsiChartBaitulArqom(
-              color: kGreen,
-              title: 'Lulus',
-              percent: '50%',
-              value: '14.900',
-            ),
-            kGap12,
-            const DeskripsiChartBaitulArqom(
-              color: kPink,
-              title: 'Tidak Lulus',
-              percent: '25%',
-              value: '7.460',
-            ),
-            kGap12,
-            const DeskripsiChartBaitulArqom(
-              color: kBlue,
-              title: 'Belum Lulus',
-              percent: '25%',
-              value: '7.460',
-            ),
-          ],
-        ),
+          ),
+          kGap24,
+          const DeskripsiChartBaitulArqom(
+            color: kGreen,
+            title: 'Lulus',
+            percent: '50%',
+            value: '14.900',
+          ),
+          kGap12,
+          const DeskripsiChartBaitulArqom(
+            color: kPink,
+            title: 'Tidak Lulus',
+            percent: '25%',
+            value: '7.460',
+          ),
+          kGap12,
+          const DeskripsiChartBaitulArqom(
+            color: kBlue,
+            title: 'Belum Lulus',
+            percent: '25%',
+            value: '7.460',
+          ),
+        ],
       ),
     );
   }
@@ -164,7 +158,7 @@ class DeskripsiChartBaitulArqom extends StatelessWidget {
             ),
             Text(
               value,
-              style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey),
+              style: Styles.kPublicSemiBoldBodyTwo.copyWith(color: kGrey900),
             ),
           ],
         ),

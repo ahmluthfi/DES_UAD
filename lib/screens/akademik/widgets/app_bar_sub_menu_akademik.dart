@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constant_finals.dart';
+import '../../../core/constant_finals.dart';
 
 class AppBarSubMenuAkademik extends StatelessWidget {
   const AppBarSubMenuAkademik({

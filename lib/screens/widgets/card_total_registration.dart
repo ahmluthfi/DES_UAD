@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
 import 'base_container.dart';
+import 'chart_total_registrasi.dart';
 
 class CardTotalRegistration extends StatelessWidget {
-  const CardTotalRegistration({
-    super.key,
-  });
+  const CardTotalRegistration({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BaseContainer(
-      border: Border.all(color: kWhite, width: 1.5),
+      border: Border.all(color: kWhite, width: 2),
       boxShadow: [
         BoxShadow(
           color: const Color(0xFF4F4E55).withOpacity(.1),
@@ -20,9 +19,10 @@ class CardTotalRegistration extends StatelessWidget {
         )
       ],
       color: kBlue,
-      padding: const EdgeInsets.all(12),
-      width: double.infinity,
-      height: 200,
+      padding: const EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: 16,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -37,21 +37,22 @@ class CardTotalRegistration extends StatelessWidget {
                 children: [
                   Text(
                     'TA 2023/2024',
-                    style: Styles.kPublicRegularBodyThree
-                        .copyWith(color: kLightGrey100),
+                    style:
+                        Styles.kPublicRegularBodyThree.copyWith(color: kWhite),
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 4),
-                    height: 3,
                     width: 3,
+                    height: 3,
                     decoration: BoxDecoration(
-                        color: kLightGrey100,
-                        borderRadius: BorderRadius.circular(3)),
+                      borderRadius: BorderRadius.circular(10),
+                      color: kWhite,
+                    ),
                   ),
                   Text(
                     '23 Des',
-                    style: Styles.kPublicRegularBodyThree
-                        .copyWith(color: kLightGrey100),
+                    style:
+                        Styles.kPublicRegularBodyThree.copyWith(color: kWhite),
                   ),
                 ],
               ),
@@ -60,6 +61,10 @@ class CardTotalRegistration extends StatelessWidget {
           Text(
             '736',
             style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kWhite),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 13),
+            child: const ChartTotalRegistrasi(),
           ),
         ],
       ),

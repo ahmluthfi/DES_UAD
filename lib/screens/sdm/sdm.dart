@@ -34,7 +34,7 @@ class _SumberDayaManusiaState extends State<SumberDayaManusia> {
           children: [
             Text(
               'Sumber Daya Manusia',
-              style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kGrey),
+              style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kGrey900),
             ),
             kGap16,
             Container(
@@ -63,7 +63,7 @@ class _SumberDayaManusiaState extends State<SumberDayaManusia> {
                             child: Text(
                               'Dosen',
                               style: Styles.kPublicSemiBoldBodyThree.copyWith(
-                                color: kGrey,
+                                color: kGrey900,
                               ),
                             ),
                           ),
@@ -86,7 +86,7 @@ class _SumberDayaManusiaState extends State<SumberDayaManusia> {
                             child: Text(
                               'Tendik',
                               style: Styles.kPublicSemiBoldBodyThree.copyWith(
-                                color: kGrey,
+                                color: kGrey900,
                               ),
                             ),
                           ),

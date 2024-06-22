@@ -56,7 +56,7 @@ class TotalGender extends StatelessWidget {
               Text(
                 value,
                 style: Styles.kPublicSemiBoldHeadingThree.copyWith(
-                  color: kGrey,
+                  color: kGrey900,
                 ),
               )
             ],

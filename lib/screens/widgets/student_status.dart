@@ -28,8 +28,8 @@ class StudentStatus extends StatelessWidget {
               height: 10,
               width: 10,
               decoration: BoxDecoration(
-                color: color,
                 borderRadius: BorderRadius.circular(10),
+                color: color,
               ),
             ),
             kGap8,
