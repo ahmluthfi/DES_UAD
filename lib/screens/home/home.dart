@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
               kGap20,
               const CardTotalRegistration(),
               kGap16,
-              const CardStudentBody(),
+              CardStudentBody(),
               kGap16,
               const CardRatio(
                 title: 'Dosen',
