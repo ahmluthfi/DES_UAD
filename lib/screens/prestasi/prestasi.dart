@@ -1,13 +1,14 @@
-import 'package:des_uad/core/constant_finals.dart';
-import 'package:des_uad/cubit/prestasi_cubit.dart';
-import 'package:des_uad/screens/widgets/active_button.dart';
-import 'package:des_uad/screens/widgets/base_container.dart';
-import 'package:des_uad/screens/widgets/big_card_title.dart';
-import 'package:des_uad/screens/widgets/chart/chart_legend.dart';
-import 'package:des_uad/screens/widgets/chart_prestasi.dart';
-import 'package:des_uad/screens/widgets/horizontal_bar_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../core/constant_finals.dart';
+import '../../cubit/prestasi_cubit.dart';
+import '../widgets/active_button.dart';
+import '../widgets/base_container.dart';
+import '../widgets/big_card_title.dart';
+import '../widgets/chart/chart_legend.dart';
+import '../widgets/chart_prestasi.dart';
+import '../widgets/chart/horizontal_bar_chart.dart';
 
 class PrestasiPage extends StatelessWidget {
   const PrestasiPage({super.key});

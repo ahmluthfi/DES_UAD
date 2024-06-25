@@ -1,4 +1,10 @@
 import 'package:bloc/bloc.dart';
+import 'package:des_uad/data/datasources/data_sources.dart';
+import 'package:des_uad/data/models/akademik/kelulusan/perbandingan_kelulusan.dart';
+import 'package:des_uad/data/models/akademik/kelulusan/tren_kelulusan.dart';
+import 'package:des_uad/data/models/akademik/mahasiswa_asing/persebaran_negara.dart';
+import 'package:des_uad/data/models/akademik/penerimaan_mahasiswa_baru/data_pmb.dart';
+import 'package:des_uad/data/models/persebaran_berdasarkan.dart';
 import 'package:meta/meta.dart';
 
 part 'akademik_state.dart';
@@ -6,9 +12,11 @@ part 'akademik_state.dart';
 enum JenisPMB { persebaran, reguler, nonReguler }
 
 class AkademikCubit extends Cubit<AkademikState> {
-  AkademikCubit() : super(AkademikInitial());
+  AkademikCubit({required this.dataSource}) : super(AkademikInitial());
 
-  List<int> indexJenisPMB = [0, 0, 0];
+  final DataSource dataSource;
+
+  final List<int> indexJenisPMB = [0, 0, 0];
   List<bool> isChecked = [true, true, true, true];
   int indexMhsLokal = 0;
   int indexMhsAsing = 0;
@@ -34,5 +42,67 @@ class AkademikCubit extends Cubit<AkademikState> {
   void clickActiveButtonMhsAsing(final int index) {
     indexMhsAsing = index;
     emit(AkademikInitial());
+  }
+
+  // Mahasiswa Asing
+  Future<void> getJumlahMahasiswaAsing() async {
+    emit(JumlahMahasiswaAsingLoading());
+
+    final result = await dataSource.getJumlahMahasiswaAsing();
+
+    emit(JumlahMahasiswaAsingLoaded(result));
+  }
+
+  Future<void> getPersebaranNegara() async {
+    emit(PersebaranNegaraMahasiswaAsingLoading());
+
+    final result = await dataSource.getPersebaranNegara();
+
+    emit(PersebaranNegaraMahasiswaAsingLoaded(result));
+  }
+
+  // PMB
+  Future<void> getDataPMB() async {
+    emit(DataPMBLoading());
+
+    final result = await dataSource.getDataPMB();
+
+    emit(DataPMBLoaded(result));
+  }
+
+  Future<void> getPersebaranPMB(JenisPMB jenisPMB, int index) async {
+    indexJenisPMB[jenisPMB.index] = index;
+    emit(PersebaranPMBLoading());
+
+    switch (index) {
+      case 0:
+        final result = await dataSource.getPersebaranFakultasMahasiswaBaru();
+        emit(PersebaranPMBLoaded(result));
+        break;
+      case 1:
+        // Persebaran Prodi
+        break;
+      case 2:
+        final result = await dataSource.getPersebaranProvinsiMahasiswaBaru();
+        emit(PersebaranPMBLoaded(result));
+        break;
+      default:
+    }
+  }
+
+  Future<void> getTrenKelulusan() async {
+    emit(TrenKelulusanLoading());
+
+    final result = await dataSource.getTrenKelulusan();
+
+    emit(TrenKelulusanLoaded(result));
+  }
+  
+  Future<void> getPerbandinganKelulusan() async {
+    emit(PerbandinganKelulusanLoading());
+
+    final result = await dataSource.getPerbandinganKelulusan();
+
+    emit(PerbandinganKelulusanLoaded(result));
   }
 }

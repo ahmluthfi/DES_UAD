@@ -4,9 +4,9 @@ import 'package:flutter_svg/svg.dart';
 import '../../../core/constant_finals.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/big_card_title.dart';
-import '../../widgets/horizontal_bar_chart.dart';
-import '../../widgets/pie_chart_legend.dart';
-import '../../widgets/pie_chart_with_details.dart';
+import '../../widgets/chart/horizontal_bar_chart.dart';
+import '../../widgets/chart/pie_chart_legend.dart';
+import '../../widgets/chart/pie_chart_with_details.dart';
 import '../../widgets/rounded_icon_container.dart';
 
 class AkreditasiSection extends StatelessWidget {

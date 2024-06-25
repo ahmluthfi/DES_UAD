@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/constant_finals.dart';
+import '../../../core/constant_finals.dart';
 
 class PieChartWithDetails extends StatelessWidget {
   const PieChartWithDetails({

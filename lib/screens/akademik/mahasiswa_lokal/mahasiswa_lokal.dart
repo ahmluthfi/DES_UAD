@@ -8,7 +8,7 @@ import '../../widgets/base_container.dart';
 import '../../widgets/big_card_title.dart';
 import '../../widgets/chart/line_chart.dart';
 import '../../widgets/chart/line_chart_checkbox.dart';
-import '../../widgets/horizontal_bar_chart.dart';
+import '../../widgets/chart/horizontal_bar_chart.dart';
 import '../../widgets/rounded_icon_container.dart';
 import '../widgets/app_bar_sub_menu_akademik.dart';
 import '../widgets/body_sub_menu_akademik.dart';

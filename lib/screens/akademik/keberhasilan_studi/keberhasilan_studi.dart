@@ -6,7 +6,7 @@ import '../../widgets/big_card_title.dart';
 import '../../widgets/chart/chart_legend.dart';
 import '../../widgets/chart/combo_chart.dart';
 import '../../widgets/chart_prestasi.dart';
-import '../../widgets/pie_chart_with_details.dart';
+import '../../widgets/chart/pie_chart_with_details.dart';
 import '../widgets/app_bar_sub_menu_akademik.dart';
 import '../widgets/body_sub_menu_akademik.dart';
 import 'widgets/item_studi_mahasiswa.dart';
@@ -65,7 +65,9 @@ class KeberhasilanStudiPage extends StatelessWidget {
               kGap24,
               SizedBox(
                 height: 300,
-                child: ComboChart(),
+                child: ComboChart(
+                  datas: [],
+                ),
               ),
             ],
           ),

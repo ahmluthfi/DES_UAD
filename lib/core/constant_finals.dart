@@ -2,6 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+const String url = 'http://d3v.uad.id/ipm/index.php/des/';
+final Map<String, dynamic> endpoint = {
+  'mahasiswa_asing': {
+    'jumlah': 'mahasiswa_asing',
+    'persebaran_negara': 'persebaran_mahasiswa_asing',
+  },
+  'pmb': {
+    'dataPMB': 'maba_jumlah_mahasiswa',
+    'persebaran_fakultas': 'maba_jumlah_mahasiswa_fakultas',
+    'persebaran_provinsi': 'maba_jumlah_mahasiswa_provinsi',
+  },
+  'kelulusan': {
+    'tren': 'akademik_statistik_kelulusan',
+    'perbandingan': 'akademik_perbandingan_kelulusan',
+  },
+};
+
 // Spacing (Gap)
 const Gap kGap4 = Gap(4);
 const Gap kGap8 = Gap(8);

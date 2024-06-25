@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../core/constant_finals.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/big_card_title.dart';
-import '../../widgets/horizontal_bar_chart.dart';
-import '../../widgets/pie_chart_legend.dart';
-import '../../widgets/pie_chart_with_details.dart';
+import '../../widgets/chart/horizontal_bar_chart.dart';
+import '../../widgets/chart/pie_chart_legend.dart';
+import '../../widgets/chart/pie_chart_with_details.dart';
 import '../widgets/app_bar_sub_menu_akademik.dart';
 import '../widgets/body_sub_menu_akademik.dart';
 

@@ -5,8 +5,8 @@ import '../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/big_card_title.dart';
 import '../widgets/body_sub_menu_akademik.dart';
-import '../../widgets/pie_chart_legend.dart';
-import '../../widgets/pie_chart_with_details.dart';
+import '../../widgets/chart/pie_chart_legend.dart';
+import '../../widgets/chart/pie_chart_with_details.dart';
 import '../../widgets/rounded_icon_container.dart';
 
 class JurnalUADPage extends StatelessWidget {

@@ -1,10 +1,13 @@
 import 'package:bloc/bloc.dart';
+import 'package:des_uad/data/datasources/data_sources.dart';
 import 'package:meta/meta.dart';
 
 part 'prestasi_state.dart';
 
 class PrestasiCubit extends Cubit<PrestasiState> {
-  PrestasiCubit() : super(PrestasiInitial());
+  PrestasiCubit({required this.dataSource}) : super(PrestasiInitial());
+
+  final DataSource dataSource;
 
   bool isNasional = true;
   int index = 0;
