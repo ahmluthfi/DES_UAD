@@ -79,3 +79,55 @@ class PerbandinganKelulusanLoaded extends PerbandinganKelulusanState {
 
   PerbandinganKelulusanLoaded(this.datas);
 }
+
+// Keberhasilan Studi
+class Keberhasilan extends AkademikState {}
+
+// Studi Mahasiswa
+class StudiMahasiswaState extends Keberhasilan {}
+
+class StudiMahasiswaLoading extends StudiMahasiswaState {}
+
+class StudiMahasiswaLoaded extends StudiMahasiswaState {
+  final StudiMahasiswa data;
+
+  StudiMahasiswaLoaded(this.data);
+}
+
+// Tren Keberhasilan Studi (Not Yet Aired)
+
+// Perbandingan Keberhasilan Studi
+class PerbandinganKeberhasilanState extends Keberhasilan {}
+
+class PerbandinganKeberhasilanLoading extends PerbandinganKeberhasilanState {}
+
+class PerbandinganKeberhasilanLoaded extends PerbandinganKeberhasilanState {
+  final List<PerbandinganKeberhasilanStudi> datas;
+
+  PerbandinganKeberhasilanLoaded(this.datas);
+}
+
+// Perpustakaan
+class Perpustakaan extends AkademikState {}
+
+// Koleksi
+class KoleksiState extends Perpustakaan {}
+
+class KoleksiLoading extends KoleksiState {}
+
+class KoleksiLoaded extends KoleksiState {
+  final Koleksi data;
+
+  KoleksiLoaded(this.data);
+}
+
+// Eksamplar
+class EksamplarState extends Perpustakaan {}
+
+class EksamplarLoading extends EksamplarState {}
+
+class EksamplarLoaded extends EksamplarState {
+  final String data;
+
+  EksamplarLoaded(this.data);
+}

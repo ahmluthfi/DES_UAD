@@ -1,4 +1,4 @@
-import 'package:des_uad/data/models/persebaran_berdasarkan.dart';
+import '../../persebaran_berdasarkan.dart';
 
 class PersebaranFakultas extends PersebaranBerdasarkan{
   final String fakultas;

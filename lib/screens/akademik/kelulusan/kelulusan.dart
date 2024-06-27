@@ -111,7 +111,7 @@ class KelulusanPage extends StatelessWidget {
                               const charts.Color(r: 0, g: 169, b: 145),
                         ),
                       ];
-                      return GroupedBarChart(datas);
+                      return GroupedBarChart(seriesList: datas);
                     }
 
                     return const Center(child: CircularProgressIndicator());

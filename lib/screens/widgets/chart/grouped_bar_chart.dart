@@ -7,8 +7,9 @@ class GroupedBarChart extends StatelessWidget {
   final bool animate;
 
   const GroupedBarChart(
-    this.seriesList, {
+    {
     super.key,
+    required this.seriesList,
     this.animate = true,
   });
 

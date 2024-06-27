@@ -34,7 +34,7 @@ class AIKPage extends StatelessWidget {
                 height: 300,
                 child: PieChartWithDetails.prodi(
                   title: 'Total Mahasiswa',
-                  value: 29800,
+                  value: '29800',
                 ),
               ),
               const PieChartLegend(
@@ -85,7 +85,7 @@ class AIKPage extends StatelessWidget {
                 height: 300,
                 child: PieChartWithDetails.prodi(
                   title: 'Total Mahasiswa',
-                  value: 29800,
+                  value: '29800',
                 ),
               ),
               const PieChartLegend(

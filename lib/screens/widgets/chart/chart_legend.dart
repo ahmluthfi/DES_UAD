@@ -1,4 +1,4 @@
-import 'package:des_uad/core/constant_finals.dart';
+import '../../../core/constant_finals.dart';
 import 'package:flutter/material.dart';
 
 class ChartLegend extends StatelessWidget {

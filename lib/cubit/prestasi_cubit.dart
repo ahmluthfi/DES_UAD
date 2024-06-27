@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:des_uad/data/datasources/data_sources.dart';
+import '../data/datasources/data_sources.dart';
 import 'package:meta/meta.dart';
 
 part 'prestasi_state.dart';

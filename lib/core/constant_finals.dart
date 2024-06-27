@@ -17,6 +17,14 @@ final Map<String, dynamic> endpoint = {
     'tren': 'akademik_statistik_kelulusan',
     'perbandingan': 'akademik_perbandingan_kelulusan',
   },
+  'keberhasilan': {
+    'mhs': 'akademik_statistik_keberhasilan_studi',
+    'perbandingan': 'perbandingan_total_mahasiswa',
+  },
+  'perpustakaan': {
+    'koleksi': 'perpus_jumlah_koleksi',
+    'eksemplar': 'perpus_jumlah_eksemplar',
+  }
 };
 
 // Spacing (Gap)
@@ -72,6 +80,7 @@ const String icNote = '${icLoc}note.svg';
 const String icClipboard = '${icLoc}clipboard.svg';
 const String icSearchStatus = '${icLoc}search-status.svg';
 const String icBook = '${icLoc}book.svg';
+const String icBookTwo = '${icLoc}book-2.svg';
 const String icAward = '${icLoc}award.svg';
 const String icUserOctagon = '${icLoc}user-octagon.svg';
 const String icProfileAdd = '${icLoc}profile-add.svg';

@@ -12,7 +12,7 @@ class PieChartWithDetails extends StatelessWidget {
   });
 
   final String title;
-  final int value;
+  final String value;
   final List<PieChartSectionData> sections;
 
   @override
@@ -49,7 +49,7 @@ class PieChartWithDetails extends StatelessWidget {
 
   factory PieChartWithDetails.prodi({
     required final String title,
-    required final int value,
+    required final String value,
   }) =>
       PieChartWithDetails(
         title: title,
@@ -59,7 +59,7 @@ class PieChartWithDetails extends StatelessWidget {
 
   factory PieChartWithDetails.succeededStudy({
     required final String title,
-    required final int value,
+    required final String value,
   }) =>
       PieChartWithDetails(
         title: title,

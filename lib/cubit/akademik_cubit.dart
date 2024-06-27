@@ -1,10 +1,13 @@
 import 'package:bloc/bloc.dart';
-import 'package:des_uad/data/datasources/data_sources.dart';
-import 'package:des_uad/data/models/akademik/kelulusan/perbandingan_kelulusan.dart';
-import 'package:des_uad/data/models/akademik/kelulusan/tren_kelulusan.dart';
-import 'package:des_uad/data/models/akademik/mahasiswa_asing/persebaran_negara.dart';
-import 'package:des_uad/data/models/akademik/penerimaan_mahasiswa_baru/data_pmb.dart';
-import 'package:des_uad/data/models/persebaran_berdasarkan.dart';
+import '../data/datasources/data_sources.dart';
+import '../data/models/akademik/keberhasilan_studi/perbandingan_keberhasilan_studi.dart';
+import '../data/models/akademik/keberhasilan_studi/studi_mahasiswa.dart';
+import '../data/models/akademik/kelulusan/perbandingan_kelulusan.dart';
+import '../data/models/akademik/kelulusan/tren_kelulusan.dart';
+import '../data/models/akademik/mahasiswa_asing/persebaran_negara.dart';
+import '../data/models/akademik/penerimaan_mahasiswa_baru/data_pmb.dart';
+import '../data/models/akademik/perpustakaan/koleksi.dart';
+import '../data/models/persebaran_berdasarkan.dart';
 import 'package:meta/meta.dart';
 
 part 'akademik_state.dart';
@@ -90,6 +93,7 @@ class AkademikCubit extends Cubit<AkademikState> {
     }
   }
 
+  // Kelulusan Studi
   Future<void> getTrenKelulusan() async {
     emit(TrenKelulusanLoading());
 
@@ -97,12 +101,42 @@ class AkademikCubit extends Cubit<AkademikState> {
 
     emit(TrenKelulusanLoaded(result));
   }
-  
+
   Future<void> getPerbandinganKelulusan() async {
     emit(PerbandinganKelulusanLoading());
 
     final result = await dataSource.getPerbandinganKelulusan();
 
     emit(PerbandinganKelulusanLoaded(result));
+  }
+
+  // Keberhasilan Studi
+  Future<void> getStudiMahasiswa() async {
+    emit(StudiMahasiswaLoading());
+
+    final result = await dataSource.getStudiMahasiswa();
+
+    emit(StudiMahasiswaLoaded(result));
+  }
+
+  Future<void> getPerbandinganKeberhasilanStudi() async {
+    emit(PerbandinganKeberhasilanLoading());
+
+    final result = await dataSource.getPerbandinganKeberhasilanStudi();
+
+    emit(PerbandinganKeberhasilanLoaded(result));
+  }
+
+  // Perpustakaan
+  Future<void> getKoleksi() async {
+    emit(KoleksiLoading());
+    final result = await dataSource.getKoleksi();
+    emit(KoleksiLoaded(result));
+  }
+
+  Future<void> getEksemplar() async {
+    emit(EksamplarLoading());
+    final result = await dataSource.getEksemplar();
+    emit(EksamplarLoaded(result));
   }
 }

@@ -1,4 +1,4 @@
-import 'package:des_uad/core/constant_finals.dart';
+import '../constant_finals.dart';
 import 'package:flutter/material.dart';
 
 final theme = ThemeData(

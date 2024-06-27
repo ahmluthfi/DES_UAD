@@ -7,8 +7,8 @@ import '../widgets/active_button.dart';
 import '../widgets/base_container.dart';
 import '../widgets/big_card_title.dart';
 import '../widgets/chart/chart_legend.dart';
-import '../widgets/chart_prestasi.dart';
 import '../widgets/chart/horizontal_bar_chart.dart';
+import '../widgets/chart_prestasi.dart';
 
 class PrestasiPage extends StatelessWidget {
   const PrestasiPage({super.key});

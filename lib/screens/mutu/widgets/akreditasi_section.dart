@@ -61,7 +61,7 @@ class AkreditasiSection extends StatelessWidget {
               height: 300,
               child: PieChartWithDetails.prodi(
                 title: 'Total Prodi',
-                value: 68,
+                value: '68',
               ),
             ),
             const PieChartLegend(

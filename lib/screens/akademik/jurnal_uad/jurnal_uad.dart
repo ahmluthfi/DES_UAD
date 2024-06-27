@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constant_finals.dart';
-import '../widgets/app_bar_sub_menu_akademik.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/big_card_title.dart';
-import '../widgets/body_sub_menu_akademik.dart';
 import '../../widgets/chart/pie_chart_legend.dart';
 import '../../widgets/chart/pie_chart_with_details.dart';
 import '../../widgets/rounded_icon_container.dart';
+import '../widgets/app_bar_sub_menu_akademik.dart';
+import '../widgets/body_sub_menu_akademik.dart';
 
 class JurnalUADPage extends StatelessWidget {
   const JurnalUADPage({super.key});
@@ -55,7 +55,7 @@ class JurnalUADPage extends StatelessWidget {
                 height: 300,
                 child: PieChartWithDetails.prodi(
                   title: 'Total Prodi',
-                  value: 68,
+                  value: '68',
                 ),
               ),
               const PieChartLegend(
