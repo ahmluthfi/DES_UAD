@@ -1,9 +1,3 @@
-import 'package:des_uad/core/constant_finals.dart';
-import 'package:des_uad/screens/akademik/akademik.dart';
-import 'package:des_uad/screens/home/home.dart';
-import 'package:des_uad/screens/mutu/mutu.dart';
-import 'package:des_uad/screens/prestasi/prestasi.dart';
-import 'package:des_uad/screens/sdm/sdm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,6 +6,7 @@ import '../screens/akademik/akademik.dart';
 import '../screens/home/home.dart';
 import '../screens/mutu/mutu.dart';
 import '../screens/prestasi/prestasi.dart';
+import '../screens/sdm/sdm.dart';
 
 class FragmentPage extends StatefulWidget {
   const FragmentPage({super.key});

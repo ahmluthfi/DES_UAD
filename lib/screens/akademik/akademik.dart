@@ -21,7 +21,7 @@ class AkademikPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-              const CardStudentBody(),
+              CardStudentBody(),
               kGap24,
               Text(
                 'Menu Akademik',
