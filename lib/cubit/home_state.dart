@@ -5,12 +5,19 @@ sealed class HomeState {}
 
 final class HomeInitial extends HomeState {}
 
-final class HomeLoading extends HomeState {
-  
-  
-}
-final class HomeLoaded extends HomeState {
-  final DataStudent data;
+class StudentBodyState extends HomeState {}
 
-  HomeLoaded(this.data);
+class StudentStatusState extends HomeState {}
+
+final class StudentBodyLoading extends StudentBodyState {}
+final class StudentBodyLoaded extends StudentBodyState {
+  final DataStudent data;
+  StudentBodyLoaded(this.data);
+}
+
+
+final class AkademikStudentStatusLoading extends StudentStatusState {}
+final class AkademikStudentStatusLoaded extends StudentStatusState {
+  final DataStudentStatus data;
+  AkademikStudentStatusLoaded(this.data);
 }

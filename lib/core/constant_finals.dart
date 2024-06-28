@@ -7,6 +7,7 @@ const String url = 'http://d3v.uad.id/ipm/index.php/des/';
 final Map<String, String> endpoint = {
   "mahasiswa_asing" : "mahasiswa_asing",
   "akademik_student_body" : "akademik_student_body",
+  "akademik_student_status" : "akademik_student_status",
 };
 
 // Spacing (Gap)

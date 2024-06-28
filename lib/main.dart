@@ -1,4 +1,6 @@
 import 'package:des_uad/core/constant_finals.dart';
+import 'package:des_uad/cubit/home_cubit.dart';
+import 'package:des_uad/data/datasources/data_sources_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => MutuCubit()),
         BlocProvider(create: (context) => AkademikCubit()),
         BlocProvider(create: (context) => PrestasiCubit()),
+        BlocProvider(create: (context) => HomeCubit(DataSourceImpl())),
       ],
       child: MaterialApp(
         // initialRoute: homeRoute,
