@@ -2,7 +2,6 @@
 //
 //     final akademikStudentStatus = akademikStudentStatusFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 AkademikStudentStatus akademikStudentStatusFromJson(String str) => AkademikStudentStatus.fromJson(json.decode(str));
