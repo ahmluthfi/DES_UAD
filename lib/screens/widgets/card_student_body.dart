@@ -1,5 +1,4 @@
 import 'package:des_uad/cubit/home_cubit.dart';
-import 'package:des_uad/data/models/student_body_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,8 +15,6 @@ class CardStudentBody extends StatelessWidget {
     //call cubit
     final HomeCubit homeCubit = context.read<HomeCubit>();
 
-    // temporary chart
-
     return BaseContainer.styledBigCard(
       children: [
         BlocBuilder<HomeCubit, HomeState>(
@@ -25,7 +22,12 @@ class CardStudentBody extends StatelessWidget {
           buildWhen: (previous, current) => current is StudentBodyState,
           builder: (context, state) {
             if (state is StudentBodyLoading) {
-              return Center();
+              return const Expanded(
+                  child: Center(
+                child: CircularProgressIndicator(
+                  color: kBlue,
+                ),
+              ));
             }
             if (state is StudentBodyLoaded) {
               return Column(
@@ -51,7 +53,7 @@ class CardStudentBody extends StatelessWidget {
                 ],
               );
             }
-            return SizedBox();
+            return const SizedBox();
           },
         ),
         kGap24,
@@ -60,7 +62,7 @@ class CardStudentBody extends StatelessWidget {
           buildWhen: (previous, current) => current is StudentStatusState,
           builder: (context, state) {
             if (state is AkademikStudentStatusLoading) {
-              return Center();
+              return const Center();
             }
             if (state is AkademikStudentStatusLoaded) {
               String active = state.data.aktif;
@@ -133,7 +135,7 @@ class CardStudentBody extends StatelessWidget {
                 ],
               );
             }
-            return SizedBox();
+            return const SizedBox();
           },
         ),
       ],
