@@ -1,11 +1,11 @@
-import 'package:des_uad/screens/widgets/big_card_title.dart';
+import 'big_card_title.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constant_finals.dart';
 import 'base_container.dart';
-import 'pie_chart_legend.dart';
+import 'chart/pie_chart_legend.dart';
 
 class CardAkreditasiProdi extends StatelessWidget {
   const CardAkreditasiProdi({super.key});

@@ -2,15 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// Url
 const String url = 'http://d3v.uad.id/ipm/index.php/des/';
-final Map<String, String> endpoint = {
-  "mahasiswa_asing" : "mahasiswa_asing",
-  "akademik_student_body" : "akademik_student_body",
-  "akademik_student_status" : "akademik_student_status",
-  "sdm_jumlah_dosen" : "sdm_jumlah_dosen",
+final Map<String, dynamic> endpoint = {
+  'mahasiswa_asing': {
+    'jumlah': 'mahasiswa_asing',
+    'persebaran_negara': 'persebaran_mahasiswa_asing',
+  },
+  'pmb': {
+    'dataPMB': 'maba_jumlah_mahasiswa',
+    'persebaran_fakultas': 'maba_jumlah_mahasiswa_fakultas',
+    'persebaran_provinsi': 'maba_jumlah_mahasiswa_provinsi',
+  },
+  'kelulusan': {
+    'tren': 'akademik_statistik_kelulusan',
+    'perbandingan': 'akademik_perbandingan_kelulusan',
+  },
+  'keberhasilan': {
+    'mhs': 'akademik_statistik_keberhasilan_studi',
+    'perbandingan': 'perbandingan_total_mahasiswa',
+  },
+  'perpustakaan': {
+    'koleksi': 'perpus_jumlah_koleksi',
+    'eksemplar': 'perpus_jumlah_eksemplar',
+  },
+  "akademik_student_body": "akademik_student_body",
+  "akademik_student_status": "akademik_student_status",
 };
-
 // Spacing (Gap)
 const Gap kGap4 = Gap(4);
 const Gap kGap8 = Gap(8);
@@ -64,6 +81,7 @@ const String icNote = '${icLoc}note.svg';
 const String icClipboard = '${icLoc}clipboard.svg';
 const String icSearchStatus = '${icLoc}search-status.svg';
 const String icBook = '${icLoc}book.svg';
+const String icBookTwo = '${icLoc}book-2.svg';
 const String icAward = '${icLoc}award.svg';
 const String icUserOctagon = '${icLoc}user-octagon.svg';
 const String icProfileAdd = '${icLoc}profile-add.svg';

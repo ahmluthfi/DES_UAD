@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
-import 'chart_prestasi.dart';
 import 'base_container.dart';
+import 'chart_prestasi.dart';
 
 class CardPrestasiMahasiswa extends StatelessWidget {
   const CardPrestasiMahasiswa({super.key});

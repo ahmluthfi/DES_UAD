@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
 import '../data/datasources/data_sources.dart';
-import '../data/models/sdm_jumlah_dosen_model.dart';
+import '../data/models/sdm/sdm_jumlah_dosen_model.dart';
 
 part 'sdm_state.dart';
 
@@ -11,11 +11,11 @@ class SdmCubit extends Cubit<SdmState> {
   
   final DataSource dataSource;
 
-  Future<void> getJumlahDosen() async {
-    emit(SdmJumlahDosenLoading());
+  // Future<void> getJumlahDosen() async {
+  //   emit(SdmJumlahDosenLoading());
 
-    final SdmJumlahDosen data = await dataSource.getJumlahDosen();
-    emit(SdmJumlahDosenLoaded(data));
-  }
+  //   final SdmJumlahDosen data = await dataSource.getJumlahDosen();
+  //   emit(SdmJumlahDosenLoaded(data));
+  // }
   
 }

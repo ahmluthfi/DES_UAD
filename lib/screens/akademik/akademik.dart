@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/constant_finals.dart';
 import '../widgets/card_student_body.dart';
-import '../widgets/item_akademik_menu.dart';
+import 'widgets/item_akademik_menu.dart';
 
 class AkademikPage extends StatelessWidget {
   const AkademikPage({super.key});

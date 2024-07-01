@@ -1,13 +1,15 @@
-import 'package:des_uad/core/constant_finals.dart';
-import 'package:des_uad/cubit/home_cubit.dart';
-import 'package:des_uad/data/datasources/data_sources_impl.dart';
+import 'core/constant_finals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'cubit/home_cubit.dart';
 
+import 'core/constant_finals.dart';
 import 'core/routes.dart';
+import 'core/theme/theme.dart';
 import 'cubit/akademik_cubit.dart';
 import 'cubit/mutu_cubit.dart';
 import 'cubit/prestasi_cubit.dart';
+import 'data/datasources/data_sources_impl.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,37 +18,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dataSource = DataSourceImpl();
+
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => MutuCubit()),
-        BlocProvider(create: (context) => AkademikCubit()),
-        BlocProvider(create: (context) => PrestasiCubit()),
-        BlocProvider(create: (context) => HomeCubit(DataSourceImpl())),
+        BlocProvider(create: (context) => MutuCubit(dataSource: dataSource)),
+        BlocProvider(
+            create: (context) => AkademikCubit(dataSource: dataSource)),
+        BlocProvider(
+            create: (context) => PrestasiCubit(dataSource: dataSource)),
+        BlocProvider(create: (context) => HomeCubit(dataSource)),
       ],
       child: MaterialApp(
-        // initialRoute: homeRoute,
-        // routes: Routes.routes,
-        theme: ThemeData(
-          scaffoldBackgroundColor: kBackground,
-          appBarTheme: AppBarTheme(
-            backgroundColor: kWhite,
-            surfaceTintColor: Colors.transparent,
-            titleTextStyle:
-                Styles.kPublicSemiBoldHeadingThree.copyWith(color: kGrey900),
-          ),
-          navigationBarTheme: NavigationBarThemeData(
-            indicatorColor: kWhite.withOpacity(0 / 100),
-            labelTextStyle: MaterialStateProperty.resolveWith(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.selected)) {
-                  return Styles.kPublicMediumBodyThree.copyWith(color: kBlue);
-                }
-                return Styles.kPublicMediumBodyThree
-                    .copyWith(color: kLightGrey300);
-              },
-            ),
-          ),
-        ),
+        theme: theme,
         routes: Routes.routes,
         initialRoute: homeRoute,
       ),

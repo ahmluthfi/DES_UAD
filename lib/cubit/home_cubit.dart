@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:des_uad/data/datasources/data_sources.dart';
-import 'package:des_uad/data/models/akademik_student_status_model.dart';
-import 'package:des_uad/data/models/student_body_model.dart';
+import '../data/datasources/data_sources.dart';
+import '../data/models/home/akademik_student_status_model.dart';
+import '../data/models/home/student_body_model.dart';
 import 'package:meta/meta.dart';
 
 part 'home_state.dart';

@@ -2,7 +2,7 @@ import 'package:community_charts_flutter/community_charts_flutter.dart'
     as charts;
 import 'package:flutter/material.dart';
 
-import '../../data/data_chart.dart';
+import '../../../data/data_chart.dart';
 
 class HorizontalBarLabelChart extends StatelessWidget {
   final List<charts.Series<dynamic, String>> seriesList;

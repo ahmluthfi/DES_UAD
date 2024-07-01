@@ -1,8 +1,8 @@
-import 'package:des_uad/screens/widgets/chart/chart_legend.dart';
+import 'chart_legend.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../core/constant_finals.dart';
+import '../../../core/constant_finals.dart';
 
 class PieChartLegend extends ChartLegend {
   // final Color color;
