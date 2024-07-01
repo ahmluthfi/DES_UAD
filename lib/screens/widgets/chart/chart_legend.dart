@@ -1,5 +1,6 @@
-import '../../../core/constant_finals.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/constant_finals.dart';
 
 class ChartLegend extends StatelessWidget {
   const ChartLegend({

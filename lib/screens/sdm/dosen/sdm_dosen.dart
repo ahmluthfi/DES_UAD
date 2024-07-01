@@ -5,9 +5,9 @@ import 'package:flutter/widgets.dart';
 
 import '../../../core/constant_finals.dart';
 import '../../widgets/card_ratio.dart';
-import '../widgets/card_total_gender.dart';
 import '../widgets/card_bar_chart.dart';
 import '../widgets/card_persebaran.dart';
+import '../widgets/card_total_gender.dart';
 
 class SDMDosen extends StatelessWidget {
   const SDMDosen({

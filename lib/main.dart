@@ -1,7 +1,7 @@
-import 'package:des_uad/core/constant_finals.dart';
+import 'core/constant_finals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:des_uad/cubit/home_cubit.dart';
+import 'cubit/home_cubit.dart';
 
 import 'core/constant_finals.dart';
 import 'core/routes.dart';
