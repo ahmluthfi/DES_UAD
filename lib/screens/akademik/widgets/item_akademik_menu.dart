@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constant_finals.dart';
-import 'base_container.dart';
-import 'rounded_icon_container.dart';
+import '../../../core/constant_finals.dart';
+import '../../widgets/base_container.dart';
+import '../../widgets/rounded_icon_container.dart';
 
 class ItemAkademikMenu extends StatelessWidget {
   const ItemAkademikMenu({

@@ -1,4 +1,4 @@
-import 'package:des_uad/screens/widgets/base_container.dart';
+import 'base_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

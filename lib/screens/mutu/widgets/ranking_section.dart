@@ -52,17 +52,7 @@ class RankingSection extends StatelessWidget {
             const BigCardTitle(title: 'Tren Ranking'),
             SizedBox(
               height: 240,
-              child: DChartComboO(
-                groupList: ordinalGroup,
-                fillColor: (group, ordinalData, index) {
-                  switch (group.chartType) {
-                    case ChartType.scatterPlot:
-                      return kGrey800;
-                    default:
-                      return Colors.blue;
-                  }
-                },
-              ),
+              child: ComboChart(datas: []),
             ),
           ],
         ),
