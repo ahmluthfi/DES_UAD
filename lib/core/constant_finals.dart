@@ -8,6 +8,7 @@ final Map<String, String> endpoint = {
   "mahasiswa_asing" : "mahasiswa_asing",
   "akademik_student_body" : "akademik_student_body",
   "akademik_student_status" : "akademik_student_status",
+  "sdm_jumlah_dosen" : "sdm_jumlah_dosen",
 };
 
 // Spacing (Gap)
