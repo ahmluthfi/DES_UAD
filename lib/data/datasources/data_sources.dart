@@ -7,6 +7,8 @@ import '../models/akademik/penerimaan_mahasiswa_baru/data_pmb.dart';
 import '../models/akademik/penerimaan_mahasiswa_baru/persebaran_fakultas.dart';
 import '../models/akademik/penerimaan_mahasiswa_baru/persebaran_provinsi.dart';
 import '../models/akademik/perpustakaan/koleksi.dart';
+import '../models/akademik_student_status_model.dart';
+import '../models/student_body_model.dart';
 
 abstract interface class DataSource {
   // Mahasiswa Asing
@@ -26,4 +28,7 @@ abstract interface class DataSource {
   // Perpustakaan
   Future<Koleksi> getKoleksi();
   Future<String> getEksemplar();
+  // Fitur Apa Ni? Tulis sini
+  Future<StudentBody> getStudentBody();
+  Future<AkademikStudentStatus> getStudentStatus();
 }

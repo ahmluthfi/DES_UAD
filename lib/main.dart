@@ -1,5 +1,7 @@
+import 'package:des_uad/core/constant_finals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:des_uad/cubit/home_cubit.dart';
 
 import 'core/constant_finals.dart';
 import 'core/routes.dart';
@@ -20,15 +22,12 @@ class MyApp extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [
+        BlocProvider(create: (context) => MutuCubit(dataSource: dataSource)),
         BlocProvider(
-          create: (context) => MutuCubit(dataSource: dataSource),
-        ),
+            create: (context) => AkademikCubit(dataSource: dataSource)),
         BlocProvider(
-          create: (context) => AkademikCubit(dataSource: dataSource),
-        ),
-        BlocProvider(
-          create: (context) => PrestasiCubit(dataSource: dataSource),
-        ),
+            create: (context) => PrestasiCubit(dataSource: dataSource)),
+        BlocProvider(create: (context) => HomeCubit(dataSource)),
       ],
       child: MaterialApp(
         theme: theme,

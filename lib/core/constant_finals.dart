@@ -24,9 +24,10 @@ final Map<String, dynamic> endpoint = {
   'perpustakaan': {
     'koleksi': 'perpus_jumlah_koleksi',
     'eksemplar': 'perpus_jumlah_eksemplar',
-  }
+  },
+  "akademik_student_body": "akademik_student_body",
+  "akademik_student_status": "akademik_student_status",
 };
-
 // Spacing (Gap)
 const Gap kGap4 = Gap(4);
 const Gap kGap8 = Gap(8);
