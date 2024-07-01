@@ -80,23 +80,16 @@ class _FragmentPageState extends State<FragmentPage> {
         ),
         children: pages,
       ),
-      floatingActionButton: Container(
-        decoration: const BoxDecoration(color: kWhite),
-        width: double.infinity,
-        height: 68,
-        child: NavigationBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          selectedIndex: currentPage,
-          destinations: destinations,
-          surfaceTintColor: Colors.transparent,
-          onDestinationSelected: (value) {
-            pageController.jumpToPage(value);
-            setState(() => currentPage = value);
-          },
-        ),
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: kWhite,
+        elevation: 0,
+        selectedIndex: currentPage,
+        destinations: destinations,
+        onDestinationSelected: (value) {
+          pageController.jumpToPage(value);
+          setState(() => currentPage = value);
+        },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
