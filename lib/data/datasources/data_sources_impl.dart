@@ -1,8 +1,5 @@
 import 'dart:convert';
 
-import 'package:des_uad/data/models/mutu/persebaran_akreditasi.dart';
-import 'package:des_uad/data/models/mutu/persebaran_akreditasi_internasional.dart';
-import 'package:des_uad/data/models/mutu/sertifikasi_internasional.dart';
 import 'package:http/http.dart';
 
 import '../../core/constant_finals.dart';
@@ -16,8 +13,11 @@ import '../models/akademik/penerimaan_mahasiswa_baru/data_pmb.dart';
 import '../models/akademik/penerimaan_mahasiswa_baru/persebaran_fakultas.dart';
 import '../models/akademik/penerimaan_mahasiswa_baru/persebaran_provinsi.dart';
 import '../models/akademik/perpustakaan/koleksi.dart';
-import '../models/akademik_student_status_model.dart';
-import '../models/student_body_model.dart';
+import '../models/home/akademik_student_status_model.dart';
+import '../models/home/student_body_model.dart';
+import '../models/mutu/persebaran_akreditasi.dart';
+import '../models/mutu/persebaran_akreditasi_internasional.dart';
+import '../models/mutu/sertifikasi_internasional.dart';
 import 'data_sources.dart';
 
 class DataSourceImpl implements DataSource {
@@ -220,10 +220,8 @@ class DataSourceImpl implements DataSource {
       final Response response =
           await get(Uri.parse('$url${endpoint['akademik_student_body']}'));
       if (response.statusCode == 200) {
-        print('Response Body: ${response.body}');
         return studentBodyFromJson(response.body);
       } else {
-        print('Failed with status code: ${response.statusCode}');
         throw ServerException(message: 'Gagal Mengambil Data');
       }
     } catch (e) {
@@ -237,16 +235,29 @@ class DataSourceImpl implements DataSource {
       final Response response =
           await get(Uri.parse('$url${endpoint['akademik_student_status']}'));
       if (response.statusCode == 200) {
-        print('Response Body: ${response.body}');
         return akademikStudentStatusFromJson(response.body);
       } else {
-        throw ServerException(
-            message: 'Gagal Mengambil Data: ${response.statusCode}');
+        throw ServerException(message: 'Gagal Mengambil Data');
       }
     } catch (e) {
       throw ServerException(message: e.toString());
     }
   }
+
+  // @override
+  // Future<SdmJumlahDosen> getJumlahDosen() async {
+  //   try {
+  //     final Response response =
+  //         await get(Uri.parse('$url${endpoint['akademik_student_status']}'));
+  //     if (response.statusCode == 200) {
+  //       return akademikStudentStatusFromJson(response.body);
+  //     } else {
+  //       throw ServerException(message: 'Gagal Mengambil Data');
+  //     }
+  //   } catch (e) {
+  //     throw ServerException(message: e.toString());
+  //   }
+  // }
 
   @override
   Future<String> getTotalProdi() async {

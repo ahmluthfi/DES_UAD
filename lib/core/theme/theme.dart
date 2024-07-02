@@ -13,9 +13,9 @@ final theme = ThemeData(
   ),
   navigationBarTheme: NavigationBarThemeData(
     indicatorColor: kWhite.withOpacity(0 / 100),
-    labelTextStyle: WidgetStateProperty.resolveWith(
-      (Set<WidgetState> states) {
-        if (states.contains(WidgetState.selected)) {
+    labelTextStyle: MaterialStateProperty.resolveWith(
+      (Set<MaterialState> states) {
+        if (states.contains(MaterialState.selected)) {
           return Styles.kPublicMediumBodyThree.copyWith(color: kBlue);
         }
         return Styles.kPublicMediumBodyThree.copyWith(color: kLightGrey300);
