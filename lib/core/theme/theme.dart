@@ -2,12 +2,14 @@ import '../constant_finals.dart';
 import 'package:flutter/material.dart';
 
 final theme = ThemeData(
-  scaffoldBackgroundColor: kBackground,
   appBarTheme: AppBarTheme(
     backgroundColor: kWhite,
     surfaceTintColor: Colors.transparent,
     titleTextStyle:
         Styles.kPublicSemiBoldHeadingThree.copyWith(color: kGrey900),
+  ),
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: kBlue,
   ),
   navigationBarTheme: NavigationBarThemeData(
     indicatorColor: kWhite.withOpacity(0 / 100),
@@ -20,4 +22,5 @@ final theme = ThemeData(
       },
     ),
   ),
+  scaffoldBackgroundColor: kBackground,
 );
