@@ -31,7 +31,7 @@ class PieChartWithDetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '$value',
+                value,
                 style:
                     Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kGrey900),
               ),

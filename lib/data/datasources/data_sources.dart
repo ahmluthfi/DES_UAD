@@ -9,32 +9,38 @@ import '../models/akademik/penerimaan_mahasiswa_baru/persebaran_provinsi.dart';
 import '../models/akademik/perpustakaan/koleksi.dart';
 import '../models/home/akademik_student_status_model.dart';
 import '../models/home/student_body_model.dart';
-import '../models/sdm/sdm_jumlah_dosen_model.dart';
+import '../models/mutu/persebaran_akreditasi.dart';
+import '../models/mutu/persebaran_akreditasi_internasional.dart';
+import '../models/mutu/sertifikasi_internasional.dart';
 
 abstract interface class DataSource {
-  // Mahasiswa Asing
+  // Akademik - Mahasiswa Asing
   Future<String> getJumlahMahasiswaAsing();
   Future<List<PersebaranNegara>> getPersebaranNegara();
-  // PMB
+  // Akademik - PMB
   Future<DataPMB> getDataPMB();
   Future<List<PersebaranFakultas>> getPersebaranFakultasMahasiswaBaru();
   Future<List<PersebaranProvinsi>> getPersebaranProvinsiMahasiswaBaru();
-  // Kelulusan
+  // Akademik - Kelulusan
   Future<List<TrenKelulusan>> getTrenKelulusan();
   Future<List<PerbandinganKelulusan>> getPerbandinganKelulusan();
-  // Keberhasilan Studi
+  // Akademik - Keberhasilan Studi
   Future<StudiMahasiswa> getStudiMahasiswa();
   Future<List<PerbandinganKeberhasilanStudi>>
       getPerbandinganKeberhasilanStudi();
-  // Perpustakaan
+  // Akademik - Perpustakaan
   Future<Koleksi> getKoleksi();
   Future<String> getEksemplar();
-  //Home
-  //student body
+  // Home - Student Body
   Future<StudentBody> getStudentBody();
   Future<AkademikStudentStatus> getStudentStatus();
-
-  //sdm
-  //sdm jumlah dosen
+  // SDM - Jumlah Dosen
   // Future<SdmJumlahDosen> getJumlahDosen();
+
+  // Mutu - Akreditasi
+  Future<String> getTotalProdi();
+  Future<List<PersebaranAkreditasi>> getPersebaranAkreditasi();
+  /// Future<List<T>> getAkreditasiInternasional() -> Not Yet Aired
+  Future<List<SertifikasiInternasional>> getSertifikasiInternasional();
+  Future<List<PersebaranAkreditasiInternasional>> getPersebaranAkreditasInternasional();
 }

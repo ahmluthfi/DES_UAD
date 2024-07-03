@@ -22,12 +22,11 @@ class CardStudentBody extends StatelessWidget {
           buildWhen: (previous, current) => current is StudentBodyState,
           builder: (context, state) {
             if (state is StudentBodyLoading) {
-              return const Expanded(
-                  child: Center(
+              return const Center(
                 child: CircularProgressIndicator(
                   color: kBlue,
                 ),
-              ));
+              );
             }
             if (state is StudentBodyLoaded) {
               return Column(

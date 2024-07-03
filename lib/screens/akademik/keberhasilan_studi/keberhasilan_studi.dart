@@ -31,6 +31,7 @@ class KeberhasilanStudiPage extends StatelessWidget {
         ),
         height: 1425,
         children: [
+          // Studi
           BaseContainer.styledBigCard(
             children: [
               const BigCardTitle(
@@ -87,6 +88,7 @@ class KeberhasilanStudiPage extends StatelessWidget {
             ],
           ),
           kGap16,
+          // Tren
           BaseContainer.styledBigCard(
             children: const [
               BigCardTitle(
@@ -102,6 +104,7 @@ class KeberhasilanStudiPage extends StatelessWidget {
             ],
           ),
           kGap16,
+          // Perbandingan
           BaseContainer.styledBigCard(
             children: [
               const BigCardTitle(

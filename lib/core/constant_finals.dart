@@ -25,6 +25,15 @@ final Map<String, dynamic> endpoint = {
     'koleksi': 'perpus_jumlah_koleksi',
     'eksemplar': 'perpus_jumlah_eksemplar',
   },
+  'mutu': {
+    'akreditasi': {
+      'total': 'akreditasi_jumlah_prodi',
+      'prodi': 'akreditasi_persebaran',
+      // 'akreditasi':
+      'sertifikasi': 'akreditasi_persebaran_tersertifikasi_prodi',
+      'internasional': 'akreditasi_persebaran_internasional',
+    }
+  },
   "akademik_student_body": "akademik_student_body",
   "akademik_student_status": "akademik_student_status",
 };
