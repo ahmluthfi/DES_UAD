@@ -8,6 +8,7 @@ import 'cubit/akademik_cubit.dart';
 import 'cubit/home_cubit.dart';
 import 'cubit/mutu_cubit.dart';
 import 'cubit/prestasi_cubit.dart';
+import 'cubit/sdm_cubit.dart';
 import 'data/datasources/data_sources_impl.dart';
 
 void main() => runApp(const MyApp());
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) => PrestasiCubit(dataSource: dataSource)),
         BlocProvider(create: (context) => HomeCubit(dataSource)),
+        BlocProvider(create: (context) => SdmCubit(dataSource)),
       ],
       child: MaterialApp(
         theme: theme,

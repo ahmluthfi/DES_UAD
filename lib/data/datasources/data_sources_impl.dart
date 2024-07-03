@@ -18,6 +18,7 @@ import '../models/home/student_body_model.dart';
 import '../models/mutu/persebaran_akreditasi.dart';
 import '../models/mutu/persebaran_akreditasi_internasional.dart';
 import '../models/mutu/sertifikasi_internasional.dart';
+import '../models/sdm/sdm_jumlah_dosen_model.dart';
 import 'data_sources.dart';
 
 class DataSourceImpl implements DataSource {
@@ -218,7 +219,7 @@ class DataSourceImpl implements DataSource {
   Future<StudentBody> getStudentBody() async {
     try {
       final Response response =
-          await get(Uri.parse('$url${endpoint['akademik_student_body']}'));
+          await get(Uri.parse('$url${endpoint['mahasiswa_status']['jumlah']}'));
       if (response.statusCode == 200) {
         return studentBodyFromJson(response.body);
       } else {
@@ -233,7 +234,7 @@ class DataSourceImpl implements DataSource {
   Future<AkademikStudentStatus> getStudentStatus() async {
     try {
       final Response response =
-          await get(Uri.parse('$url${endpoint['akademik_student_status']}'));
+          await get(Uri.parse('$url${endpoint['mahasiswa_status']['status']}'));
       if (response.statusCode == 200) {
         return akademikStudentStatusFromJson(response.body);
       } else {
@@ -244,20 +245,21 @@ class DataSourceImpl implements DataSource {
     }
   }
 
-  // @override
-  // Future<SdmJumlahDosen> getJumlahDosen() async {
-  //   try {
-  //     final Response response =
-  //         await get(Uri.parse('$url${endpoint['akademik_student_status']}'));
-  //     if (response.statusCode == 200) {
-  //       return akademikStudentStatusFromJson(response.body);
-  //     } else {
-  //       throw ServerException(message: 'Gagal Mengambil Data');
-  //     }
-  //   } catch (e) {
-  //     throw ServerException(message: e.toString());
-  //   }
-  // }
+  @override
+  Future<SdmJumlahDosen> getJumlahDosen() async {
+    try {
+      final Response response =
+          await get(Uri.parse('$url${endpoint['sdm_dosen']['jumlah']}'));
+      if (response.statusCode == 200) {
+        print(response.body);
+        return sdmJumlahDosenFromJson(response.body);
+      } else {
+        throw ServerException(message: 'Gagal Mengambil Data');
+      }
+    } catch (e) {
+      throw ServerException(message: e.toString());
+    }
+  }
 
   @override
   Future<String> getTotalProdi() async {

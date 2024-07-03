@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:des_uad/cubit/sdm_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/constant_finals.dart';
 import '../../widgets/card_ratio.dart';
@@ -14,16 +16,30 @@ class SDMTendik extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final SdmCubit cubit = context.read<SdmCubit>();
+    cubit.getJumlahDosen();
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-            CardRatio(
-              title: 'Tendik',
-              total: '494',
-              ratio: '1:58',
-              svgIcon: icBriefcase,
+            BlocBuilder<SdmCubit, SdmState>(
+              bloc: cubit..getJumlahDosen(),
+              builder: (context, state) {
+                print(state);
+                if (state is SdmJumlahDosenLoading) {
+                  return SizedBox();
+                }
+                if (state is SdmJumlahDosenLoaded) {
+                  return CardRatio(
+                    title: 'Tendik',
+                    total: state.data.totalDosen,
+                    ratio: state.data.rasioDosen,
+                    svgIcon: icBriefcase,
+                  );
+                }
+                return SizedBox();
+              },
             ),
             kGap16,
             Row(
@@ -31,7 +47,7 @@ class SDMTendik extends StatelessWidget {
               children: [
                 TotalGender(
                   icon: icManGender,
-                  title: 'Laki-laki',
+                  title: 'Laki-laki', 
                   value: '400',
                   color: kLightBlue,
                 ),

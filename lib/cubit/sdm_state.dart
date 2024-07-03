@@ -7,6 +7,6 @@ final class SdmInitial extends SdmState {}
 
 final class SdmJumlahDosenLoading extends SdmState {}
 final class SdmJumlahDosenLoaded extends SdmState {
-  final SdmJumlahDosen data;
+  final DataJumlahDosen data;
   SdmJumlahDosenLoaded(this.data);
 }
