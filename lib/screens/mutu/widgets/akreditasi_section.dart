@@ -1,7 +1,13 @@
+import 'package:community_charts_flutter/community_charts_flutter.dart'
+    as charts;
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../core/constant_finals.dart';
+import '../../../cubit/mutu_cubit.dart';
+import '../../../data/models/mutu/persebaran_akreditasi_internasional.dart';
 import '../../widgets/base_container.dart';
 import '../../widgets/big_card_title.dart';
 import '../../widgets/chart/horizontal_bar_chart.dart';
@@ -16,6 +22,9 @@ class AkreditasiSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const colors = [kGreen, kBlue, kPurple, kYellow, kPink];
+    final mutuCubit = context.read<MutuCubit>();
+
     return Column(
       children: [
         // Total Prodi
@@ -29,9 +38,21 @@ class AkreditasiSection extends StatelessWidget {
                   'Total Prodi',
                   style: Styles.kPublicRegularBodyTwo.copyWith(color: kGrey600),
                 ),
-                Text(
-                  '68',
-                  style: Styles.kPublicSemiBoldHeadingTwo,
+                BlocBuilder<MutuCubit, MutuState>(
+                  bloc: mutuCubit..getTotalProdi(),
+                  buildWhen: (previous, current) => current is TotalProdiState,
+                  builder: (context, state) {
+                    if (state is TotalProdiLoaded) {
+                      return Text(
+                        state.data,
+                        style: Styles.kPublicSemiBoldHeadingTwo,
+                      );
+                    }
+                    return Text(
+                      '...',
+                      style: Styles.kPublicSemiBoldHeadingTwo,
+                    );
+                  },
                 ),
               ],
             ),
@@ -59,31 +80,59 @@ class AkreditasiSection extends StatelessWidget {
             ),
             SizedBox(
               height: 300,
-              child: PieChartWithDetails.prodi(
-                title: 'Total Prodi',
-                value: '68',
+              child: BlocBuilder<MutuCubit, MutuState>(
+                bloc: mutuCubit..getAkreditasiProdi(),
+                buildWhen: (previous, current) =>
+                    current is PersebaranAkreditasiProdiState,
+                builder: (context, state) {
+                  if (state is PersebaranAkreditasiProdiLoaded) {
+                    final totalProdi = state.datas
+                        .map((e) => int.parse(e.total))
+                        .reduce((value, element) => value + element);
+                    List<PieChartSectionData> getData() {
+                      return List.generate(
+                        state.datas.length,
+                        (index) => PieChartSectionData(
+                          showTitle: false,
+                          color: colors[index],
+                          value:
+                              double.tryParse(state.datas[index].total) ?? 0.0,
+                          radius: 15,
+                        ),
+                      );
+                    }
+
+                    return PieChartWithDetails(
+                      title: 'Total Prodi',
+                      value: '$totalProdi',
+                      sections: getData(),
+                    );
+                  }
+                  return const Center(child: CircularProgressIndicator());
+                },
               ),
             ),
-            const PieChartLegend(
-                color: kGreen, title: 'Unggul', percent: '20%', value: '14'),
-            kGap12,
-            const PieChartLegend(
-                color: kBlue,
-                title: 'Baik Sekali',
-                percent: '38%',
-                value: '25'),
-            kGap12,
-            const PieChartLegend(
-                color: kLightSkyBlue,
-                title: 'Baik',
-                percent: '37%',
-                value: '24'),
-            kGap12,
-            const PieChartLegend(
-                color: kYellow,
-                title: 'Izin Operasional',
-                percent: '5%',
-                value: '5'),
+            BlocBuilder<MutuCubit, MutuState>(
+              buildWhen: (previous, current) =>
+                  current is PersebaranAkreditasiProdiState,
+              builder: (context, state) {
+                if (state is PersebaranAkreditasiProdiLoaded) {
+                  return ListView.separated(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) => PieChartLegend(
+                      color: colors[index],
+                      title: state.datas[index].akreditasi,
+                      percent: state.datas[index].persentase,
+                      value: state.datas[index].total,
+                    ),
+                    separatorBuilder: (context, index) => kGap12,
+                    itemCount: state.datas.length,
+                  );
+                }
+                return const SizedBox();
+              },
+            ),
           ],
         ),
         kGap16,
@@ -181,8 +230,47 @@ class AkreditasiSection extends StatelessWidget {
           children: [
             const BigCardTitle(title: 'Akreditasi Internasional'),
             SizedBox(
-              height: 325,
-              child: HorizontalBarLabelChart(dataAkreditasi),
+              height: 300,
+              child: BlocBuilder<MutuCubit, MutuState>(
+                bloc: mutuCubit..getAkreditasiInternasional(),
+                buildWhen: (previous, current) =>
+                    current is PersebaranAkreditasiInternasionalState,
+                builder: (context, state) {
+                  if (state is PersebaranAkreditasiInternasionalLoaded) {
+                    final dataAkreditasiInternasional = [
+                      charts.Series<PersebaranAkreditasiInternasional, String>(
+                        id: 'AI',
+                        data: state.datas,
+                        domainFn: (datum, index) => datum.prodi,
+                        measureFn: (datum, index) => datum.getPercent,
+                        labelAccessorFn: (datum, index) =>
+                            '${datum.prodi} ${datum.persentase} ● ${datum.total}',
+                        insideLabelStyleAccessorFn: (datum, index) =>
+                            const charts.TextStyleSpec(
+                          color: charts.MaterialPalette.white,
+                          fontWeight: 'bold',
+                        ),
+                        outsideLabelStyleAccessorFn: (datum, index) =>
+                            const charts.TextStyleSpec(
+                          color: charts.MaterialPalette.black,
+                          fontWeight: 'bold',
+                        ),
+                      ),
+                      charts.Series<PersebaranAkreditasiInternasional, String>(
+                        id: 'AI',
+                        domainFn: (datum, index) => datum.prodi,
+                        measureFn: (datum, index) => 100 - datum.getPercent,
+                        data: state.datas,
+                        labelAccessorFn: (datum, index) => '',
+                        colorFn: (datum, index) =>
+                            const charts.Color(r: 52, g: 144, b: 252, a: 32),
+                      )
+                    ];
+                    return HorizontalBarLabelChart(dataAkreditasiInternasional);
+                  }
+                  return const Center(child: CircularProgressIndicator());
+                },
+              ),
             ),
           ],
         ),

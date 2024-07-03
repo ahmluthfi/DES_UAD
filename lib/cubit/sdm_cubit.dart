@@ -8,7 +8,7 @@ part 'sdm_state.dart';
 
 class SdmCubit extends Cubit<SdmState> {
   SdmCubit(this.dataSource) : super(SdmInitial());
-  
+
   final DataSource dataSource;
 
   Future<void> getJumlahDosen() async {
@@ -17,5 +17,4 @@ class SdmCubit extends Cubit<SdmState> {
     final SdmJumlahDosen data = await dataSource.getJumlahDosen();
     emit(SdmJumlahDosenLoaded(data.data));
   }
-  
 }

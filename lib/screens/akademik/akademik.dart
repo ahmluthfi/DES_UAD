@@ -17,10 +17,11 @@ class AkademikPage extends StatelessWidget {
           ),
         ],
         body: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
+              kGap16,
               CardStudentBody(),
               kGap24,
               Text(
@@ -103,7 +104,6 @@ class AkademikPage extends StatelessWidget {
                   ),
                 ],
               ),
-              kGap80,
             ],
           ),
         ),

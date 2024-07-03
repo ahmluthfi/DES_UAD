@@ -1,12 +1,11 @@
-import 'core/constant_finals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'cubit/home_cubit.dart';
 
 import 'core/constant_finals.dart';
 import 'core/routes.dart';
 import 'core/theme/theme.dart';
 import 'cubit/akademik_cubit.dart';
+import 'cubit/home_cubit.dart';
 import 'cubit/mutu_cubit.dart';
 import 'cubit/prestasi_cubit.dart';
 import 'cubit/sdm_cubit.dart';
@@ -35,6 +34,7 @@ class MyApp extends StatelessWidget {
         theme: theme,
         routes: Routes.routes,
         initialRoute: homeRoute,
+        
       ),
     );
   }

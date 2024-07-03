@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:des_uad/data/models/sdm/sdm_jumlah_dosen_model.dart';
 import 'package:http/http.dart';
 
 import '../../core/constant_finals.dart';
@@ -16,6 +15,10 @@ import '../models/akademik/penerimaan_mahasiswa_baru/persebaran_provinsi.dart';
 import '../models/akademik/perpustakaan/koleksi.dart';
 import '../models/home/akademik_student_status_model.dart';
 import '../models/home/student_body_model.dart';
+import '../models/mutu/persebaran_akreditasi.dart';
+import '../models/mutu/persebaran_akreditasi_internasional.dart';
+import '../models/mutu/sertifikasi_internasional.dart';
+import '../models/sdm/sdm_jumlah_dosen_model.dart';
 import 'data_sources.dart';
 
 class DataSourceImpl implements DataSource {
@@ -255,6 +258,67 @@ class DataSourceImpl implements DataSource {
       }
     } catch (e) {
       throw ServerException(message: e.toString());
+    }
+  }
+
+  @override
+  Future<String> getTotalProdi() async {
+    try {
+      final response = await get(
+          Uri.parse('$url${endpoint['mutu']['akreditasi']['total']}'));
+      final decoded = jsonDecode(response.body);
+
+      if (response.statusCode == 200) {
+        return decoded['data']['total_prodi'];
+      }
+      throw ServerException();
+    } catch (e) {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<List<PersebaranAkreditasi>> getPersebaranAkreditasi() async {
+    try {
+      final response = await get(
+          Uri.parse('$url${endpoint['mutu']['akreditasi']['prodi']}'));
+      final decoded = jsonDecode(response.body);
+
+      if (response.statusCode == 200) {
+        return (decoded['data'] as List)
+            .map((e) => PersebaranAkreditasi.fromJson(e))
+            .toList();
+      }
+
+      throw ServerException();
+    } catch (e) {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<List<SertifikasiInternasional>> getSertifikasiInternasional() {
+    // TODO: implement getSertifikasiInternasional
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<PersebaranAkreditasiInternasional>>
+      getPersebaranAkreditasInternasional() async {
+    try {
+      final response = await get(
+          Uri.parse('$url${endpoint['mutu']['akreditasi']['internasional']}'));
+      final decoded = jsonDecode(response.body);
+
+      if (response.statusCode == 200) {
+        return (decoded['data'] as List)
+            .map((e) => PersebaranAkreditasiInternasional.fromJson(e))
+            .toList();
+      }
+
+      throw ServerException();
+    } catch (e) {
+      throw ServerException();
     }
   }
 }

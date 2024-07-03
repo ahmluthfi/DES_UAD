@@ -26,32 +26,30 @@ class MutuPage extends StatelessWidget {
                 kGap20,
                 BaseContainer.activeButtonContainer(
                   child: BlocBuilder<MutuCubit, MutuState>(
-                    builder: (context, state) {
-                      return Row(
-                        children: [
-                          Expanded(
-                            child: InkWell(
-                              onTap: () => mutuCubit.clickAppBarButton(),
-                              child: ActiveButton(
-                                title: 'Akreditasi',
-                                isActive: mutuCubit.isAkreditasi,
-                              ),
+                    builder: (context, state) => Row(
+                      children: [
+                        Expanded(
+                          child: InkWell(
+                            onTap: mutuCubit.clickAppBarButton,
+                            child: ActiveButton(
+                              title: 'Akreditasi',
+                              isActive: mutuCubit.isAkreditasi,
                             ),
                           ),
-                          kGap8,
-                          Expanded(
-                            child: InkWell(
-                              onTap: () =>
-                                  mutuCubit.clickAppBarButton(isActive: false),
-                              child: ActiveButton(
-                                title: 'Ranking',
-                                isActive: !mutuCubit.isAkreditasi,
-                              ),
+                        ),
+                        kGap8,
+                        Expanded(
+                          child: InkWell(
+                            onTap: () =>
+                                mutuCubit.clickAppBarButton(isActive: false),
+                            child: ActiveButton(
+                              title: 'Ranking',
+                              isActive: !mutuCubit.isAkreditasi,
                             ),
                           ),
-                        ],
-                      );
-                    },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -60,18 +58,17 @@ class MutuPage extends StatelessWidget {
           ),
         ],
         body: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
+              kGap16,
               BlocBuilder<MutuCubit, MutuState>(
-                builder: (context, state) {
-                  return mutuCubit.isAkreditasi
-                      ? const AkreditasiSection()
-                      : const RankingSection();
-                },
+                builder: (context, state) => mutuCubit.isAkreditasi
+                    ? const AkreditasiSection()
+                    : const RankingSection(),
               ),
-              kGap80,
+              kGap16,
             ],
           ),
         ),

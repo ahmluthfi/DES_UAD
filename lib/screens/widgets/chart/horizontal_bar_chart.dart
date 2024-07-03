@@ -9,7 +9,7 @@ class HorizontalBarLabelChart extends StatelessWidget {
   final bool animate;
 
   const HorizontalBarLabelChart(this.seriesList,
-      {super.key, this.animate = false});
+      {super.key, this.animate = true});
 
   /// Creates a [BarChart] with sample data and no transition.
   factory HorizontalBarLabelChart.withSampleData() {
