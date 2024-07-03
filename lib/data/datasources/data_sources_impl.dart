@@ -221,12 +221,13 @@ class DataSourceImpl implements DataSource {
       final Response response =
           await get(Uri.parse('$url${endpoint['mahasiswa_status']['jumlah']}'));
       if (response.statusCode == 200) {
+        print(response.body);
         return studentBodyFromJson(response.body);
       } else {
-        throw ServerException(message: 'Gagal Mengambil Data');
+        throw ServerException();
       }
     } catch (e) {
-      throw ServerException(message: e.toString());
+      throw ServerException();
     }
   }
 
@@ -236,12 +237,13 @@ class DataSourceImpl implements DataSource {
       final Response response =
           await get(Uri.parse('$url${endpoint['mahasiswa_status']['status']}'));
       if (response.statusCode == 200) {
+        print(response.body);
         return akademikStudentStatusFromJson(response.body);
       } else {
-        throw ServerException(message: 'Gagal Mengambil Data');
+        throw ServerException();
       }
     } catch (e) {
-      throw ServerException(message: e.toString());
+      throw ServerException();
     }
   }
 

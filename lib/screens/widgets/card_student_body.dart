@@ -21,6 +21,7 @@ class CardStudentBody extends StatelessWidget {
           bloc: homeCubit..getStudentBody(),
           buildWhen: (previous, current) => current is StudentBodyState,
           builder: (context, state) {
+            print(state);
             if (state is StudentBodyLoading) {
               return const Center(
                 child: CircularProgressIndicator(
@@ -60,6 +61,7 @@ class CardStudentBody extends StatelessWidget {
           bloc: homeCubit..getStudentStatus(),
           buildWhen: (previous, current) => current is StudentStatusState,
           builder: (context, state) {
+            print(state);
             if (state is AkademikStudentStatusLoading) {
               return const Center();
             }

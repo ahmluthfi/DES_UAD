@@ -25,7 +25,7 @@ final Map<String, dynamic> endpoint = {
     'koleksi': 'perpus_jumlah_koleksi',
     'eksemplar': 'perpus_jumlah_eksemplar',
   },
-  'mahasiswa_state': {
+  'mahasiswa_status': {
     'jumlah': 'akademik_student_body',
     'status': 'akademik_student_status',
   },
