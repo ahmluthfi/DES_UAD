@@ -36,5 +36,5 @@ abstract interface class DataSource {
 
   //sdm
   //sdm jumlah dosen
-  // Future<SdmJumlahDosen> getJumlahDosen();
+  Future<SdmJumlahDosen> getJumlahDosen();
 }

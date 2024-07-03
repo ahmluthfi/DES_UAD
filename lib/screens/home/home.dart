@@ -30,8 +30,8 @@ class HomeScreen extends StatelessWidget {
               ),
               Text(
                 'Yuk Mulai Pantau DES!',
-                style:
-                    Styles.kPublicSemiBoldHeadingThree.copyWith(color: kGrey900),
+                style: Styles.kPublicSemiBoldHeadingThree
+                    .copyWith(color: kGrey900),
               ),
               kGap20,
               const CardTotalRegistration(),
@@ -40,15 +40,15 @@ class HomeScreen extends StatelessWidget {
               kGap16,
               const CardRatio(
                 title: 'Dosen',
-                total: '736',
-                ratio: '1:36',
+                total: '0',
+                ratio: '0',
                 svgIcon: icProfileTwoUser,
               ),
               kGap16,
               const CardRatio(
                 title: 'Tendik',
-                total: '494',
-                ratio: '1:58',
+                total: '0',
+                ratio: '0',
                 svgIcon: icBriefcase,
               ),
               kGap16,

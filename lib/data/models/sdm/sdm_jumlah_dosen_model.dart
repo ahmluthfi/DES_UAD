@@ -11,7 +11,7 @@ String sdmJumlahDosenToJson(SdmJumlahDosen data) => json.encode(data.toJson());
 
 class SdmJumlahDosen {
     bool status;
-    Data data;
+    DataJumlahDosen data;
     String code;
     String message;
 
@@ -24,7 +24,7 @@ class SdmJumlahDosen {
 
     factory SdmJumlahDosen.fromJson(Map<String, dynamic> json) => SdmJumlahDosen(
         status: json["status"],
-        data: Data.fromJson(json["data"]),
+        data: DataJumlahDosen.fromJson(json["data"]),
         code: json["code"],
         message: json["message"],
     );
@@ -37,16 +37,16 @@ class SdmJumlahDosen {
     };
 }
 
-class Data {
+class DataJumlahDosen {
     String totalDosen;
     String rasioDosen;
 
-    Data({
+    DataJumlahDosen({
         required this.totalDosen,
         required this.rasioDosen,
     });
 
-    factory Data.fromJson(Map<String, dynamic> json) => Data(
+    factory DataJumlahDosen.fromJson(Map<String, dynamic> json) => DataJumlahDosen(
         totalDosen: json["total_dosen"],
         rasioDosen: json["rasio_dosen"],
     );

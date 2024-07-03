@@ -216,7 +216,7 @@ class DataSourceImpl implements DataSource {
   Future<StudentBody> getStudentBody() async {
     try {
       final Response response =
-          await get(Uri.parse('$url${endpoint['akademik_student_body']}'));
+          await get(Uri.parse('$url${endpoint['mahasiswa_status']['jumlah']}'));
       if (response.statusCode == 200) {
         return studentBodyFromJson(response.body);
       } else {
@@ -231,7 +231,7 @@ class DataSourceImpl implements DataSource {
   Future<AkademikStudentStatus> getStudentStatus() async {
     try {
       final Response response =
-          await get(Uri.parse('$url${endpoint['akademik_student_status']}'));
+          await get(Uri.parse('$url${endpoint['mahasiswa_status']['status']}'));
       if (response.statusCode == 200) {
         return akademikStudentStatusFromJson(response.body);
       } else {
@@ -242,18 +242,19 @@ class DataSourceImpl implements DataSource {
     }
   }
 
-  // @override
-  // Future<SdmJumlahDosen> getJumlahDosen() async {
-  //   try {
-  //     final Response response =
-  //         await get(Uri.parse('$url${endpoint['akademik_student_status']}'));
-  //     if (response.statusCode == 200) {
-  //       return akademikStudentStatusFromJson(response.body);
-  //     } else {
-  //       throw ServerException(message: 'Gagal Mengambil Data');
-  //     }
-  //   } catch (e) {
-  //     throw ServerException(message: e.toString());
-  //   }
-  // }
+  @override
+  Future<SdmJumlahDosen> getJumlahDosen() async {
+    try {
+      final Response response =
+          await get(Uri.parse('$url${endpoint['sdm_dosen']['jumlah']}'));
+      if (response.statusCode == 200) {
+        print(response.body);
+        return sdmJumlahDosenFromJson(response.body);
+      } else {
+        throw ServerException(message: 'Gagal Mengambil Data');
+      }
+    } catch (e) {
+      throw ServerException(message: e.toString());
+    }
+  }
 }

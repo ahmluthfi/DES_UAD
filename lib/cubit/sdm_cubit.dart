@@ -11,11 +11,11 @@ class SdmCubit extends Cubit<SdmState> {
   
   final DataSource dataSource;
 
-  // Future<void> getJumlahDosen() async {
-  //   emit(SdmJumlahDosenLoading());
+  Future<void> getJumlahDosen() async {
+    emit(SdmJumlahDosenLoading());
 
-  //   final SdmJumlahDosen data = await dataSource.getJumlahDosen();
-  //   emit(SdmJumlahDosenLoaded(data));
-  // }
+    final SdmJumlahDosen data = await dataSource.getJumlahDosen();
+    emit(SdmJumlahDosenLoaded(data.data));
+  }
   
 }
