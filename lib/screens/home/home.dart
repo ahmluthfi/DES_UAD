@@ -1,4 +1,6 @@
+import 'package:des_uad/cubit/sdm_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/constant_finals.dart';
 import '../widgets/card_akreditasi_prodi.dart';
@@ -14,6 +16,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final SdmCubit cubit = context.read<SdmCubit>();
+    cubit.getJumlahDosen();
+    cubit.getJumlahTendik();
+
     return Scaffold(
       backgroundColor: kBackground,
       body: SingleChildScrollView(
@@ -38,18 +44,45 @@ class HomeScreen extends StatelessWidget {
               kGap16,
               CardStudentBody(),
               kGap16,
-              const CardRatio(
-                title: 'Dosen',
-                total: '0',
-                ratio: '0',
-                svgIcon: icProfileTwoUser,
+              BlocBuilder<SdmCubit, SdmState>(
+                builder: (context, state) {
+                  print(state);
+                  if (state is SdmJumlahDosenLoaded) {
+                    return CardRatio(
+                      title: 'Dosen',
+                      total: state.data.totalDosen,
+                      ratio: state.data.rasioDosen,
+                      svgIcon: icProfileTwoUser,
+                    );
+                  }
+                  //return kalo datanya gaada
+                  return const CardRatio(
+                    title: 'Dosen',
+                    total: '--',
+                    ratio: '--',
+                    svgIcon: icProfileTwoUser,
+                  );
+                },
               ),
               kGap16,
-              const CardRatio(
-                title: 'Tendik',
-                total: '0',
-                ratio: '0',
-                svgIcon: icBriefcase,
+              BlocBuilder<SdmCubit, SdmState>(
+                builder: (context, state) {
+                  print(state);
+                  if (state is SdmJumlahTendikLoaded) {
+                    return CardRatio(
+                      title: 'Tendik',
+                      total: state.data.totalTendik,
+                      ratio: state.data.rasioTendik,
+                      svgIcon: icBriefcase,
+                    );
+                  }
+                  return const CardRatio(
+                    title: 'Tendik',
+                    total: '--',
+                    ratio: '--',
+                    svgIcon: icBriefcase,
+                  );
+                },
               ),
               kGap16,
               const CardAkreditasiProdi(),

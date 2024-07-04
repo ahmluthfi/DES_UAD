@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:des_uad/data/models/sdm/sdm_gender_tendik_model.dart';
+import 'package:des_uad/data/models/sdm/sdm_jumlah_tendik_model.dart';
 import 'package:http/http.dart';
 
 import '../../core/constant_finals.dart';
@@ -18,6 +20,7 @@ import '../models/home/student_body_model.dart';
 import '../models/mutu/persebaran_akreditasi.dart';
 import '../models/mutu/persebaran_akreditasi_internasional.dart';
 import '../models/mutu/sertifikasi_internasional.dart';
+import '../models/sdm/sdm_gender_dosen_model.dart';
 import '../models/sdm/sdm_jumlah_dosen_model.dart';
 import 'data_sources.dart';
 
@@ -223,10 +226,10 @@ class DataSourceImpl implements DataSource {
       if (response.statusCode == 200) {
         return studentBodyFromJson(response.body);
       } else {
-        throw ServerException(message: 'Gagal Mengambil Data');
+        throw ServerException();
       }
     } catch (e) {
-      throw ServerException(message: e.toString());
+      throw ServerException();
     }
   }
 
@@ -238,26 +241,72 @@ class DataSourceImpl implements DataSource {
       if (response.statusCode == 200) {
         return akademikStudentStatusFromJson(response.body);
       } else {
-        throw ServerException(message: 'Gagal Mengambil Data');
+        throw ServerException();
       }
     } catch (e) {
-      throw ServerException(message: e.toString());
+      throw ServerException();
+    }
+  }
+
+  //Sumber Daya Manusia
+  @override
+  Future<SdmJumlahDosen> getJumlahDosen() async {
+    try {
+      final Response response = await get(
+          Uri.parse('$url${endpoint['sdm']['sdm_dosen']['ratio_jumlah']}'));
+      if (response.statusCode == 200) {
+        return sdmJumlahDosenFromJson(response.body);
+      } else {
+        throw ServerException();
+      }
+    } catch (e) {
+      throw ServerException();
     }
   }
 
   @override
-  Future<SdmJumlahDosen> getJumlahDosen() async {
+  Future<SdmJumlahTendik> getJumlahTendik() async {
     try {
-      final Response response =
-          await get(Uri.parse('$url${endpoint['sdm_dosen']['jumlah']}'));
+      final Response response = await get(
+          Uri.parse('$url${endpoint['sdm']['sdm_tendik']['ratio_jumlah']}'));
       if (response.statusCode == 200) {
-        print(response.body);
-        return sdmJumlahDosenFromJson(response.body);
+        return sdmJumlahTendikFromJson(response.body);
       } else {
-        throw ServerException(message: 'Gagal Mengambil Data');
+        throw ServerException();
       }
     } catch (e) {
-      throw ServerException(message: e.toString());
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<SdmGenderDosen> getGenderDosen() async {
+    try {
+      final Response response =
+          await get(Uri.parse('$url${endpoint['sdm']['sdm_dosen']['gender']}'));
+      if (response.statusCode == 200) {
+        print(response.body);
+        return sdmGenderDosenFromJson(response.body);
+      } else {
+        throw ServerException();
+      }
+    } catch (e) {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<SdmGenderTendik> getGenderTendik() async {
+    try {
+      final Response response = await get(
+          Uri.parse('$url${endpoint['sdm']['sdm_tendik']['gender']}'));
+      if (response.statusCode == 200) {
+        return sdmGenderTendikFromJson(response.body);
+      } else {
+        throw ServerException();
+      }
+    } catch (e) {
+      throw ServerException();
     }
   }
 
@@ -289,7 +338,6 @@ class DataSourceImpl implements DataSource {
             .map((e) => PersebaranAkreditasi.fromJson(e))
             .toList();
       }
-
       throw ServerException();
     } catch (e) {
       throw ServerException();
@@ -298,7 +346,6 @@ class DataSourceImpl implements DataSource {
 
   @override
   Future<List<SertifikasiInternasional>> getSertifikasiInternasional() {
-    // TODO: implement getSertifikasiInternasional
     throw UnimplementedError();
   }
 
