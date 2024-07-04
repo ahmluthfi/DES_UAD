@@ -17,8 +17,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SdmCubit cubit = context.read<SdmCubit>();
-    cubit.getJumlahDosen();
-    cubit.getJumlahTendik();
+    // cubit.getJumlahDosen();
+    // cubit.getJumlahTendik();
 
     return Scaffold(
       backgroundColor: kBackground,
@@ -45,42 +45,44 @@ class HomeScreen extends StatelessWidget {
               CardStudentBody(),
               kGap16,
               BlocBuilder<SdmCubit, SdmState>(
+                bloc: cubit..getJumlahDosenTendik(),
                 builder: (context, state) {
-                  print(state);
-                  if (state is SdmJumlahDosenLoaded) {
-                    return CardRatio(
-                      title: 'Dosen',
-                      total: state.data.totalDosen,
-                      ratio: state.data.rasioDosen,
-                      svgIcon: icProfileTwoUser,
+                  // print(state);
+                  if (state is SdmJumlahDosenTendikLoaded) {
+                    return Column(
+                      children: [
+                        CardRatio(
+                          title: 'Dosen',
+                          total: state.dataDosen.totalDosen,
+                          ratio: state.dataDosen.rasioDosen,
+                          svgIcon: icProfileTwoUser,
+                        ),
+                        kGap16,
+                        CardRatio(
+                          title: 'Tendik',
+                          total: state.dataTendik.totalTendik,
+                          ratio: state.dataTendik.rasioTendik,
+                          svgIcon: icBriefcase,
+                        )
+                      ],
                     );
                   }
-                  //return kalo datanya gaada
-                  return const CardRatio(
-                    title: 'Dosen',
-                    total: '--',
-                    ratio: '--',
-                    svgIcon: icProfileTwoUser,
-                  );
-                },
-              ),
-              kGap16,
-              BlocBuilder<SdmCubit, SdmState>(
-                builder: (context, state) {
-                  print(state);
-                  if (state is SdmJumlahTendikLoaded) {
-                    return CardRatio(
-                      title: 'Tendik',
-                      total: state.data.totalTendik,
-                      ratio: state.data.rasioTendik,
-                      svgIcon: icBriefcase,
-                    );
-                  }
-                  return const CardRatio(
-                    title: 'Tendik',
-                    total: '--',
-                    ratio: '--',
-                    svgIcon: icBriefcase,
+                  return Column(
+                    children: [
+                      const CardRatio(
+                        title: 'Dosen',
+                        total: '--',
+                        ratio: '--',
+                        svgIcon: icProfileTwoUser,
+                      ),
+                      kGap16,
+                      CardRatio(
+                        title: 'Tendik',
+                        total: '--',
+                        ratio: '--',
+                        svgIcon: icBriefcase,
+                      )
+                    ],
                   );
                 },
               ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/constant_finals.dart';
+import '../../cubit/akademik_cubit.dart';
 import 'base_container.dart';
 import 'chart_total_registrasi.dart';
 
@@ -9,6 +11,7 @@ class CardTotalRegistration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final akademikCubit = context.read<AkademikCubit>();
     return BaseContainer(
       border: Border.all(color: kWhite, width: 2),
       boxShadow: [
@@ -23,50 +26,61 @@ class CardTotalRegistration extends StatelessWidget {
         vertical: 10,
         horizontal: 16,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Total Registrasi',
-                style: Styles.kPublicSemiBoldBodyOne.copyWith(color: kWhite),
-              ),
-              Row(
-                children: [
-                  Text(
-                    'TA 2023/2024',
-                    style:
-                        Styles.kPublicRegularBodyThree.copyWith(color: kWhite),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                    width: 3,
-                    height: 3,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: kWhite,
+      child: BlocBuilder<AkademikCubit, AkademikState>(
+        bloc: akademikCubit..getDataPMB(),
+        buildWhen: (previous, current) => current is DataPMBState,
+        builder: (context, state) {
+          if (state is DataPMBLoaded) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Total Registrasi',
+                      style:
+                          Styles.kPublicSemiBoldBodyOne.copyWith(color: kWhite),
                     ),
-                  ),
-                  Text(
-                    '23 Des',
-                    style:
-                        Styles.kPublicRegularBodyThree.copyWith(color: kWhite),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Text(
-            '736',
-            style: Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kWhite),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 13),
-            child: const ChartTotalRegistrasi(),
-          ),
-        ],
+                    Row(
+                      children: [
+                        Text(
+                          'TA ' + state.data.tahun,
+                          style: Styles.kPublicRegularBodyThree
+                              .copyWith(color: kWhite),
+                        ),
+                        // Container(
+                        //   margin: const EdgeInsets.symmetric(horizontal: 4),
+                        //   width: 3,
+                        //   height: 3,
+                        //   decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(10),
+                        //     color: kWhite,
+                        //   ),
+                        // ),
+                        // Text(
+                        //   '23 Des',
+                        //   style: Styles.kPublicRegularBodyThree
+                        //       .copyWith(color: kWhite),
+                        // ),
+                      ],
+                    ),
+                  ],
+                ),
+                Text(
+                  state.data.totalRegistrasi,
+                  style:
+                      Styles.kPublicSemiBoldHeadingTwo.copyWith(color: kWhite),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 13),
+                  child: const ChartTotalRegistrasi(),
+                ),
+              ],
+            );
+          }
+          return Text('');
+        },
       ),
     );
   }
