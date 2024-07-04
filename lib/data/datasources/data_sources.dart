@@ -12,7 +12,10 @@ import '../models/home/student_body_model.dart';
 import '../models/mutu/persebaran_akreditasi.dart';
 import '../models/mutu/persebaran_akreditasi_internasional.dart';
 import '../models/mutu/sertifikasi_internasional.dart';
+import '../models/sdm/sdm_gender_dosen_model.dart';
+import '../models/sdm/sdm_gender_tendik_model.dart';
 import '../models/sdm/sdm_jumlah_dosen_model.dart';
+import '../models/sdm/sdm_jumlah_tendik_model.dart';
 
 abstract interface class DataSource {
   // Akademik - Mahasiswa Asing
@@ -35,10 +38,17 @@ abstract interface class DataSource {
   // Home - Student Body
   Future<StudentBody> getStudentBody();
   Future<AkademikStudentStatus> getStudentStatus();
+
+
   // SDM - Jumlah Dosen
   Future<SdmJumlahDosen> getJumlahDosen();
+  //SDM - Gender Dosen
+  Future<SdmGenderDosen> getGenderDosen();
+  //SDM - Jumlah Tendik
+  Future<SdmJumlahTendik> getJumlahTendik();
+  //SDM - Gender Tendik
+  Future<SdmGenderTendik> getGenderTendik();
   
-
   // Mutu - Akreditasi
   Future<String> getTotalProdi();
   Future<List<PersebaranAkreditasi>> getPersebaranAkreditasi();

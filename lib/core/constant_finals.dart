@@ -29,9 +29,25 @@ final Map<String, dynamic> endpoint = {
     'jumlah': 'akademik_student_body',
     'status': 'akademik_student_status',
   },
-  'sdm_dosen': {
-    'ratio_jumlah': 'sdm_jumlah_dosen',
-  }
+  'mutu': {
+    'akreditasi': {
+      'total': 'akreditasi_jumlah_prodi',
+      'prodi': 'akreditasi_persebaran',
+      // 'akreditasi':
+      'sertifikasi': 'akreditasi_persebaran_tersertifikasi_prodi',
+      'internasional': 'akreditasi_persebaran_internasional',
+    }
+  },
+  'sdm': {
+    'sdm_dosen': {
+      'ratio_jumlah': 'sdm_jumlah_dosen',
+      'gender': 'sdm_dosen_gender',
+    },
+    'sdm_tendik': {
+      'ratio_jumlah': 'sdm_jumlah_tendik',
+      'gender': 'sdm_tendik_gender',
+    }
+  },
 };
 // Spacing (Gap)
 const Gap kGap4 = Gap(4);

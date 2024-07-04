@@ -17,48 +17,76 @@ class SDMTendik extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SdmCubit cubit = context.read<SdmCubit>();
-    cubit.getJumlahDosen();
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
             BlocBuilder<SdmCubit, SdmState>(
-              bloc: cubit..getJumlahDosen(),
+              bloc: cubit..getJumlahTendik(),
+              buildWhen: (previous, current) => current is SdmJumlah,
               builder: (context, state) {
-                print(state);
-                if (state is SdmJumlahDosenLoading) {
-                  return SizedBox();
-                }
-                if (state is SdmJumlahDosenLoaded) {
+                if (state is SdmJumlahTendikLoaded) {
                   return CardRatio(
                     title: 'Tendik',
-                    total: state.data.totalDosen,
-                    ratio: state.data.rasioDosen,
+                    total: state.data.totalTendik,
+                    ratio: state.data.rasioTendik,
                     svgIcon: icBriefcase,
                   );
                 }
-                return SizedBox();
+                //temporary return - nanti diganti sama yang lain
+                return CardRatio(
+                    title: 'Tendik',
+                    total: '--',
+                    ratio: '--',
+                    svgIcon: icBriefcase);
               },
             ),
             kGap16,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TotalGender(
-                  icon: icManGender,
-                  title: 'Laki-laki', 
-                  value: '400',
-                  color: kLightBlue,
-                ),
-                kGap12,
-                TotalGender(
-                  icon: icWomanGender,
-                  title: 'Perempuan',
-                  value: '365',
-                  color: kRed,
-                ),
-              ],
+            BlocBuilder<SdmCubit, SdmState>(
+              bloc: cubit..getGenderTendik(),
+              buildWhen: (previous, current) => current is SdmGender,
+              builder: (context, state) {
+                if (state is SdmGenderTendikLoaded) {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TotalGender(
+                        icon: icManGender,
+                        title: 'Laki-laki',
+                        value: state.data.lakiLaki,
+                        color: kLightBlue,
+                      ),
+                      kGap12,
+                      TotalGender(
+                        icon: icWomanGender,
+                        title: state.data.perempuan,
+                        value: '--',
+                        color: kRed,
+                      ),
+                    ],
+                  );
+                }
+                //temporary return - nanti diganti sama yang lain
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TotalGender(
+                      icon: icManGender,
+                      title: 'Laki-laki',
+                      value: '--',
+                      color: kLightBlue,
+                    ),
+                    kGap12,
+                    TotalGender(
+                      icon: icWomanGender,
+                      title: 'Perempuan',
+                      value: '--',
+                      color: kRed,
+                    ),
+                  ],
+                );
+              },
             ),
             kGap16,
             CardBarChart(
